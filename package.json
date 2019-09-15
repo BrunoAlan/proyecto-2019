@@ -1,0 +1,23 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "Aplicacion proyecto 2018",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+ 
+  "keywords": [
+    "Electron"
+  ],
+  "author": "Alan Bruno, Franco Paturlanne",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^6.0.9",
+    "electron-rebuild": "^1.8.6"
+  },
+  "dependencies": {
+    "better-sqlite3": "^5.4.3",
+    "materialize-css": "^1.0.0"
+  }
+}
