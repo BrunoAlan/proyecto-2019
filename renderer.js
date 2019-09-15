@@ -1,7 +1,12 @@
-//Requiero la DB y la instacio
+const app = require('electron').remote.app;
+const fs = require('fs');
 
+//Requiero la DB y la instacio
+const path = require('path');
 const Database = require('better-sqlite3');
-const db = new Database('./db.sqlite', { verbose: console.log });
+
+let dbFile = path.join(app.getAppPath(), 'db.sqlite')
+const db = new Database(dbFile, { verbose: console.log });
 
 const listaPalabras = []
 
