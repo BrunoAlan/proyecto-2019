@@ -4,9 +4,9 @@
   "description": "Aplicacion proyecto 2018",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "postinstall": "install-app-deps"
   },
- 
   "keywords": [
     "Electron"
   ],
@@ -14,10 +14,20 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^6.0.9",
+    "electron-builder": "^21.2.0",
     "electron-rebuild": "^1.8.6"
   },
   "dependencies": {
     "better-sqlite3": "^5.4.3",
-    "materialize-css": "^1.0.0"
+    "bootstrap-table": "^1.15.4",
+    "datatables": "^1.10.18",
+    "datatables.net": "^1.10.19",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "materialize-css": "^1.0.0",
+    "sqlite3": "^4.1.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^8.17.4",
+    "zinggrid": "^1.1.1"
   }
 }

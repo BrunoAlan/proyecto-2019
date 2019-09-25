@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css"
+    href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+</head>
+
+<zing-grid caption="Consulta estudiantes" pager search sort theme="android">
+  <zg-column type="selector"></zg-column>
+  <zg-column index="nombre" header="Nombre"></zg-column>
+  <zg-column index="apellido" header="Apellido"></zg-column>
+  <zg-column index="descripcion" header="Descripcion"></zg-column>
+  <zg-data src="http://localhost:3000/estudiantes"></zg-data>
+
+</zing-grid>
+
+
+<script src="../node_modules/zinggrid/dist/zinggrid.min.js" defer></script>
+</body>
+
+</html>
