@@ -1,0 +1,67 @@
+
+#contdenom {
+    margin-left: 22%;
+    box-sizing: border-box;
+    width: 80%;
+    height: auto;
+    
+    }
+ 
+ 
+   .contdenominacion
+   {
+     margin-left: 10%;
+     margin-top: 7%; 
+     margin-bottom: 5%;   
+     width: 80%;
+     height: auto;
+     padding: 20px 20px 50px 20px;
+     border-radius: 35px 35px 35px 35px;
+     -moz-border-radius: 35px 35px 35px 35px;
+     -webkit-border-radius: 35px 35px 35px 35px;
+     box-sizing: border-box;
+     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+     background-color: #26a69a ;
+  }
+
+
+   #correcta
+ {
+  font-size: 2.5vw;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: bold;
+  margin-left: 7%;
+  margin-top: -4%; 
+ }
+
+
+ #im1
+{
+
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   border-radius: 10px;
+   object-fit: fixed;
+   width:17vw;
+   height: 17vw;
+  
+}
+
+#im1:hover {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  cursor:  url(../public/aprovechar.png) , pointer;
+  }
+
+#im2
+{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 10px;
+  object-fit: fixed;
+  width:17vw;
+  height: 17vw;
+}
+
+#im2:hover {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    cursor:  url(../public/aprovechar.png) , pointer;
+}
+

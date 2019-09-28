@@ -39,7 +39,6 @@ function getPalabras(listaPalabras) {
 
 btn1.addEventListener('click', () => {
   if (btn1.palabra == listaPalabras[dosAleatorios[correcta]].palabra) {
-    //window.location = "palabras.html"
 
     dosAleatorios = obtenerDosAleatorios();
     correcta = obtenerCorrecta();
@@ -52,7 +51,6 @@ btn1.addEventListener('click', () => {
 
 btn2.addEventListener('click', () => {
   if (btn2.palabra == listaPalabras[dosAleatorios[correcta]].palabra) {
-    //window.location = "palabras.html"
 
     dosAleatorios = obtenerDosAleatorios();
     correcta = obtenerCorrecta();
@@ -71,10 +69,6 @@ var dosAleatorios = obtenerDosAleatorios();
 var correcta = obtenerCorrecta();
 cargarJuego(dosAleatorios, correcta);
 
-
-// dosAleatorios = obtenerDosAleatorios();
-// correcta = obtenerCorrecta();
-// jugar(dosAleatorios, correcta);
 
 
 //Obtengo dos números aleatorios sin que se repitan
@@ -104,27 +98,24 @@ function cargarJuego(dosAleatorios, opcionCorrecta) {
 }
 
 
-function jugar(dosAleatorios, opcionCorrecta) {
-  //cargarJuego(dosAleatorios, opcionCorrecta)
-  // const btn1 = document.getElementById('im1');
-  // const btn2 = document.getElementById('im2');
+// function jugar(dosAleatorios, opcionCorrecta) {
 
-  //Handler de los eventos del click en las imagenes
-  btn1.addEventListener('click', () => {
-    if (btn1.palabra == listaPalabras[dosAleatorios[opcionCorrecta]].palabra) {
-      //window.location = "palabras.html"
-      console.log('Correcta');
-    } else {
-      console.log('Incorrecta');
-    }
-  })
+//   //Handler de los eventos del click en las imagenes
+//   btn1.addEventListener('click', () => {
+//     if (btn1.palabra == listaPalabras[dosAleatorios[opcionCorrecta]].palabra) {
+//       //window.location = "palabras.html"
+//       console.log('Correcta');
+//     } else {
+//       console.log('Incorrecta');
+//     }
+//   })
 
-  btn2.addEventListener('click', () => {
-    if (btn2.palabra == listaPalabras[dosAleatorios[opcionCorrecta]].palabra) {
-      //window.location = "palabras.html"
-      console.log('Correcta');
-    } else {
-      console.log('Incorrecta')
-    }
-  })
-}//jugar()
+//   btn2.addEventListener('click', () => {
+//     if (btn2.palabra == listaPalabras[dosAleatorios[opcionCorrecta]].palabra) {
+//       //window.location = "palabras.html"
+//       console.log('Correcta');
+//     } else {
+//       console.log('Incorrecta')
+//     }
+//   })
+// }//jugar()
