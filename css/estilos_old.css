@@ -176,6 +176,37 @@ img.hoverImages:hover {
 }
 
 
+#im1
+{
+
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   border-radius: 10px;
+
+}
+
+#im1:hover {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  cursor:  url(../public/aprovechar.png) , pointer;
+  }
+
+#im2
+{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+
+  border-radius: 10px;
+}
+#im2:hover {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    cursor:  url(../public/aprovechar.png) , pointer;
+}
+
+#contdenom {
+   margin-left: 20%;
+   width: 80%;
+   height: auto;
+}
+
 .botonessemana{
 
   height:120px;
@@ -220,14 +251,13 @@ main, .principal
 .consigna
 {
   height: 5vh;
-  font-size: 2vw;
-  color: #ffffff;
+  font-size: 35px;
+  color: #007065;
   font-weight: 600;
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   font-weight: bold;
   /*text-shadow: 2px 2px 4px;*/
   box-sizing: border-box;
-  text-align: center;
 }
 
 .contenedordias
@@ -235,9 +265,20 @@ main, .principal
    width: 100%;
 }
 
-
-@media screen and (max-width: 1000px) 
+#correcta
 {
+  font-size: 45px;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+.consigna
+{
+  font-size: 25px;
+}
 .hoymanayer
 {
   font-size: 25px;
@@ -250,5 +291,14 @@ main, .principal
 {
   font-size: 25px;
 }
-
+#im1
+{
+  width: 200px;
+  height: 200px;
+}
+#im2
+{
+  width: 200px;
+  height: 200px;
+}
 }

@@ -19,15 +19,12 @@
   },
   "dependencies": {
     "better-sqlite3": "^5.4.3",
-    "bootstrap-table": "^1.15.4",
-    "datatables": "^1.10.18",
-    "datatables.net": "^1.10.19",
     "express": "^4.17.1",
+    "fancygrid": "^1.7.81",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0",
     "sqlite3": "^4.1.0",
     "sweetalert": "^2.1.2",
-    "sweetalert2": "^8.17.4",
-    "zinggrid": "^1.1.1"
+    "sweetalert2": "^8.17.4"
   }
 }

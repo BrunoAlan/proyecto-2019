@@ -5,26 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" type="text/css"
-    href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link href="../node_modules/fancygrid/client/fancy.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet" type="text/css">
+  <link href="../css/denominacion.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css"
+    media="screen,projection" />
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+  <title>Estudiantes</title>
 
 </head>
 
-<zing-grid caption="Consulta estudiantes" pager search sort theme="android">
-  <zg-column type="selector"></zg-column>
-  <zg-column index="nombre" header="Nombre"></zg-column>
-  <zg-column index="apellido" header="Apellido"></zg-column>
-  <zg-column index="descripcion" header="Descripcion"></zg-column>
-  <zg-data src="http://localhost:3000/estudiantes"></zg-data>
+<body>
+  <nav id="nav">
+    <div class="nav-wrapper container">
+      <a href="#" id="tituloej" class="brand-logo center">Estudiantes</a>
+      <ul class="left hide-on-med-and-down" id="volver">
+        <li><a class="volver" href="index.html">Volver
+            <i class="material-icons left">arrow_back</i></a></li>
+      </ul>
+    </div>
+  </nav>
 
-</zing-grid>
+  <div id="container"></div>
+  <button style="float: right" id="btn">Obtener Lista</button>
+  <script src="../js/consultaEstudiantes.js">  </script>
 
-
-<script src="../node_modules/zinggrid/dist/zinggrid.min.js" defer></script>
 </body>
 
 </html>
