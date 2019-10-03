@@ -13,67 +13,75 @@
 
 </head>
 
-<div class="pagina">
 
-	<body id="index">
-
-
-		<nav id="nav">
-			<div class="nav-wrapper container">
-				<a href="#" class="brand-logo">NombreApp</a>
-				<ul class="right hide-on-med-and-down">
-					<li><a class="links_nav" href="#">Seguimiento</a></li>
-					<li>
-						<a href="#" id="links_nav" class="dropdown-trigger" data-target="id_drop">
-							Estudiantes
-							<i class="material-icons right">arrow_drop_down</i>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+<body id="index">
 
 
-		<ul id="id_drop" class="dropdown-content">
-			<li><a href="denominacion.html" id="drop">Dar de alta estudiante</a></li>
-			<li><a href="diasSemana.html" id="drop">Dar de baja estudiante</a></li>
-			<li><a href="consultaEstudiantes.html" id="drop">Consulta de datos</a></li>
-		</ul>
-
-		<div class="row">
-
-			<div class="rectangulo col s8 offset-s2">Ejercitación</div>
-			<div class="row">
-				<div class="col" id="ejercicios">
-					<a href="configDenominacion.html"><img class="hoverImages" src="http://placehold.it/200x200"></a>
-					<h2 id="textoej">Denominación</h2>
-				</div>
-				<div class="col" id="ejercicios">
-					<a href="diasSemana.html"><img class="hoverImages" src="http://placehold.it/200x200"></a>
-					<h2 id="textoej">Días de la semana</h2>
-				</div>
-				<div class="col" id="ejercicios">
-					<a href=""><img class="hoverImages" src="http://placehold.it/200x200"></a>
-					<h2 id="textoej">Dactilológico</h2>
-				</div>
-			</div>
-
+	<nav id="nav">
+		<div class="nav-wrapper container">
+			<a href="#" class="brand-logo">NombreApp</a>
+			<ul class="right hide-on-med-and-down">
+				<li><a class="links_nav" href="#">Seguimiento</a></li>
+				<li>
+					<a href="#" id="links_nav" class="dropdown-trigger" data-target="id_drop">
+						Estudiantes
+						<i class="material-icons right">arrow_drop_down</i>
+					</a>
+				</li>
+			</ul>
 		</div>
+	</nav>
 
 
-		<!--JavaScript at end of body for optimized loading-->
-		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				M.AutoInit();
+	<ul id="id_drop" class="dropdown-content">
+		<li><a href="denominacion.html" id="drop">Dar de alta estudiante</a></li>
+		<li><a href="diasSemana.html" id="drop">Dar de baja estudiante</a></li>
+		<li><a href="consultaEstudiantes.html" id="drop">Consulta de datos</a></li>
+	</ul>
+	<div class="row">
+		<div class="rectangulo col s8 offset-s2">Ejercitación</div>
+	</div>
 
-				var elem = document.querySelector('.dropdown-trigger');
-				var instance = M.Dropdown.init(elem, { coverTrigger: false });
-			});
+	<div id="contenedorindex">
+		<main class="row">
+			<div id="contenedorej">
+				<div class="col s3" id="ejercicios">
+					<a href="configDenominacion.html"><img class="hoverImages" src="../public/images/denomin.png"></a>
+					<!-- 	<h2 id="textoej">Denominación</h2> -->
+				</div>
+				<div class="col s3" id="ejercicios">
+					<a href="diasSemana.html"><img class="hoverImages" src="../public/images/diassemana.png"></a>
+					<!--	<h2 id="textoej">Días de la semana</h2>-->
+				</div>
+				<div class="col s3" id="ejercicios">
 
-		</script>
+					<a href=""><img class="hoverImages" src="../public/images/caperucitaroja.png"></a>
+
+					<!--	<h2 id="textoej">Cuentos con Animaciones</h2>-->
+				</div>
+				<div class="col s3" id="ejercicios">
+					<a href=""><img class="hoverImages" src="../public/images/dacti.png"></a>
+					<!--	<h2 id="textoej">Dactilológico</h2>-->
+				</div>
+			</div>
+
+		</main>
+	</div>
 
 
-	</body>
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			M.AutoInit();
+
+			var elem = document.querySelector('.dropdown-trigger');
+			var instance = M.Dropdown.init(elem, { coverTrigger: false });
+		});
+
+	</script>
+
+
+</body>
 
 </html>
