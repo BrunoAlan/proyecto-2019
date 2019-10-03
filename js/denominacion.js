@@ -26,11 +26,16 @@ var puntos = 0;
 //   console.log(data)
 // })
 
+var conf = JSON.parse(localStorage.getItem('configuracion'));
+console.log(conf)
 
 function getPalabras(listaPalabras) {
-  const row = db.prepare('SELECT * FROM palabras');
-  const palabrasDB = row.all()
-  //console.log();
+  //const row = db.prepare('SELECT * FROM palabras WHERE id in (?,?,?) ');
+  var query = "SELECT * FROM palabras WHERE id in " + "(" + conf + ")"
+  //console.log(query)
+  const row = db.prepare(query)
+  const palabrasDB = row.all();
+  console.log(palabrasDB);
   palabrasDB.forEach(palabra => {
     listaPalabras.push(palabra)
   });
@@ -80,7 +85,7 @@ cargarJuego(dosAleatorios, correcta);
 function obtenerDosAleatorios() {
   let lista = []
   while (lista.length < 2) {
-    let random = Math.floor(Math.random() * 3) + 0;
+    let random = Math.floor(Math.random() * listaPalabras.length) + 0;
     if (lista.indexOf(random) === -1) lista.push(random);
   }
   return lista;
