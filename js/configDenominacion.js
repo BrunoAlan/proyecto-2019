@@ -53,7 +53,13 @@ document.getElementById("btn").addEventListener("click", () => {
     palabrasSeleccionadas.push(element.id);
   });
 
-  localStorage.setItem("configuracion", JSON.stringify(palabrasSeleccionadas));
-  console.log(JSON.stringify(palabrasSeleccionadas))
-  location.href = "denominacion.html"
+
+  if (palabrasSeleccionadas.length >= 2) {
+    localStorage.setItem("configuracion", JSON.stringify(palabrasSeleccionadas));
+    console.log(JSON.stringify(palabrasSeleccionadas))
+    location.href = "denominacion.html"
+  } else {
+    alert("Necesita seleccionar al menos dos palabras para trabajar")
+  }
+
 })

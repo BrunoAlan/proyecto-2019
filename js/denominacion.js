@@ -7,7 +7,6 @@ const Database = require('better-sqlite3');
 let dbFile = path.join(app.getAppPath(), 'db.sqlite')
 const db = new Database(dbFile, { verbose: console.log });
 
-
 const listaPalabras = []
 const btn1 = document.getElementById('im1');
 const btn2 = document.getElementById('im2');
@@ -26,13 +25,13 @@ var puntos = 0;
 //   console.log(data)
 // })
 
+//OBTENGO LA LISTA DE PALABRAS A TRABAJAR
 var conf = JSON.parse(localStorage.getItem('configuracion'));
-console.log(conf)
+
 
 function getPalabras(listaPalabras) {
-  //const row = db.prepare('SELECT * FROM palabras WHERE id in (?,?,?) ');
+  //ARMO MI QUERY PARA TRABAJAR CON LAS PALABRAS QUE ME PASARON DE LA CONFIG.
   var query = "SELECT * FROM palabras WHERE id in " + "(" + conf + ")"
-  //console.log(query)
   const row = db.prepare(query)
   const palabrasDB = row.all();
   console.log(palabrasDB);
@@ -43,10 +42,8 @@ function getPalabras(listaPalabras) {
 
 btn1.addEventListener('click', () => {
   if (btn1.palabra == listaPalabras[dosAleatorios[correcta]].palabra) {
-    //window.location = "palabras.html"
-
-    dosAleatorios = obtenerDosAleatorios();
-    correcta = obtenerCorrecta();
+    dosAleatorios = generateTwoRandoms();
+    correcta = generateCorrect();
     cargarJuego(dosAleatorios, correcta);
     console.log('Correcta');
   } else {
@@ -58,8 +55,8 @@ btn2.addEventListener('click', () => {
   if (btn2.palabra == listaPalabras[dosAleatorios[correcta]].palabra) {
     //window.location = "palabras.html"
 
-    dosAleatorios = obtenerDosAleatorios();
-    correcta = obtenerCorrecta();
+    dosAleatorios = generateTwoRandoms();
+    correcta = generateCorrect();
     cargarJuego(dosAleatorios, correcta);
     console.log('Correcta');
   } else {
@@ -70,19 +67,13 @@ btn2.addEventListener('click', () => {
 
 
 getPalabras(listaPalabras);
-
-var dosAleatorios = obtenerDosAleatorios();
-var correcta = obtenerCorrecta();
+var dosAleatorios = generateTwoRandoms();
+var correcta = generateCorrect();
 cargarJuego(dosAleatorios, correcta);
 
 
-// dosAleatorios = obtenerDosAleatorios();
-// correcta = obtenerCorrecta();
-// jugar(dosAleatorios, correcta);
-
-
 //Obtengo dos números aleatorios sin que se repitan
-function obtenerDosAleatorios() {
+function generateTwoRandoms() {
   let lista = []
   while (lista.length < 2) {
     let random = Math.floor(Math.random() * listaPalabras.length) + 0;
@@ -92,7 +83,8 @@ function obtenerDosAleatorios() {
 
 }
 
-function obtenerCorrecta() {
+//Determino qué opción es la correcta
+function generateCorrect() {
   let num1 = Math.floor(Math.random() * ((1 + 1) - 0) + 0);
   return num1
 }
@@ -106,29 +98,3 @@ function cargarJuego(dosAleatorios, opcionCorrecta) {
   document.getElementById('im1').palabra = listaPalabras[dosAleatorios[0]].palabra;
   document.getElementById('im2').palabra = listaPalabras[dosAleatorios[1]].palabra;
 }
-
-
-function jugar(dosAleatorios, opcionCorrecta) {
-  //cargarJuego(dosAleatorios, opcionCorrecta)
-  // const btn1 = document.getElementById('im1');
-  // const btn2 = document.getElementById('im2');
-
-  //Handler de los eventos del click en las imagenes
-  btn1.addEventListener('click', () => {
-    if (btn1.palabra == listaPalabras[dosAleatorios[opcionCorrecta]].palabra) {
-      //window.location = "palabras.html"
-      console.log('Correcta');
-    } else {
-      console.log('Incorrecta');
-    }
-  })
-
-  btn2.addEventListener('click', () => {
-    if (btn2.palabra == listaPalabras[dosAleatorios[opcionCorrecta]].palabra) {
-      //window.location = "palabras.html"
-      console.log('Correcta');
-    } else {
-      console.log('Incorrecta')
-    }
-  })
-}//jugar()
