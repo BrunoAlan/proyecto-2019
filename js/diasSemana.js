@@ -1,6 +1,5 @@
 
 const Swal = require('sweetalert2')
-
 const lunes = document.getElementById("lunes");
 const martes = document.getElementById("martes");
 const miercoles = document.getElementById("miercoles");
@@ -8,19 +7,6 @@ const jueves = document.getElementById("jueves");
 const viernes = document.getElementById("viernes");
 const sabado = document.getElementById("sabado");
 const domingo = document.getElementById("domingo");
-
-const lunes2 = document.getElementById("lunes2");
-const martes2 = document.getElementById("martes2");
-const miercoles2 = document.getElementById("miercoles2");
-const jueves2 = document.getElementById("jueves2");
-const viernes2 = document.getElementById("viernes2");
-const sabado2 = document.getElementById("sabado2");
-const domingo2 = document.getElementById("domingo2");
-var hoyEs = document.getElementById("hoyEs");
-var mananaEs = document.getElementById("mananaEs");
-var ayerFue = document.getElementById("ayerFue");
-
-
 
 //Obtengo la fecha del sistema
 
@@ -31,23 +17,29 @@ var hoy = diasSemana[(date.getDay())];
 var ayer; if (hoy == "Domingo") { ayer = "Sábado" } else { ayer = diasSemana[(date.getDay() - 1)] };
 var manana = diasSemana[(date.getDay() + 1) % 7]
 
+//Obtendo el html desde el que estoy requiriendo este js
+//me devuelve diasSemanaHoy.html , diasSemanaAyer.html o diasSemanaManana.html
+var locat = (location.pathname.substring(location.pathname.lastIndexOf("/") + 1));
 
 
-//Función que despliega la alerta
-function mostrarAlerta(tipo) {
-	alerta.crearAlerta(tipo);
-
+switch (locat) {
+	case "diasSemanaHoy.html":
+		setToday();
+		break;
+	case "diasSemanaAyer.html":
+		setYesterday();
+		break;
+	case "diasSemanaManana.html":
+		setTomorrow()
+		break;
 }
-
 
 
 //Función que determina si el día elegido es correcto
 function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 	if (diaCorrecto == diaElegido) {
-
 		var arrayAciertos = ['¡Muy bien!', '¡Excelente!', '¡Bravo!', '¡Grandioso!', '¡Estupendo!', '¡Fantastico!'];
 		var singleacierto = arrayAciertos[Math.floor(Math.random() * arrayAciertos.length)];
-
 		Swal.fire({
 			imageUrl: '../public/images/muybien.png',
 			width: 400,
@@ -62,13 +54,13 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 				//location.href='index.html';
 				switch (ejercicio) {
 					case "hoy":
-						//location.href='index.html';
+						location.href = 'diasSemanaAyer.html'
 						break;
 					case "ayer":
-
+						location.href = 'diasSemanaManana.html'
 						break;
 					case "manana":
-
+						location.href = 'index.html'
 						break;
 
 				}
@@ -88,7 +80,6 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 			title: singlerror,
 			showConfirmButton: false,
 			timer: 2000
-
 		});
 	}
 }
@@ -98,27 +89,23 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 function cambiarDía(dia, ejercicio) {
 	switch (ejercicio) {
 		case "hoy":
-			hoyEs.innerHTML = "Hoy es " + dia
+			textoResolucion.innerHTML = "Hoy es " + dia
 			break;
 		case "ayer":
-			ayerFue.innerHTML = "Ayer fue  " + dia
+			textoResolucion.innerHTML = "Ayer fue  " + dia
 			break;
 		case "manana":
-			mananaEs.innerHTML = "Mañana es " + dia
+			textoResolucion.innerHTML = "Mañana es " + dia
 			break;
-
 	}
-
 }
 
 
-//Lógia del ejercicio
+
+
+//LÓGICA DEL EJERCICIO
 
 //Dia de hoy
-
-
-
-
 function setToday() {
 	lunes.addEventListener("click", e => {
 		verificarDia(hoy, "Lunes", "hoy")
@@ -146,73 +133,68 @@ function setToday() {
 		verificarDia(hoy, "Domingo", "hoy")
 	})
 }
-setToday();
 
+
+//Día de mañana
 function setTomorrow() {
-	lunes2.addEventListener("click", e => {
+	lunes.addEventListener("click", e => {
 		verificarDia(manana, "Lunes", "manana")
 	})
 
-	martes2.addEventListener("click", e => {
+	martes.addEventListener("click", e => {
 		verificarDia(manana, "Martes", "manana")
 	})
 
-	miercoles2.addEventListener("click", e => {
+	miercoles.addEventListener("click", e => {
 		verificarDia(manana, "Miércoles", "manana")
 	})
 
-	jueves2.addEventListener("click", e => {
+	jueves.addEventListener("click", e => {
 		verificarDia(manana, "Jueves", "manana")
 	})
 
-	viernes2.addEventListener("click", e => {
+	viernes.addEventListener("click", e => {
 		verificarDia(manana, "Viernes", "manana")
 	})
-	sabado2.addEventListener("click", e => {
+	sabado.addEventListener("click", e => {
 		verificarDia(manana, "Sábado", "manana")
 	})
-	domingo2.addEventListener("click", e => {
+	domingo.addEventListener("click", e => {
 		verificarDia(manana, "Domingo", "manana")
 	})
 
 }
-
-//Día de mañana
-
-
 
 
 
 //Día de ayer
 function setYesterday() {
 
-	lunes3.addEventListener("click", e => {
+	lunes.addEventListener("click", e => {
 		verificarDia(ayer, "Lunes", "ayer")
 	})
 
-	martes3.addEventListener("click", e => {
+	martes.addEventListener("click", e => {
 		verificarDia(ayer, "Martes", "ayer")
 	})
 
-	miercoles3.addEventListener("click", e => {
+	miercoles.addEventListener("click", e => {
 		verificarDia(ayer, "Miércoles", "ayer")
 	})
 
-	jueves3.addEventListener("click", e => {
+	jueves.addEventListener("click", e => {
 		verificarDia(ayer, "Jueves", "ayer")
 	})
 
-	viernes3.addEventListener("click", e => {
+	viernes.addEventListener("click", e => {
 		verificarDia(ayer, "Viernes", "ayer")
 	})
-	sabado3.addEventListener("click", e => {
+	sabado.addEventListener("click", e => {
 		verificarDia(ayer, "Sábado", "ayer")
 	})
-	domingo3.addEventListener("click", e => {
+	domingo.addEventListener("click", e => {
 		verificarDia(ayer, "Domingo", "ayer")
 	})
 }
-
-
 
 console.log(hoy, ayer, manana, date.getDay())
