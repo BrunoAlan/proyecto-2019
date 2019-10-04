@@ -31,17 +31,11 @@ var grid = new Fancy.Grid({
   },
   columns: [{
     type: 'select',
-    locked: true
-  }, {
-    index: 'id',
-    title: 'ID',
-    type: 'number'
   }, {
     index: 'nombre',
     title: 'Nombre',
     type: 'string',
     flex: 1
-
   }, {
     index: 'apellido',
     title: 'Apellido',
@@ -52,13 +46,16 @@ var grid = new Fancy.Grid({
     index: 'edad',
     title: 'Edad',
     type: 'number',
-
+    flex: 1,
     sortable: true
   }, {
     index: 'descripcion',
     title: 'Descripcion',
     type: 'string',
-    flex: 2,
+    width: 350,
+    resizable: true,
+    autoHeight: true,
+
   }]
 });
 

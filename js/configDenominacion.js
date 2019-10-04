@@ -41,7 +41,6 @@ var grid = new Fancy.Grid({
     title: 'Palabra',
     type: 'string',
     flex: 1
-
   }]
 });
 

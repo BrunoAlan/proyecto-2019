@@ -7,6 +7,8 @@ const jueves = document.getElementById("jueves");
 const viernes = document.getElementById("viernes");
 const sabado = document.getElementById("sabado");
 const domingo = document.getElementById("domingo");
+const siguiente = document.getElementById('siguiente')
+siguiente.style.visibility = 'hidden';
 
 //Obtengo la fecha del sistema
 
@@ -17,9 +19,11 @@ var hoy = diasSemana[(date.getDay())];
 var ayer; if (hoy == "Domingo") { ayer = "Sábado" } else { ayer = diasSemana[(date.getDay() - 1)] };
 var manana = diasSemana[(date.getDay() + 1) % 7]
 
-//Obtendo el html desde el que estoy requiriendo este js
+//Obtengo el html desde el que estoy requiriendo este js
 //me devuelve diasSemanaHoy.html , diasSemanaAyer.html o diasSemanaManana.html
 var locat = (location.pathname.substring(location.pathname.lastIndexOf("/") + 1));
+
+
 
 
 switch (locat) {
@@ -40,6 +44,7 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 	if (diaCorrecto == diaElegido) {
 		var arrayAciertos = ['¡Muy bien!', '¡Excelente!', '¡Bravo!', '¡Grandioso!', '¡Estupendo!', '¡Fantastico!'];
 		var singleacierto = arrayAciertos[Math.floor(Math.random() * arrayAciertos.length)];
+
 		Swal.fire({
 			imageUrl: '../public/images/muybien.png',
 			width: 400,
@@ -47,26 +52,31 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 			imageHeight: 300,
 			background: '#e4f2f0',
 			title: singleacierto,
-			showConfirmButton: true,
-			confirmButtonText: 'Siguiente'
-		}).then((result) => {
-			if (result.value) {
-				//location.href='index.html';
-				switch (ejercicio) {
-					case "hoy":
-						location.href = 'diasSemanaAyer.html'
-						break;
-					case "ayer":
-						location.href = 'diasSemanaManana.html'
-						break;
-					case "manana":
-						location.href = 'index.html'
-						break;
+			showConfirmButton: false,
+			timer: 2000
 
-				}
-			}
 		});
-		cambiarDía(diaElegido, ejercicio)
+		cambiarDía(diaElegido, ejercicio);
+		document.getElementById('siguiente').style.visibility = 'visible';
+		switch (ejercicio) {
+			case "hoy":
+				siguiente.addEventListener("click", () => {
+					location.href = 'diasSemanaAyer.html'
+				})
+				//location.href = 'diasSemanaAyer.html'
+				break;
+			case "ayer":
+				siguiente.addEventListener("click", () => {
+					location.href = 'diasSemanaManana.html'
+				})
+				break;
+			case "manana":
+				siguiente.addEventListener("click", () => {
+					location.href = 'index.html'
+				})
+				break;
+		}
+
 	}
 	else {
 		var arrayerror = ['¡Intentalo otra vez!', '¡Intentalo nuevamente!', '¡Una vez mas, tu puedes hacerlo!'];
@@ -137,6 +147,9 @@ function setToday() {
 
 //Día de mañana
 function setTomorrow() {
+	const siguiente = document.getElementById('siguiente')
+	siguiente.innerText = "Finalizar"
+
 	lunes.addEventListener("click", e => {
 		verificarDia(manana, "Lunes", "manana")
 	})
@@ -169,7 +182,6 @@ function setTomorrow() {
 
 //Día de ayer
 function setYesterday() {
-
 	lunes.addEventListener("click", e => {
 		verificarDia(ayer, "Lunes", "ayer")
 	})

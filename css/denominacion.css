@@ -65,3 +65,12 @@
     cursor:  url(../public/aprovechar.png) , pointer;
 }
 
+#im1:active
+{
+  transform: translateY(4px);
+}
+
+#im2:active
+{
+  transform: translateY(4px);
+}
