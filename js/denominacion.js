@@ -9,29 +9,19 @@ const db = new Database(dbFile, { verbose: console.log });
 const listaPalabras = []
 const btn1 = document.getElementById('im1');
 const btn2 = document.getElementById('im2');
-var puntos = 0;
+var ejerciciosObjetivo = 10
+var cantEjercicios = 0
+var rtasCorrectas = 0
+var rtasIncorrectas = 0
+var errores = []
 
-// async function getAPI() {
-//   const response = await fetch('http://localhost:3000/palabras');
-//   const data = await response.json();
-//   return data
-// }
-
-// const json = getAPI()
-// json.then((data) => {
-//   console.log(data)
-// })
 
 //OBTENGO LA LISTA DE PALABRAS A TRABAJAR
 var conf = JSON.parse(localStorage.getItem('configuracion'));
 
 
-
-
 //ejecucion del juego
 getPalabras(listaPalabras);
-
-
 var dosAleatorios = generateTwoRandoms();
 var correcta = generateCorrect();
 cargarJuego(dosAleatorios, correcta);
@@ -49,28 +39,37 @@ function getPalabras(listaPalabras) {
   });
 }
 
-btn1.addEventListener('click', () => {
-  if (btn1.palabra == listaPalabras[dosAleatorios[correcta]].palabra) {
-    dosAleatorios = generateTwoRandoms();
-    correcta = generateCorrect();
-    cargarJuego(dosAleatorios, correcta);
-    console.log('Correcta');
+btn1.onclick = () => {
+  cantEjercicios++;
+  if (endGame(cantEjercicios, ejerciciosObjetivo)) {
+    if (btn1.palabra == listaPalabras[dosAleatorios[correcta]].palabra) {
+      nextPlay()
+    } else {
+      errores.push(listaPalabras[dosAleatorios[correcta]].palabra)
+      rtasIncorrectas++
+      console.log('Incorrecta');
+    }
   } else {
-    console.log('Incorrecta');
+    alert("Resultado: Correctas: " + rtasCorrectas + " Incorrectas: " + rtasIncorrectas)
+    console.log(errores.sort())
   }
-})
+}
 
-btn2.addEventListener('click', () => {
-  if (btn2.palabra == listaPalabras[dosAleatorios[correcta]].palabra) {
-    dosAleatorios = generateTwoRandoms();
-    correcta = generateCorrect();
-    cargarJuego(dosAleatorios, correcta);
-    console.log('Correcta');
+btn2.onclick = () => {
+  cantEjercicios++;
+  if (endGame(cantEjercicios, ejerciciosObjetivo)) {
+    if (btn2.palabra == listaPalabras[dosAleatorios[correcta]].palabra) {
+      nextPlay()
+    } else {
+      errores.push(listaPalabras[dosAleatorios[correcta]].palabra)
+      rtasIncorrectas++
+      console.log('Incorrecta');
+    }
   } else {
-    console.log('Incorrecta')
+    alert("Resultado: Correctas: " + rtasCorrectas + " Incorrectas: " + rtasIncorrectas)
+    console.log(errores.sort())
   }
-})
-
+}
 
 
 
@@ -102,7 +101,13 @@ function cargarJuego(dosAleatorios, opcionCorrecta) {
 
 
 function nextPlay() {
-  var dosAleatorios = generateTwoRandoms();
-  var correcta = generateCorrect();
+  dosAleatorios = generateTwoRandoms();
+  correcta = generateCorrect();
   cargarJuego(dosAleatorios, correcta);
+  rtasCorrectas++;
+  console.log('Correcta');
+}
+
+function endGame(cantEjercicios, ejerciciosObjetivo) {
+  return cantEjercicios <= ejerciciosObjetivo
 }
