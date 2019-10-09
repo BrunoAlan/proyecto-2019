@@ -1,5 +1,4 @@
 //Requiero la DB y la instacio
-
 const app = require('electron').remote.app;
 //const fs = require('fs');
 const path = require('path');
@@ -92,9 +91,10 @@ function generateCorrect() {
 
 
 function cargarJuego(dosAleatorios, opcionCorrecta) {
+  var prefix = "../public/images/Imagenes_reales/"
   document.getElementById('correcta').innerHTML = listaPalabras[dosAleatorios[opcionCorrecta]].palabra;
-  document.getElementById('im1').src = "../public/images/" + listaPalabras[dosAleatorios[0]].ruta;
-  document.getElementById('im2').src = "../public/images/" + listaPalabras[dosAleatorios[1]].ruta;
+  document.getElementById('im1').src = prefix + listaPalabras[dosAleatorios[0]].rutaReal;
+  document.getElementById('im2').src = prefix + listaPalabras[dosAleatorios[1]].rutaReal;
   document.getElementById('im1').palabra = listaPalabras[dosAleatorios[0]].palabra;
   document.getElementById('im2').palabra = listaPalabras[dosAleatorios[1]].palabra;
 }

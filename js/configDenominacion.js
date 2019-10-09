@@ -1,4 +1,10 @@
 var Fancy = require('fancygrid');
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});
+
 //PATU LEE ESTO!!
 
 //PARA USAR EL METODO, CAMBIAR DENTRO DEL MODULO
@@ -6,17 +12,18 @@ var Fancy = require('fancygrid');
 //fancy.full.js está modificado por ALAN
 
 var grid = new Fancy.Grid({
-  renderTo: document.getElementById('container'),
+
+  renderTo: document.getElementById('wordsContainer'),
   theme: 'material',
   tbar: [{
     type: 'search',
     width: 350,
     emptyText: 'Buscar'
   }],
-  height: (screen.height - 250),
+  height: (screen.height - 350),
   width: screen.width,
   paging: {
-    pageSize: 20,
+    pageSize: 8,
     pageSizeData: [5, 10, 20, 50]
 
   },
@@ -45,18 +52,22 @@ var grid = new Fancy.Grid({
 });
 
 document.getElementById("btn").addEventListener("click", () => {
-  var palabrasSeleccionadas = [];
-  var selection = grid.getSelection();
+  let palabrasSeleccionadas = [];
+  let selection = grid.getSelection();
   selection.forEach(element => {
     //console.log(element.id)
     palabrasSeleccionadas.push(element.id);
   });
 
 
+  selector = document.getElementById('mySelector')
+  let tipoImagen = selector.M_FormSelect.input.value;
+
   if (palabrasSeleccionadas.length >= 2) {
-    localStorage.setItem("configuracion", JSON.stringify(palabrasSeleccionadas));
-    console.log(JSON.stringify(palabrasSeleccionadas))
-    location.href = "denominacion.html"
+    localStorage.setItem("configuracion", JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }));
+    console.log(JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }))
+    //console.log(JSON.stringify(palabrasSeleccionadas))
+    // location.href = "denominacion.html"
   } else {
     alert("Necesita seleccionar al menos dos palabras para trabajar")
   }
