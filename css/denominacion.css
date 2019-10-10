@@ -1,13 +1,9 @@
+body#configuraciondenom
+{
+  background-color: #1b7fbd ;
+}
 
-#contdenom {
-    margin-left: 22%;
-    box-sizing: border-box;
-    width: 80%;
-    height: auto;
-    
-    }
- 
- 
+
    .contdenominacion
    {
      margin-left: 10%;
@@ -35,42 +31,71 @@
  }
 
 
- #im1
-{
 
-   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-   border-radius: 10px;
-   object-fit: fixed;
-   width:17vw;
-   height: 17vw;
+/* Configuracion Denominacion    */
+
+
+#conttabla {
+  margin-left: 0%;
+  box-sizing: border-box;
+  width: 40%;
+  
+  }
+
+ .contconfiguracion
+ {
+  /* margin-left: 2%;
+   margin-top: 2%; 
+   margin-bottom: 2%;   
+   width: 96%;
+   height: 90%;
+   padding: 20px 20px 50px 20px;
+   border-radius: 35px 35px 35px 35px;
+   -moz-border-radius: 35px 35px 35px 35px;
+   -webkit-border-radius: 35px 35px 35px 35px;
+   box-sizing: border-box;
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
+ 
+}
+
+
+
+.obtenerlista
+{
+  margin-left: 65%;
+  margin-top: 8%;
+  object-fit: fixed;
+  width:8vw;
+  height: 2vw;
+     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   color: #ffffff;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-weight: bold;
+    font-size: 1vw;
+    border-radius: 10%;
+    border-color: #01579b;
   
 }
 
-#im1:hover {
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+.obtenerlista:active {
+      
+  transform: translateY(2px);
+}
+
+.obtenerlista:hover {
+  box-shadow: 0 10px 18px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   cursor:  url(../public/aprovechar.png) , pointer;
-  }
-
-#im2
-{
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  border-radius: 10px;
-  object-fit: fixed;
-  width:17vw;
-  height: 17vw;
 }
 
-#im2:hover {
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    cursor:  url(../public/aprovechar.png) , pointer;
-}
 
-#im1:active
+.consignatabla
 {
-  transform: translateY(4px);
-}
-
-#im2:active
-{
-  transform: translateY(4px);
+  
+  font-size: 1vw;
+  color: #ffffff;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: bold;
+  /*text-shadow: 2px 2px 4px;*/
+  
+ 
 }

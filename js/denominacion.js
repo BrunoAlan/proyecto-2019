@@ -19,8 +19,9 @@ let conf = JSON.parse(localStorage.getItem('configuracion'));
 let pal = conf.palabras.toString();
 let tipoImg = conf.tipo
 
-console.log(tipoImg)
-//ejecucion del juego
+
+
+//EJECUCION DEL JUEGO
 getPalabras(listaPalabras);
 let dosAleatorios = generateTwoRandoms();
 let correcta = generateCorrect();
@@ -107,7 +108,6 @@ function cargarJuego(dosAleatorios, opcionCorrecta) {
     document.getElementById('im1').palabra = listaPalabras[dosAleatorios[0]].palabra;
     document.getElementById('im2').palabra = listaPalabras[dosAleatorios[1]].palabra;
   }
-
 }
 
 

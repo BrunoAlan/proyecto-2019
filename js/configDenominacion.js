@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //EN node_modules -> require('./client/fancy.full.js'); 
 //fancy.full.js está modificado por ALAN
 
-var grid = new Fancy.Grid({
+let grid = new Fancy.Grid({
 
   renderTo: document.getElementById('wordsContainer'),
   theme: 'material',
@@ -67,7 +67,7 @@ document.getElementById("btn").addEventListener("click", () => {
     localStorage.setItem("configuracion", JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }));
     console.log(JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }))
     //console.log(JSON.stringify(palabrasSeleccionadas))
-    location.href = "denominacion.html"
+    location.href = "denominacion4.html"
   } else {
     alert("Necesita seleccionar al menos dos palabras para trabajar")
   }
