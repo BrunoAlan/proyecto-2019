@@ -67,7 +67,7 @@ document.getElementById("btn").addEventListener("click", () => {
     localStorage.setItem("configuracion", JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }));
     console.log(JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }))
     //console.log(JSON.stringify(palabrasSeleccionadas))
-    // location.href = "denominacion.html"
+    location.href = "denominacion.html"
   } else {
     alert("Necesita seleccionar al menos dos palabras para trabajar")
   }

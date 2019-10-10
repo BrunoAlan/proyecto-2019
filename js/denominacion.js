@@ -1,6 +1,5 @@
 //Requiero la DB y la instacio
 const app = require('electron').remote.app;
-//const fs = require('fs');
 const path = require('path');
 const Database = require('better-sqlite3');
 let dbFile = path.join(app.getAppPath(), 'db.sqlite')
@@ -8,30 +7,32 @@ const db = new Database(dbFile, { verbose: console.log });
 const listaPalabras = []
 const btn1 = document.getElementById('im1');
 const btn2 = document.getElementById('im2');
-var ejerciciosObjetivo = 10
-var cantEjercicios = 0
-var rtasCorrectas = 0
-var rtasIncorrectas = 0
-var errores = []
+let ejerciciosObjetivo = 10
+let cantEjercicios = 0
+let rtasCorrectas = 0
+let rtasIncorrectas = 0
+let errores = []
 
 
-//OBTENGO LA LISTA DE PALABRAS A TRABAJAR
-var conf = JSON.parse(localStorage.getItem('configuracion'));
+//OBTENGO LA LISTA DE PALABRAS A TRABAJAR Y EL TIPO DE IMAGEN
+let conf = JSON.parse(localStorage.getItem('configuracion'));
+let pal = conf.palabras.toString();
+let tipoImg = conf.tipo
 
-
+console.log(tipoImg)
 //ejecucion del juego
 getPalabras(listaPalabras);
-var dosAleatorios = generateTwoRandoms();
-var correcta = generateCorrect();
+let dosAleatorios = generateTwoRandoms();
+let correcta = generateCorrect();
 cargarJuego(dosAleatorios, correcta);
 
 
 
 function getPalabras(listaPalabras) {
   //ARMO MI QUERY PARA TRABAJAR CON LAS PALABRAS QUE ME PASARON DE LA CONFIG.
-  var query = "SELECT * FROM palabras WHERE id in " + "(" + conf + ")"
-  const row = db.prepare(query)
-  const palabrasDB = row.all();
+  let query = "SELECT * FROM palabras WHERE id in " + "(" + pal + ")"
+  let row = db.prepare(query)
+  let palabrasDB = row.all();
   console.log(palabrasDB);
   palabrasDB.forEach(palabra => {
     listaPalabras.push(palabra)
@@ -91,12 +92,22 @@ function generateCorrect() {
 
 
 function cargarJuego(dosAleatorios, opcionCorrecta) {
-  var prefix = "../public/images/Imagenes_reales/"
-  document.getElementById('correcta').innerHTML = listaPalabras[dosAleatorios[opcionCorrecta]].palabra;
-  document.getElementById('im1').src = prefix + listaPalabras[dosAleatorios[0]].rutaReal;
-  document.getElementById('im2').src = prefix + listaPalabras[dosAleatorios[1]].rutaReal;
-  document.getElementById('im1').palabra = listaPalabras[dosAleatorios[0]].palabra;
-  document.getElementById('im2').palabra = listaPalabras[dosAleatorios[1]].palabra;
+  if (tipoImg === "Imagen Real") {
+    var prefix = "../public/images/Imagenes_reales/"
+    document.getElementById('correcta').innerHTML = listaPalabras[dosAleatorios[opcionCorrecta]].palabra;
+    document.getElementById('im1').src = prefix + listaPalabras[dosAleatorios[0]].rutaReal;
+    document.getElementById('im2').src = prefix + listaPalabras[dosAleatorios[1]].rutaReal;
+    document.getElementById('im1').palabra = listaPalabras[dosAleatorios[0]].palabra;
+    document.getElementById('im2').palabra = listaPalabras[dosAleatorios[1]].palabra;
+  } else {
+    var prefix = "../public/images/Imagenes_dibujo/"
+    document.getElementById('correcta').innerHTML = listaPalabras[dosAleatorios[opcionCorrecta]].palabra;
+    document.getElementById('im1').src = prefix + listaPalabras[dosAleatorios[0]].rutaDibujo;
+    document.getElementById('im2').src = prefix + listaPalabras[dosAleatorios[1]].rutaDibujo;
+    document.getElementById('im1').palabra = listaPalabras[dosAleatorios[0]].palabra;
+    document.getElementById('im2').palabra = listaPalabras[dosAleatorios[1]].palabra;
+  }
+
 }
 
 
