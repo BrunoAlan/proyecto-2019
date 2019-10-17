@@ -1,5 +1,6 @@
 var Fancy = require('fancygrid');
 var grid
+const Swal = require('sweetalert2')
 document.addEventListener('DOMContentLoaded', () => {
   let elems = document.querySelectorAll('select');
   let instances = M.FormSelect.init(elems);
@@ -29,31 +30,36 @@ document.getElementById('btn').addEventListener('click', () => {
   });
 
 
-  selector = document.getElementById('mySelector');
-  const tipoImagen = selector.M_FormSelect.input.value;
+  var tipoImagen = document.getElementById("mySelector").value;
 
   if (palabrasSeleccionadas.length >= 2) {
-    localStorage.setItem('configuracion', JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }));
-    console.log(JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }));
-    // console.log(JSON.stringify(palabrasSeleccionadas))
-    location.href = 'denominacion4.html';
+    localStorage.setItem("configuracion", JSON.stringify({ palabras: palabrasSeleccionadas, tipo:tipoImagen }));
+    console.log(JSON.stringify({ palabras: palabrasSeleccionadas, tipo: tipoImagen }))
+    //console.log(JSON.stringify(palabrasSeleccionadas))
+    location.href = "denominacion4.html"
   } else {
-    alert('Necesita seleccionar al menos dos palabras para trabajar');
+    
+    Swal.fire(
+      'Necesita seleccionar al menos dos palabras para trabajar',
+      '',
+      'warning'
+    )
   }
-});
+
+})
 
 function generateGrid() {
 
   grid = new Fancy.Grid({
-    renderTo: document.getElementById('wordsContainer'),
+    renderTo: document.getElementById('conttabla'),
     theme: 'material',
     tbar: [{
       type: 'search',
       width: 350,
       emptyText: 'Buscar',
     }],
-    height: (screen.height - 350),
-    width: (screen.width),
+    height: (screen.height - 470),
+  width: 'fit',
     paging: {
       pageSize: 8,
       pageSizeData: [5, 10, 20, 50],
