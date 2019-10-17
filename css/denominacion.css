@@ -1,8 +1,38 @@
-body#configuraciondenom
+#nav
 {
-  background-color: #1b7fbd ;
+  background-color: #145374;
+  box-shadow: 0px 8px 6px -2px rgb(56, 67, 90);
 }
 
+
+body#ejercicios
+{
+  width:100%;
+  height: 100%;
+  margin: auto;
+  background-color: #f6f078;
+}
+
+#volver
+{
+    margin-left: -18%;
+
+}
+.volver
+{
+  font-size: 24px;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: bold;
+}
+
+
+
+#tituloej
+{
+  font-size: 2vw;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: bold;
+}
 
    .contdenominacion
    {
@@ -21,6 +51,7 @@ body#configuraciondenom
   }
 
 
+
    #correcta
  {
   font-size: 2.5vw;
@@ -32,70 +63,3 @@ body#configuraciondenom
 
 
 
-/* Configuracion Denominacion    */
-
-
-#conttabla {
-  margin-left: 0%;
-  box-sizing: border-box;
-  width: 40%;
-  
-  }
-
- .contconfiguracion
- {
-  /* margin-left: 2%;
-   margin-top: 2%; 
-   margin-bottom: 2%;   
-   width: 96%;
-   height: 90%;
-   padding: 20px 20px 50px 20px;
-   border-radius: 35px 35px 35px 35px;
-   -moz-border-radius: 35px 35px 35px 35px;
-   -webkit-border-radius: 35px 35px 35px 35px;
-   box-sizing: border-box;
-   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
- 
-}
-
-
-
-.obtenerlista
-{
-  margin-left: 65%;
-  margin-top: 8%;
-  object-fit: fixed;
-  width:8vw;
-  height: 2vw;
-     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-   color: #ffffff;
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-    font-weight: bold;
-    font-size: 1vw;
-    border-radius: 10%;
-    border-color: #01579b;
-  
-}
-
-.obtenerlista:active {
-      
-  transform: translateY(2px);
-}
-
-.obtenerlista:hover {
-  box-shadow: 0 10px 18px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  cursor:  url(../public/aprovechar.png) , pointer;
-}
-
-
-.consignatabla
-{
-  
-  font-size: 1vw;
-  color: #ffffff;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  font-weight: bold;
-  /*text-shadow: 2px 2px 4px;*/
-  
- 
-}
