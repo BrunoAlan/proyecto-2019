@@ -1,95 +1,95 @@
-//Requiero la DB y la instacio
-const app = require('electron').remote.app;
+// Requiero la DB y la instacio
+const { app } = require('electron').remote;
 const path = require('path');
 const Database = require('better-sqlite3');
-let dbFile = path.join(app.getAppPath(), 'db.sqlite')
+
+const dbFile = path.join(app.getAppPath(), 'db.sqlite');
 const db = new Database(dbFile, { verbose: console.log });
-const listaPalabras = []
+const listaPalabras = [];
 const btn1 = document.getElementById('im1');
 const btn2 = document.getElementById('im2');
 const btn3 = document.getElementById('im3');
 const btn4 = document.getElementById('im4');
-let ejerciciosObjetivo = 10
-let cantEjercicios = 0
-let rtasCorrectas = 0
-let rtasIncorrectas = 0
-let errores = []
-
-
+const ejerciciosObjetivo = 2;
+let cantEjercicios = 1;
+let rtasCorrectas = 0;
+let rtasIncorrectas = 0;
+const errores = [];
+const startTime = new Date();
+let endTime;
 
 
 /* Parametros de configuración del ejercicio
 Obtengo los ids de las palabras a trabajar y el tipo de imagen */
-let conf = JSON.parse(localStorage.getItem('configuracion'));
-let pal = conf.palabras.toString();
-let tipoImg = conf.tipo
+const conf = JSON.parse(localStorage.getItem('configuracion'));
+const pal = conf.palabras.toString();
+const tipoImg = conf.tipo;
 
 
-
-//Ejecucion de la lógica del ejercicio
+// Ejecucion de la lógica del ejercicio
 getPalabras(listaPalabras);
 let cuatroAleatorios = generateFourRandoms();
 let correcta = generateCorrect();
 cargarJuego(cuatroAleatorios, correcta);
 
 btn1.onclick = () => {
-  getAnswer()
-}
+  getAnswer();
+};
 
 btn2.onclick = () => {
-  getAnswer()
-}
+  getAnswer();
+};
 
 btn3.onclick = () => {
-  getAnswer()
-}
+  getAnswer();
+};
 
 btn4.onclick = () => {
-  getAnswer()
-}
+  getAnswer();
+};
 
-//Fin ejecución de la lógica
+// Fin ejecución de la lógica
 
 
-//FUNCIONES 
+// FUNCIONES
 
-//Obtengo las palabras pasadas desde la configuración de la db
+// Obtengo las palabras pasadas desde la configuración de la db
 
 function getPalabras(listaPalabras) {
-  //Armo mi query para trabajar con las palabras seleccionadas
-  let query = "SELECT * FROM palabras WHERE id in " + "(" + pal + ")"
-  let row = db.prepare(query)
-  let palabrasDB = row.all();
+  // Armo mi query para trabajar con las palabras seleccionadas
+  const query = 'SELECT * FROM palabras WHERE id in ' + '(' + pal + ')';
+  const row = db.prepare(query);
+  const palabrasDB = row.all();
   console.log(palabrasDB);
-  palabrasDB.forEach(palabra => {
-    listaPalabras.push(palabra)
+  palabrasDB.forEach((palabra) => {
+    listaPalabras.push(palabra);
   });
 }
 
 
-/*Obtengo tres números aleatorios sin que se repitan y los retorno
+/* Obtengo tres números aleatorios sin que se repitan y los retorno
  dentro de un array de 3 posiciones */
 function generateFourRandoms() {
-  let lista = []
+  const lista = [];
   while (lista.length < 4) {
-    let random = Math.floor(Math.random() * listaPalabras.length) + 0;
+    const random = Math.floor(Math.random() * listaPalabras.length) + 0;
     if (lista.indexOf(random) === -1) lista.push(random);
   }
   return lista;
 }
 
-/* Determino qué opción es la correcta 
+/* Determino qué opción es la correcta
 Selecciono aleatoriamente una posición dentro del array generado por generateThreeRandoms()
 */
 function generateCorrect() {
-  let num1 = Math.floor(Math.random() * ((1 + 3) - 0) + 0);
-  return num1
+  const num1 = Math.floor(Math.random() * ((1 + 3) - 0) + 0);
+  return num1;
 }
 
-//Asigno a cada tag de img una palabra y la palabra target
+// Asigno a cada tag de img una palabra y la palabra target
 function cargarJuego(cuatroAleatorios, opcionCorrecta) {
-  if (tipoImg === "Imagen Real") {
-    var prefix = "../public/images/Imagenes_reales/"
+  if (tipoImg === 'Imagen Real') {
+    var prefix = '../public/images/Imagenes_reales/';
     document.getElementById('correcta').innerHTML = listaPalabras[cuatroAleatorios[opcionCorrecta]].palabra;
     document.getElementById('im1').src = prefix + listaPalabras[cuatroAleatorios[0]].rutaReal;
     document.getElementById('im2').src = prefix + listaPalabras[cuatroAleatorios[1]].rutaReal;
@@ -100,7 +100,7 @@ function cargarJuego(cuatroAleatorios, opcionCorrecta) {
     document.getElementById('im3').palabra = listaPalabras[cuatroAleatorios[2]].palabra;
     document.getElementById('im4').palabra = listaPalabras[cuatroAleatorios[3]].palabra;
   } else {
-    var prefix = "../public/images/Imagenes_dibujo/"
+    var prefix = '../public/images/Imagenes_dibujo/';
     document.getElementById('correcta').innerHTML = listaPalabras[cuatroAleatorios[opcionCorrecta]].palabra;
     document.getElementById('im1').src = prefix + listaPalabras[cuatroAleatorios[0]].rutaDibujo;
     document.getElementById('im2').src = prefix + listaPalabras[cuatroAleatorios[1]].rutaDibujo;
@@ -113,7 +113,7 @@ function cargarJuego(cuatroAleatorios, opcionCorrecta) {
   }
 }
 
-//Si la respuesta es correcta se llama este método para cargar la nueva palabra target y opciones
+// Si la respuesta es correcta se llama este método para cargar la nueva palabra target y opciones
 function nextPlay() {
   cuatroAleatorios = generateFourRandoms();
   correcta = generateCorrect();
@@ -122,24 +122,34 @@ function nextPlay() {
   console.log('Correcta');
 }
 
-//Controla si debe terminar el ejercicio
+// Controla si debe terminar el ejercicio
 function endGame(cantEjercicios, ejerciciosObjetivo) {
-  return cantEjercicios <= ejerciciosObjetivo
+  return cantEjercicios === ejerciciosObjetivo;
 }
 
-//Obtengo la respuesta de los clicks en las imágenes
+// Muestro los resultados al terminar el ejercicio
+function displayResults() {
+  endTime = new Date();
+  const tiempoTrasncurrido = endTime - startTime;
+  alert('Resultado: Correctas: ' + rtasCorrectas + ' Incorrectas: ' + rtasIncorrectas);
+  console.log(`Respuestas incorrectas: ${JSON.stringify(errores)},
+  Tiempo transcurrido: ${tiempoTrasncurrido / 1000} segundos`); // console.log(errores)
+}
+
+// Obtengo la respuesta de los clicks en las imágenes
 function getAnswer() {
+  console.log(`cantidad de ejercicios realizados: ${cantEjercicios},
+  ejercicios objetivo: ${ejerciciosObjetivo}`)
   cantEjercicios++;
   if (endGame(cantEjercicios, ejerciciosObjetivo)) {
     if (event.srcElement.palabra == listaPalabras[cuatroAleatorios[correcta]].palabra) {
-      nextPlay()
+      nextPlay();
     } else {
-      errores.push(listaPalabras[cuatroAleatorios[correcta]].palabra)
-      rtasIncorrectas++
+      errores.push({ 'target': listaPalabras[cuatroAleatorios[correcta]].palabra, 'error': event.srcElement.palabra });
+      rtasIncorrectas++;
       console.log('Incorrecta');
     }
   } else {
-    alert("Resultado: Correctas: " + rtasCorrectas + " Incorrectas: " + rtasIncorrectas)
-    console.log(errores.sort())
+    displayResults();
   }
 }
