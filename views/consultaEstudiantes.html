@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link href="../node_modules/fancygrid/client/fancy.css" rel="stylesheet" />
+		<link href="../css/estilos.css" rel="stylesheet" type="text/css" />
+		<link href="../css/denominacion.css" rel="stylesheet" type="text/css" />
+		<link
+			type="text/css"
+			rel="stylesheet"
+			href="../node_modules/font-awesome/css/font-awesome.min.css"
+		/>
+		<link
+			type="text/css"
+			rel="stylesheet"
+			href="../node_modules/materialize-css/dist/css/materialize.css"
+			media="screen,projection"
+		/>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="../node_modules/fancygrid/client/fancy.css" rel="stylesheet">
-  <link href="../css/estilos.css" rel="stylesheet" type="text/css">
-  <link href="../css/denominacion.css" rel="stylesheet" type="text/css">
-  <link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css"
-    media="screen,projection" />
+		<title>NombreApp</title>
+	</head>
 
+	<body>
+		<nav id="nav">
+			<div class="nav-wrapper container">
+				<a href="#" id="tituloej" class="brand-logo center">Estudiantes</a>
+				<ul class="left hide-on-med-and-down" id="volver">
+					<li>
+						<a class="volver" href="index.html"> <i class="fa fa-arrow-left"></i> Volver</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-  <title>NombreApp</title>
+		<div id="container"></div>
+		<button style="float: right" id="btn">Obtener Lista</button>
+		<script src="../js/consultaEstudiantes.js"></script>
 
-</head>
-
-<body>
-  <nav id="nav">
-    <div class="nav-wrapper container">
-      <a href="#" id="tituloej" class="brand-logo center">Estudiantes</a>
-      <ul class="left hide-on-med-and-down" id="volver">
-        <li><a class="volver" href="index.html">
-            <i class="fa fa-arrow-left"></i> Volver</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div id="container"></div>
-  <button style="float: right" id="btn">Obtener Lista</button>
-  <script src="../js/consultaEstudiantes.js">  </script>
-
-  <!-- <script src="../node_modules/fancygrid/client/fancy.full.js"></script> -->
-
-
-</body>
-
+		<!-- <script src="../node_modules/fancygrid/client/fancy.full.js"></script> -->
+	</body>
 </html>

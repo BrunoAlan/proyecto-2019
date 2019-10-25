@@ -1,122 +1,88 @@
-
-
-
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link href="../css/configdenominacion.css" rel="stylesheet" type="text/css" />
+		<link href="../css/denominacion.css" rel="stylesheet" type="text/css" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+		<link
+			type="text/css"
+			rel="stylesheet"
+			href="../node_modules/materialize-css/dist/css/materialize.css"
+			media="screen,projection"
+		/>
+		<title>NombreApp</title>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="../css/configdenominacion.css" rel="stylesheet" type="text/css">
-  <link href="../css/denominacion.css" rel="stylesheet" type="text/css">
-  <link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css"
-    media="screen,projection" />
-  <title>NombreApp</title>
-</head>
+	<body id="ejercicios">
+		<nav id="nav">
+			<div class="nav-wrapper container">
+				<a href="#" id="tituloej" class="brand-logo center">Configuración Denominación</a>
+				<ul class="left hide-on-med-and-down" id="volver">
+					<li>
+						<a class="volver" href="index.html"> <i class="fa fa-arrow-left"></i> Volver</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-<body id="ejercicios">
-  <nav id="nav">
-    <div class="nav-wrapper container">
-      <a href="#" id="tituloej" class="brand-logo center">Configuración Denominación</a>
-      <ul class="left hide-on-med-and-down" id="volver">
-        <li><a class="volver" href="index.html">
-            <i class="fa fa-arrow-left"></i> Volver</a></li>
-      </ul>
-    </div>
-  </nav>
+		<main class="row">
+			<div class="contenedor_azul_tabla col s">
+				<div id="conttabla">
+					<p class="consignatabla_pal col s">Seleccion de palabras a ejercitar</p>
+				</div>
+			</div>
 
-   
-  <main class="row">
-  
-    <div class="contenedor_azul_tabla col s" >
-      <div id="conttabla">
-          <p class="consignatabla_pal col s">Seleccion de palabras a ejercitar</p>
-      </div>
-    </div>
+			<div class="contenedor_azul_tabla_estudiantes col s">
+				<div id="conttablaalumnos">
+					<p class="consignatabla_est col s">Seleccion del estudiante</p>
+				</div>
+			</div>
 
-    <div class="contenedor_azul_tabla_estudiantes col s" >
-      <div id="conttablaalumnos">
-          <p class="consignatabla_est col s">Seleccion del estudiante</p>
-      </div>
-    </div>
+			<div class="contenedor_azul_2 col s ">
+				<div id="selector_tipo">
+					<p id="consigna_selector">Tipo de Palabra:</p>
 
-    <div class="contenedor_azul_2 col s ">
-      
-        <div id="selector_tipo"  >
-            <p id="consigna_selector">Tipo de Palabra:</p>
-            
-            <select id="mySelector" class="browser-default" >
-        
-                   <option id="opcion" value="Imagen Real" selected="selected">Imagen Real</option>
-                   <option id="opcion" value="Dibujo"  >Imagen Dibujo</option>
-           </select>
-          
-           
-        </div>
+					<select id="mySelector" class="browser-default">
+						<option id="opcion" value="Imagen Real" selected="selected">Imagen Real</option>
+						<option id="opcion" value="Dibujo">Imagen Dibujo</option>
+					</select>
+				</div>
 
-        <div id="cantidadrepeticiones" >
-             <p id="consigna_selector">Cantidad de repeticiones:</p>
-             <input type="number" id="rango" min="1">             
-        </div>
-        
-        
+				<div id="cantidadrepeticiones">
+					<p id="consigna_selector">Cantidad de repeticiones:</p>
+					<input type="number" id="inputRepeticiones" min="1" />
+				</div>
 
-        <div id="tipo_ejercicio" >
-          <p id="consigna_selector">Tipo de ejercicio:</p>
-          <select id="" class="browser-default">
-        
-            <option id="opcion" selected="selected">Imagen-VideosLSA</option>
-            <option id="opcion"  >Palabra-Imagenes</option>
-            <option id="opcion"  >VideoLSA-Palabras</option>
-            <option id="opcion"  >VideoLSA-Imagenes</option>
-            <option id="opcion"  >Palabra-VideosLSA</option>
-          </select>
-            </div>
+				<div id="tipo_ejercicio">
+					<p id="consigna_selector">Tipo de ejercicio:</p>
+					<select id="" class="browser-default">
+						<option id="opcion" selected="selected">Imagen-VideosLSA</option>
+						<option id="opcion">Palabra-Imagenes</option>
+						<option id="opcion">VideoLSA-Palabras</option>
+						<option id="opcion">VideoLSA-Imagenes</option>
+						<option id="opcion">Palabra-VideosLSA</option>
+					</select>
+				</div>
 
-            <div id="tipo_ejercicio" >
-              <p id="consigna_selector">Dificultad:</p>
-              <select id="dificultad" class="browser-default">
-        
-                <option id="opcion" selected="selected">Baja</option>
-                <option id="opcion"  >Media</option>
-                <option id="opcion"  >Alta</option>
-               </select>
-                </div>
+				<div id="tipo_ejercicio">
+					<p id="consigna_selector">Dificultad:</p>
+					<select id="dificultad" class="browser-default">
+						<option id="opcion" value="Baja" selected="selected">Baja</option>
+						<option id="opcion" value="Media">Media</option>
+						<option id="opcion" value="Alta">Alta</option>
+					</select>
+				</div>
+			</div>
 
-    </div>
+			<div class="col s4 offset-s5">
+				<button id="btn" class="obtenerlista light-blue darken-4">Comenzar</button>
+			</div>
+		</main>
 
-    
-    <div class="col s4 offset-s5">
-      <button id="btn" class="obtenerlista light-blue darken-4">Comenzar</button>
-  </div>
-
-  </main>
-      
-          
-           
-       
-
-
-
-
-
-
-
- 
-
-  
- 
- <script src="../js/configDenominacion.js">  </script>
- <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
-
-  
-
-</body>
-
+		<script src="../js/configDenominacion.js"></script>
+		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+	</body>
 </html>
