@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css" media="screen,projection" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Nuevo Docente</title>
+	</head>
+	<body>
+		<style>
+			.screen {
+				display: flex;
+				align-items: center;
+				width: 100%;
+			}
+		</style>
+		<div class="container ">
+			<div class="row">
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="inputNombre" type="text" class="validate" />
+						<label for="first_name">Nombre</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="inputApellido" type="text" class="validate" />
+						<label for="last_name">Apellido</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<button id="btnAgregar" class="btn waves-effect waves-light">
+					Agregar
+					<i class="material-icons right">send</i>
+				</button>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+
+		<script>
+			var request = require("request");
+			let btnAgregar = document.getElementById("btnAgregar");
+			var inputNombre = document.getElementById("inputNombre");
+			var inputApellido = document.getElementById("inputApellido");
+
+			btnAgregar.addEventListener("click", (e) => {
+				validar();
+			});
+
+			function validar() {
+				if (inputApellido.value != "" && inputNombre.value != "") {
+					var nombreMayuscula = inputNombre.value.charAt(0).toUpperCase() + inputNombre.value.slice(1);
+					var apellidoMayuscula = inputApellido.value.charAt(0).toUpperCase() + inputApellido.value.slice(1);
+					var options = {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+
+						body: new URLSearchParams({
+							nombre: nombreMayuscula,
+							apellido: apellidoMayuscula
+						})
+					};
+					fetch("http://localhost:3000/docentes", options).then((response) => {
+						response.json().then((data) => {
+							console.log(data);
+						});
+						location.href = "login.html";
+					});
+				} else {
+					alert("debe completar los campos");
+				}
+			}
+		</script>
+	</body>
+</html>
