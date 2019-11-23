@@ -62,7 +62,7 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 		const singleacierto = arrayAciertos[Math.floor(Math.random() * arrayAciertos.length)];
 
 		Swal.fire({
-			imageUrl: "../public/images/muybien.png",
+			imageUrl: "../public/images/felicitaciones.png",
 			width: 400,
 			imageWidth: 200,
 			imageHeight: 300,
