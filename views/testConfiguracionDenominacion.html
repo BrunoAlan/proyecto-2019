@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<body>
+		<style>
+			#parent {
+				width: 100%;
+				height: 100%;
+				padding: 2em;
+			}
+			#child1 {
+				height: 50%;
+				float: left;
+				width: 50%;
+				padding-right: 2%;
+				overflow: auto;
+			}
+			#child2 {
+				padding-left: 2%;
+				float: right;
+				width: 50%;
+			}
+			.row {
+				margin-bottom: 0;
+			}
+		</style>
+
+		<div id="parent">
+			<!-- <div id="search">
+				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Palabra" />
+			</div> -->
+			<div class="row">
+				<form class="col s12">
+					<div class="input-field col s6">
+						<i class="material-icons prefix">search</i>
+						<textarea id="icon_prefix2" onkeyup="search()" class="materialize-textarea"></textarea>
+						<label for="icon_prefix2">Buscar palabras</label>
+					</div>
+				</form>
+			</div>
+
+			<div id="child1">
+				<p1>Palabras</p1>
+				<ul id="listaDocentes" class="collection with-header"></ul>
+			</div>
+			<div id="child2">
+				<p1>Seleccionados</p1>
+				<ul id="seleccionados" class="collection with-header"></ul>
+			</div>
+		</div>
+		<script src="../js/letterAvatar.js"></script>
+		<script>
+			let listaDocentes = [];
+			let l = [];
+			const { app } = require("electron").remote;
+			const path = require("path");
+			const Database = require("better-sqlite3");
+			const dbFile = path.join(app.getAppPath(), "db.sqlite");
+			const db = new Database(dbFile);
+			const query = "SELECT * FROM palabras";
+			const row = db.prepare(query);
+			const palabrasDB = row.all();
+			palabrasDB.forEach((palabra) => {
+				listaDocentes.push(palabra);
+			});
+
+			var ul = document.getElementById("listaDocentes");
+			for (let index = 0; index < listaDocentes.length; index++) {
+				let palabra = listaDocentes[index].palabra;
+				let idDB = listaDocentes[index].id;
+				let listItem = document.createElement("li");
+				listItem.setAttribute("idDB", idDB);
+				listItem.setAttribute("class", "collection-item avatar");
+				listItem.textContent = palabra;
+
+				let img = document.createElement("img");
+				img.setAttribute("class", "circle");
+				img.setAttribute("hight", "60");
+				img.setAttribute("width", "60");
+				img.setAttribute("avatar", palabra);
+				listItem.innerHTML += img.outerHTML;
+				ul.appendChild(listItem);
+			}
+
+			let listaSeleccionados = document.getElementById("seleccionados");
+			let asd = document.querySelector("#listaDocentes ");
+			asd.addEventListener("click", (e) => {
+				if (e.target.tagName === "LI") {
+					listaSeleccionados.appendChild(e.target);
+				}
+			});
+
+			let listDocentes = document.getElementById("listaDocentes");
+			let asd2 = document.querySelector("#seleccionados");
+			asd2.addEventListener("click", (e) => {
+				if (e.target.tagName === "LI") {
+					listDocentes.appendChild(e.target);
+				}
+			});
+
+			function search() {
+				var input, i, filter, li, ul, txtValue;
+				input = document.getElementById("icon_prefix2");
+				filter = input.value.toUpperCase();
+				ul = document.getElementById("listaDocentes");
+				li = ul.getElementsByTagName("li");
+
+				for (i = 0; i < li.length; i++) {
+					a = li[i].textContent;
+					txtValue = a;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+					}
+				}
+			}
+		</script>
+
+		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+	</body>
+</html>
