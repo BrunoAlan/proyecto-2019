@@ -6,7 +6,7 @@
 		<link href="../node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Document</title>
+		<title>Configuración Denominación</title>
 	</head>
 	<body>
 		<style>
@@ -121,11 +121,11 @@
 				}
 			});
 
-			let listDocentes = document.getElementById("listaPalabras");
+			let listPalabras = document.getElementById("listaPalabras");
 			let asd2 = document.querySelector("#seleccionados");
 			asd2.addEventListener("click", (e) => {
 				if (e.target.tagName === "LI") {
-					listDocentes.appendChild(e.target);
+					listPalabras.appendChild(e.target);
 				}
 			});
 
@@ -189,7 +189,7 @@
 				var input, i, filter, li, ul, txtValue;
 				input = document.getElementById("buscarPalabra");
 				filter = input.value.toUpperCase();
-				ul = document.getElementById("listaDocentes");
+				ul = document.getElementById("listaPalabras");
 				li = ul.getElementsByTagName("li");
 
 				for (i = 0; i < li.length; i++) {
