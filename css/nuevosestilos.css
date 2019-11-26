@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Roboto";
+	src: url("../css/Roboto/Roboto-Regular.ttf");
+}
+
 a:hover {
 	cursor: url(../public/aprovechar.png), pointer;
 }
@@ -27,13 +32,13 @@ footer {
 	font-size: 1.3vw;
 	text-align: center;
 	text-align: center;
-	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 #hola {
 	font-size: 2vw;
 	text-align: center;
-	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Roboto", sans-serif;
 	margin-top: 15%;
 }
 
@@ -45,7 +50,7 @@ footer {
 	color: aliceblue;
 	font-size: 1.3vw;
 	margin-top: 16%;
-	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Roboto", sans-serif;
 	text-align: center;
 	font-weight: bold;
 }
@@ -55,7 +60,7 @@ footer {
 	font-size: 1.3vw;
 	text-align: center;
 	margin-top: 8%;
-	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 #nombreapp {
@@ -63,7 +68,7 @@ footer {
 	color: #00919e;
 	margin-left: 12%;
 	text-align: center;
-	font-family: Arial;
+	font-family: "Roboto";
 	font-weight: bold;
 }
 
@@ -94,10 +99,8 @@ footer {
 	margin-top: 5%;
 	width: 20vw;
 	height: 5vw;
-
 	color: #ffffff;
-	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-
+	font-family: "Roboto", sans-serif;
 	font-size: 1.3vw;
 
 	border-color: #00919e;
