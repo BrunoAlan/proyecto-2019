@@ -1,7 +1,7 @@
 (function(w, d) {
 	function LetterAvatar(name, size) {
 		name = name || "";
-		size = size || 60;
+		size = size || 180;
 
 		//var colours = ["#1abc2c"],
 		var colours = ["#ffffff"],

@@ -1,15 +1,38 @@
 var express = require("express");
 var app = express();
 var sqlite3 = require("sqlite3").verbose();
-
+var multer = require("multer");
 var path = require("path");
+var bodyParser = require("body-parser");
 var appDir = path.dirname(require.main.filename);
-
+var fs = require("fs");
 var db = new sqlite3.Database(appDir + "/db.sqlite");
 
-var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+var storage = multer.diskStorage({
+	destination: function(req, file, cb) {
+		cb(null, "./public/upload");
+	},
+	filename: function(req, file, cb) {
+		cb(null, file.originalname);
+	}
+});
+
+var upload = multer({ storage: storage }).single("avatar");
+
+app.post("/upload", (req, res, next) => {
+	upload(req, res, function(err) {
+		if (err) {
+			// A Multer error occurred when uploading.
+		} else if (err) {
+			// An unknown error occurred when uploading.
+		}
+
+		// Everything went fine.
+	});
+});
 
 app.get("/palabras", function(req, res) {
 	db.serialize(function() {
@@ -41,10 +64,11 @@ app.get("/docentes", (req, res) => {
 app.post("/docentes/", (req, res, next) => {
 	var data = {
 		nombre: req.body.nombre,
-		apellido: req.body.apellido
+		apellido: req.body.apellido,
+		rutaAvatar: req.body.avatar
 	};
-	var sql = "INSERT INTO docentes (nombre, apellido) VALUES (?,?)";
-	var params = [data.nombre, data.apellido];
+	var sql = "INSERT INTO docentes (nombre, apellido, rutaAvatar) VALUES (?,?,?)";
+	var params = [data.nombre, data.apellido, data.rutaAvatar];
 	db.run(sql, params, function(err, result) {
 		if (err) {
 			res.status(400).json({ error: err.message });
@@ -59,5 +83,5 @@ app.post("/docentes/", (req, res, next) => {
 });
 
 app.listen(3000, function() {
-	console.log("Example app listening on port 3000!");
+	console.log("APP corriendo en puerto 3000");
 });

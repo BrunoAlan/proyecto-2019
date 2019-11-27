@@ -1,4 +1,5 @@
 var nombreDocente;
+var ruta;
 let listaDocentes = [];
 let l = [];
 var seleccionado;
@@ -20,6 +21,7 @@ for (let index = 0; index < listaDocentes.length; index++) {
 	let listItem = document.createElement("li");
 	listItem.setAttribute("idDB", idDB);
 	listItem.setAttribute("class", "collection-item ");
+	listItem.setAttribute("ruta", listaDocentes[index].rutaAvatar);
 	listItem.textContent = nombreApellido;
 	ul.appendChild(listItem);
 }
@@ -27,6 +29,8 @@ ul.addEventListener("click", () => {
 	blankAll();
 	event.target.setAttribute("class", "collection-item active");
 	nombreDocente = event.target.textContent;
+	ruta = event.target.getAttribute("ruta");
+	console.log(ruta);
 });
 
 function blankAll() {
@@ -42,7 +46,7 @@ let btnNuevo = document.getElementById("btnNuevo");
 
 btnIniciar.addEventListener("click", () => {
 	if (nombreDocente != null) {
-		localStorage.setItem("login", JSON.stringify({ nombreDocente: nombreDocente }));
+		localStorage.setItem("login", JSON.stringify({ nombreDocente: nombreDocente, ruta: ruta }));
 		location.href = "index.html";
 	}
 });
