@@ -6,48 +6,87 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="../css/estilos.css" rel="stylesheet" type="text/css">
   <link href="../css/cuentopirata.css" rel="stylesheet" type="text/css">
   <link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
   <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css"
     media="screen,projection" />
+    <link href="../node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet" />
   <title>NombreApp</title>
 </head>
 
-<body id="cuento">
+<body>
 
   
-    <nav id="navejercicios">
-        <div class="nav-wrapper container">
-          <a href="#" id="tituloej" class="brand-logo center">Cuentos Animados</a>
-          <ul class="left hide-on-med-and-down" id="volver">
-            <li><a class="volver" href="index.html">
-                <i class="fa fa-arrow-left"></i> Volver</a></li>
-          </ul>
+
+    <div class="row">
+        <div class="col s">
+            <div class="barramenu sidenav-trigger" data-target="menu" >
+                <i class="iconomenu fa fa-chevron-right"></i>
+           </div> 
+
+          
+            <ul id="menu" class="sidenav sidenav" style="width:23vw">
+                <li>
+                    <div class="user-view">
+                
+                      <a href="#user"><img class="circle z-depth-5" id="imgdocente" src="../public/images/fotodocente.png"></a>
+                      <a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
+                      <a href="#name"><span id="nombredocente" class="white-text name">Marianela Gonzáles</span></a>
+                      <a href="#email"><span class="white-text email"></span></a>
+            
+                    </div>
+                </li>
+          
+                <li ><a  id="reiniciar"  href="index.html">Reiniciar ejercicio</a></li>
+                <li ><a  id="terminar" href="index.html">Terminar ejercicio</a></li>
+            </ul>
         </div>
-      </nav>
-  <div class="contcuento">
+   
+        <div class="col s11">
+            <img id="imagencuento" src="../public/images/cuentopirata/1.jpg">
+              
+             <div class="contenedortexto col s11">
+                <div class="col s1 ">
+                    <a class="btnatras" href="#"><i class="iconoatras material-icons">chevron_left</i></a>
+                </div>
     
-    <img id="imagencuento" src="../public/images/cuentopirata/1.jpg">
-    
+                <h3 class="textocuento col s9 offset-s1">Había una vez un pirata llamado Pedro, tenía un garfio en una mano, un parche en un ojo y una pata de palo</h3>
 
-    
-
-    
-        <a href="cuentopirata2.html"><img class="btnsiguiente" src="../public/images/cuentopirata/siguiente.png"></a>
-        <a href=""><img class="btnatras" src="../public/images/cuentopirata/atras.png"></a>
-
-  </div>
+                <div class="col s1">
+                     <a class="btnsiguiente" href="cuentopirata2.html"><i class="iconosiguiente material-icons">chevron_right</i></a>
+                </div>
+            </div>   
+            
+        </div>
 
 
+    </div>
 
-  <script>
-    require('../js/denominacion.js')
-  </script>
+ 
+</body>
+
+
+ 
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
 
-
+    <script src="../node_modules/jquery/dist/jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="../js/index.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, { 
+          inDuration: 500, 
+          outDuration:400, 
+          
+          
+          });
+    
+      });
+        </script>
+    
 </body>
 
 </html>

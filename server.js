@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 var storage = multer.diskStorage({
 	destination: function(req, file, cb) {
-		cb(null, "./public/upload");
+		cb(null, appDir + "/public/upload");
 	},
 	filename: function(req, file, cb) {
 		cb(null, file.originalname);

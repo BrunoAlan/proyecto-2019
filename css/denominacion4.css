@@ -1,21 +1,37 @@
 
 #contdenom {
-    margin-left: 11%;
+  
     box-sizing: border-box;
-    width: 80%;
+    
     height: auto;
     
     }
+
+
+    .target {
+    
+      font-size: 2.6vw;
+      color: #000000;
+      font-weight: 600;
+      font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+      font-weight: bold;
+      margin-top: 12%;
+      box-sizing: border-box;
+      text-align: center;
+     
+    }
+    
 
   
  #im1,#im2,#im3,#im4
 {
 
    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-   border-radius: 10px;
+   border-radius: 40px;
    object-fit: fixed;
-   width:13vw;
-   height: 13vw;
+   width:15vw;
+   height: 15vw;
+  
   
 }
 

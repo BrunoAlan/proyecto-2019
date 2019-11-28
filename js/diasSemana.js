@@ -13,15 +13,7 @@ siguiente.style.visibility = "hidden";
 // Obtengo la fecha del sistema
 
 const date = new Date();
-const diasSemana = new Array(
-	"Domingo",
-	"Lunes",
-	"Martes",
-	"Miércoles",
-	"Jueves",
-	"Viernes",
-	"Sábado"
-);
+const diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
 
 const hoy = diasSemana[date.getDay()];
 let ayer;
@@ -51,18 +43,11 @@ switch (locat) {
 // Función que determina si el día elegido es correcto
 function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 	if (diaCorrecto == diaElegido) {
-		const arrayAciertos = [
-			"¡Muy bien!",
-			"¡Excelente!",
-			"¡Bravo!",
-			"¡Grandioso!",
-			"¡Estupendo!",
-			"¡Fantastico!"
-		];
+		const arrayAciertos = ["¡Muy bien!", "¡Excelente!", "¡Bravo!", "¡Grandioso!", "¡Estupendo!", "¡Fantastico!"];
 		const singleacierto = arrayAciertos[Math.floor(Math.random() * arrayAciertos.length)];
 
 		Swal.fire({
-			imageUrl: "../public/images/felicitaciones.png",
+			imageUrl: "../public/images/Felicitaciones.png",
 			width: 400,
 			imageWidth: 200,
 			imageHeight: 300,
@@ -92,11 +77,7 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 				break;
 		}
 	} else {
-		const arrayerror = [
-			"¡Intentalo otra vez!",
-			"¡Intentalo nuevamente!",
-			"¡Una vez mas, tu puedes hacerlo!"
-		];
+		const arrayerror = ["¡Intentalo otra vez!", "¡Intentalo nuevamente!", "¡Una vez mas, tu puedes hacerlo!"];
 		const singlerror = arrayerror[Math.floor(Math.random() * arrayerror.length)];
 		Swal.fire({
 			imageUrl: "../public/images/otravez.png",
@@ -116,13 +97,13 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 function cambiarDía(dia, ejercicio) {
 	switch (ejercicio) {
 		case "hoy":
-			textoResolucion.innerHTML = `Hoy es ${dia}`;
+			textoResolucion.innerHTML = `HOY ES  ${dia.toUpperCase()}`;
 			break;
 		case "ayer":
-			textoResolucion.innerHTML = `Ayer fue  ${dia}`;
+			textoResolucion.innerHTML = `AYER FUE  ${dia.toUpperCase()}`;
 			break;
 		case "manana":
-			textoResolucion.innerHTML = `Mañana es ${dia}`;
+			textoResolucion.innerHTML = `MAÑANA ES ${dia.toUpperCase()}`;
 			break;
 	}
 }

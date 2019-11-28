@@ -30,7 +30,7 @@ for (let index = 0; index < listaPalabras.length; index++) {
 	let idDB = listaPalabras[index].id;
 	let listItem = document.createElement("li");
 	listItem.setAttribute("idDB", idDB);
-	listItem.setAttribute("class", "collection-item");
+	listItem.setAttribute("class", "collection-item palabras");
 	listItem.textContent = palabra;
 	ul.appendChild(listItem);
 }
@@ -55,7 +55,7 @@ let div = document.getElementById("divEstudiantes");
 div.addEventListener("click", (e) => {
 	if (e.target.tagName === "IMG") {
 		blankAllEstudiantes();
-		e.target.setAttribute("class", "circle seleccionado");
+		e.target.setAttribute("class", "circle avatar seleccionado");
 	}
 });
 
@@ -69,7 +69,7 @@ for (let index = 0; index < listaAlumnos.length; index++) {
 	pal.innerHTML = nombreApellido;
 
 	let img = document.createElement("img");
-	img.setAttribute("class", "circle noSeleccionado");
+	img.setAttribute("class", "circle avatar noSeleccionado ");
 	img.setAttribute("hight", "80");
 	img.setAttribute("width", "80");
 	img.setAttribute("avatar", nombreApellido);
@@ -120,7 +120,7 @@ function searchPalabra() {
 function blankAllEstudiantes() {
 	let childs = document.getElementById("divEstudiantes").getElementsByTagName("img");
 	for (let index = 0; index < childs.length; index++) {
-		childs[index].setAttribute("class", "circle noSeleccionado");
+		childs[index].setAttribute("class", "circle avatar noSeleccionado");
 	}
 }
 

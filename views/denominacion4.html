@@ -17,27 +17,41 @@
 
 <body id="ejercicios">
 
-  <nav id="navejercicios">
-    <div class="nav-wrapper container">
-      <a href="#" id="tituloej" class="brand-logo center">Denominación</a>
-      <ul class="left hide-on-med-and-down" id="volver">
-        <li><a class="volver" href="index.html">
-            <i class="fa fa-arrow-left"></i> Volver</a></li>
+  <div class="row">
+
+
+    <div class="col s">
+      <div class="barramenu sidenav-trigger" data-target="menu" >
+          <i class="iconomenu fa fa-chevron-right"></i>
+     </div> 
+
+    
+      <ul id="menu" class="sidenav sidenav" style="width:23vw">
+          <li>
+              <div class="user-view">
+          
+                <a href="#user"><img class="circle z-depth-5" id="imgdocente" src=""></a>
+                <a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
+                <a href="#name"><span id="nombredocente" class="white-text name"></span></a>
+                <a href="#email"><span class="white-text email"></span></a>
+      
+              </div>
+          </li>
+    
+          <li ><a  id="reiniciar"  href="index.html">Reiniciar ejercicio</a></li>
+          <li ><a  id="terminar" href="index.html">Terminar ejercicio</a></li>
       </ul>
-    </div>
-  </nav>
+  </div>
 
-  <div class="contdenominacion">
-    <div class="row">
+  <div class="col s10 offset-s1 contdenominacion">
+    
       <p class="consigna col s10 offset-s1">Elije la imagen que corresponde con la palabra</p>
+ <div class="target">
+      <p class="col s10 offset-s1"  id="correcta"></p>
     </div>
-
-
     <main class="row">
 
-      <div class="col s5 offset-s5">
-        <h1 id="correcta"></h1>
-      </div>
+    
       <div id="contdenom">
 
         <div class="col s2" id="imagen1">
@@ -65,10 +79,23 @@
   <script>
     require('../js/denominacion4.js')
   </script>
+  <script src="../js/index.js"></script>
+  <script src="../js/letterAvatar.js"></script>
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
-
-
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, { 
+        inDuration: 500, 
+        outDuration:400, 
+        
+        
+        });
+  
+    });
+      </script>
 </body>
 
 </html>

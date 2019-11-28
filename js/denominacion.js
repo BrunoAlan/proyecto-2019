@@ -127,7 +127,7 @@ function setImages() {
 	let prefix;
 	if (tipoImg == "Imagen Real") {
 		prefix = prefixReal;
-		document.getElementById("correcta").innerHTML = palabraTarget.palabra;
+		document.getElementById("correcta").innerHTML = palabraTarget.palabra.toUpperCase();
 		document.getElementById("im1").src = prefix + listaEjercicio[0].rutaReal;
 		document.getElementById("im2").src = prefix + listaEjercicio[1].rutaReal;
 		document.getElementById("im1").palabra = listaEjercicio[0].palabra;
