@@ -25,18 +25,20 @@ for (let index = 0; index < listaDocentes.length; index++) {
 	listItem.textContent = nombreApellido;
 	ul.appendChild(listItem);
 }
-ul.addEventListener("click", () => {
-	blankAll();
-	event.target.setAttribute("class", "collection-item active");
-	nombreDocente = event.target.textContent;
-	ruta = event.target.getAttribute("ruta");
-	console.log(ruta);
+
+ul.addEventListener("click", (e) => {
+	if (e.target.tagName === "LI") {
+		blankAll();
+		event.target.setAttribute("class", "collection-item active");
+		nombreDocente = event.target.textContent;
+		ruta = event.target.getAttribute("ruta");
+	}
 });
 
 function blankAll() {
-	var ul = document.getElementById("listaDocentes");
-	var items = ul.getElementsByTagName("li");
-	for (var i = 0; i < items.length; ++i) {
+	let ul = document.getElementById("listaDocentes");
+	let items = ul.getElementsByTagName("li");
+	for (let i = 0; i < items.length; ++i) {
 		items[i].setAttribute("class", "collection-item");
 	}
 }

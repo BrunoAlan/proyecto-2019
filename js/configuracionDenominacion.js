@@ -16,6 +16,7 @@ let alumnosDB = row.all();
 alumnosDB.forEach((alumno) => {
 	listaAlumnos.push(alumno);
 });
+console.log(app.getPath("userData"));
 
 query = "SELECT * FROM palabras";
 row = db.prepare(query);
