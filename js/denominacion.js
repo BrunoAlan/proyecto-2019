@@ -25,7 +25,17 @@ Obtengo los ids de las palabras a trabajar y el tipo de imagen */
 const conf = JSON.parse(localStorage.getItem("configuracion"));
 const pal = conf.palabras.toString();
 const tipoImg = conf.tipo;
+const estudiante = conf.estudiante;
 ejerciciosObjetivo = conf.repeticiones;
+
+const stmt = db.prepare("INSERT INTO RESULTADOS (id_estudiante, fecha) VALUES (?, datetime('now', 'localtime'))");
+const info = stmt.run(estudiante);
+let idUltimoResultado = info.lastInsertRowid;
+
+conf.palabras.forEach((palabra) => {
+	const stmt = db.prepare("INSERT INTO resultadosPalabras (id_resultado, id_palabra) VALUES (?, ?)");
+	const info = stmt.run(idUltimoResultado, palabra);
+});
 
 // Ejecucion de la lógica del ejercicio
 

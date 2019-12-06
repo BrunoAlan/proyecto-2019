@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let listaAlumnos = [];
 let listaPalabras = [];
+var idEstudiante;
 const { app } = require("electron").remote;
 const path = require("path");
 const Database = require("better-sqlite3");
@@ -16,7 +17,6 @@ let alumnosDB = row.all();
 alumnosDB.forEach((alumno) => {
 	listaAlumnos.push(alumno);
 });
-console.log(app.getPath("userData"));
 
 query = "SELECT * FROM palabras";
 row = db.prepare(query);
@@ -57,6 +57,8 @@ div.addEventListener("click", (e) => {
 	if (e.target.tagName === "IMG") {
 		blankAllEstudiantes();
 		e.target.setAttribute("class", "circle avatar seleccionado");
+		idEstudiante = e.target.getAttribute("idDB");
+		console.log(idEstudiante);
 	}
 });
 
@@ -78,6 +80,7 @@ for (let index = 0; index < listaAlumnos.length; index++) {
 	img.setAttribute("apellido", listaAlumnos[index].apellido);
 	img.setAttribute("edad", listaAlumnos[index].edad);
 	img.setAttribute("descripcion", listaAlumnos[index].descripcion);
+	img.setAttribute("idDB", listaAlumnos[index].id);
 	listItem.innerHTML += img.outerHTML;
 	listItem.innerHTML += pal.outerHTML;
 	div.appendChild(listItem);
@@ -99,6 +102,7 @@ function searchNombre() {
 		}
 	}
 }
+
 let searchBarPalabra = document.getElementById("buscarPalabra").addEventListener("keyup", searchPalabra);
 function searchPalabra() {
 	var input, i, filter, li, ul, txtValue;
@@ -143,7 +147,15 @@ function iniciar() {
 		idsSeleccionados.push(li[index].getAttribute("idDB"));
 	}
 
-	localStorage.setItem("configuracion", JSON.stringify({ palabras: idsSeleccionados, tipo: tipoImagen, repeticiones: repeticiones }));
+	localStorage.setItem(
+		"configuracion",
+		JSON.stringify({
+			estudiante: idEstudiante,
+			palabras: idsSeleccionados,
+			tipo: tipoImagen,
+			repeticiones: repeticiones
+		})
+	);
 	switch (dificultad) {
 		case "Baja":
 			location.href = "denominacion.html";

@@ -8,32 +8,46 @@ const path = require("path");
 const Database = require("better-sqlite3");
 const dbFile = path.join(app.getAppPath(), "db.sqlite");
 const db = new Database(dbFile);
-const query = "SELECT * FROM docentes";
-const row = db.prepare(query);
-const docentesDB = row.all();
-docentesDB.forEach((docente) => {
-	listaDocentes.push(docente);
+// const query = "SELECT * FROM docentes";
+// const row = db.prepare(query);
+// const docentesDB = row.all();
+// docentesDB.forEach((docente) => {
+// 	listaDocentes.push(docente);
+// });
+
+getDocentes().then((data) => {
+	data.data.forEach((docente) => {
+		listaDocentes.push(docente);
+	});
+	setView(listaDocentes);
+	addListener();
 });
-var ul = document.getElementById("listaDocentes");
-for (let index = 0; index < listaDocentes.length; index++) {
-	let nombreApellido = listaDocentes[index].nombre + " " + listaDocentes[index].apellido;
-	let idDB = listaDocentes[index].id;
-	let listItem = document.createElement("li");
-	listItem.setAttribute("idDB", idDB);
-	listItem.setAttribute("class", "collection-item ");
-	listItem.setAttribute("ruta", listaDocentes[index].rutaAvatar);
-	listItem.textContent = nombreApellido;
-	ul.appendChild(listItem);
+
+function setView(listaDocentes) {
+	let ul = document.getElementById("listaDocentes");
+	for (let index = 0; index < listaDocentes.length; index++) {
+		let nombreApellido = listaDocentes[index].nombre + " " + listaDocentes[index].apellido;
+		let idDB = listaDocentes[index].id;
+		let listItem = document.createElement("li");
+		listItem.setAttribute("idDB", idDB);
+		listItem.setAttribute("class", "collection-item ");
+		listItem.setAttribute("ruta", listaDocentes[index].rutaAvatar);
+		listItem.textContent = nombreApellido;
+		ul.appendChild(listItem);
+	}
 }
 
-ul.addEventListener("click", (e) => {
-	if (e.target.tagName === "LI") {
-		blankAll();
-		event.target.setAttribute("class", "collection-item active");
-		nombreDocente = event.target.textContent;
-		ruta = event.target.getAttribute("ruta");
-	}
-});
+function addListener() {
+	var ul = document.getElementById("listaDocentes");
+	ul.addEventListener("click", (e) => {
+		if (e.target.tagName === "LI") {
+			blankAll();
+			event.target.setAttribute("class", "collection-item active");
+			nombreDocente = event.target.textContent;
+			ruta = event.target.getAttribute("ruta");
+		}
+	});
+}
 
 function blankAll() {
 	let ul = document.getElementById("listaDocentes");
@@ -56,3 +70,9 @@ btnIniciar.addEventListener("click", () => {
 btnNuevo.addEventListener("click", () => {
 	location.href = "altaDocente.html";
 });
+
+async function getDocentes() {
+	let response = await fetch("http://localhost:3000/docentes");
+	let data = await response.json();
+	return data;
+}

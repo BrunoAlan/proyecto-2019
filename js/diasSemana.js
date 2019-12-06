@@ -8,6 +8,7 @@ const viernes = document.getElementById("viernes");
 const sabado = document.getElementById("sabado");
 const domingo = document.getElementById("domingo");
 const siguiente = document.getElementById("siguiente");
+
 siguiente.style.visibility = "hidden";
 
 // Obtengo la fecha del sistema

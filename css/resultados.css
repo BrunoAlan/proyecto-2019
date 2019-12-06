@@ -1,0 +1,33 @@
+.estudiante {
+	text-align: center;
+	margin-bottom: 10%;
+}
+.nyap {
+	margin: 0%;
+}
+
+img {
+	border-style: solid;
+	border-color: #a9a9a9;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.seleccionado {
+	border-width: 5px;
+	border-color: #86c911;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+.noSeleccionado {
+	border-width: 1px;
+	border-color: #a9a9a9;
+}
+
+#divEstudiantes {
+	padding: 10px;
+	background-color: #fcfcfc;
+}
+
+input[type="text"]:not(.browser-default):disabled + label {
+	color: #86c911;
+}
