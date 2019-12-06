@@ -82,7 +82,7 @@ function search() {
 let tbody = document.getElementById("tbodyResultado");
 function resultados(id) {
 	let palabrasPorEjercicio;
-	let queryResultadosPorAlumno = `select resultados.id,strftime('%d/%m/%Y',resultados.fecha) as fecha from resultados inner join resultadosPalabras where id_estudiante = ${id} and resultados.id = resultadosPalabras.id_resultado group by fecha`;
+	let queryResultadosPorAlumno = `select resultados.id,strftime('%d/%m/%Y',resultados.fecha) as fecha from resultados inner join resultadosPalabras where id_estudiante = ${id} and resultados.id = resultadosPalabras.id_resultado group by fecha order by resultados.id desc`;
 	row = db.prepare(queryResultadosPorAlumno);
 	let resultadosPorAlumno = row.all();
 	resultadosPorAlumno.forEach((element) => {
@@ -93,7 +93,7 @@ function resultados(id) {
 		for (let index = 0; index < palabrasPorEjercicio.length; index++) {
 			asd += palabrasPorEjercicio[index].palabra + ", ";
 		}
-
+		asd = asd.replace(/,\s*$/, "");
 		let fila = document.createElement("tr");
 		let celdaFecha = document.createElement("td");
 		let textoFechaCelda = document.createTextNode(element.fecha);

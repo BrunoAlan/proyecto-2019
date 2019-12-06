@@ -1,179 +1,173 @@
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../node_modules/material-icons/iconfont/material-icons.css" />
-		<link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css" />
-
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-		<title>Estudiantes</title>
+		<title>NombreApp</title>
+		<link href="../node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+		<link
+			type="text/css"
+			rel="stylesheet"
+			media="screen,projection"
+			href="../node_modules/materialize-css/dist/css/materialize.css"
+			media="screen,projection"
+		/>
+		<link href="../css/configdenominacion.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/resultados.css" />
 	</head>
-	<style>
-		.estudiante {
-			text-align: center;
-			margin-bottom: 10%;
-		}
-		.nyap {
-			margin: 0%;
-		}
 
-		img {
-			border-style: solid;
-			border-color: #a9a9a9;
-			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-		}
-
-		.seleccionado {
-			border-width: 5px;
-			border-color: #86c911;
-			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-		}
-
-		.noSeleccionado {
-			border-width: 1px;
-			border-color: #a9a9a9;
-		}
-
-		#divEstudiantes {
-			padding: 10px;
-			background-color: #fcfcfc;
-		}
-
-		input[type="text"]:not(.browser-default):disabled + label {
-			color: #86c911;
-		}
-	</style>
 	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col s6">
-					<p>Estudiantes</p>
+		<div class="row">
+			<div class="col s1">
+				<div class="barramenu sidenav-trigger" data-target="menu">
+					<i class="iconomenu fa fa-chevron-right"></i>
 				</div>
+				<ul id="menu" class="sidenav sidenav" style="width:23vw">
+					<li>
+						<div class="user-view">
+							<a href="#user"><img class="circle z-depth-5" id="imgdocente" src="../public/images/fotodocente.png"/></a>
+							<a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
+							<a href="#name"><span id="nombredocente" class="white-text name"></span></a>
+							<a href="#email"><span class="white-text email"></span></a>
+						</div>
+					</li>
+					<li><a id="reiniciar" href="index.html">Volver al inicio</a></li>
+				</ul>
 			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<i class="material-icons prefix">search</i>
-					<textarea id="icon_prefix2" onkeyup="search()" class="materialize-textarea"></textarea>
-					<label for="icon_prefix2">Buscar nombre</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div id="divEstudiantes" class="col s6"></div>
-				<div class="col s6">
+			<div class="col s11">
+				<div class="row">
 					<div class="row">
-						<div class="input-field col s12">
-							<input disabled value=" " id="nombre" type="text" class="validate" />
-							<label for="disabled">Nombre</label>
+						<div class="input-field col s4">
+							<i class="material-icons prefix">search</i>
+							<textarea id="icon_prefix2" onkeyup="search()" class="materialize-textarea"></textarea>
+							<label for="icon_prefix2">Buscar nombre</label>
 						</div>
 					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							<input disabled value=" " id="apellido" type="text" class="validate" />
-							<label for="disabled">Apellido</label>
+					<div id="divEstudiantes" class="col s4"></div>
+					<div class="col s8">
+						<div class="row">
+							<div class="input-field col s12">
+								<input disabled value=" " id="nombre" type="text" class="validate" />
+								<label for="disabled">Nombre</label>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							<input disabled value=" " id="edad" type="text" class="validate" />
-							<label for="disabled">Edad</label>
+						<div class="row">
+							<div class="input-field col s12">
+								<input disabled value=" " id="apellido" type="text" class="validate" />
+								<label for="disabled">Apellido</label>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							<input disabled value=" " id="descripcion" type="text" class="validate" />
-							<label for="disabled">Descripción</label>
+						<div class="row">
+							<div class="input-field col s12">
+								<input disabled value=" " id="edad" type="text" class="validate" />
+								<label for="disabled">Edad</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input disabled value=" " id="descripcion" type="text" class="validate" />
+								<label for="disabled">Descripción</label>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</body>
 
-	<script src="../js/letterAvatar.js"></script>
-	<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
-	<script>
-		let listaDocentes = [];
-		let displayNombre = document.getElementById("nombre");
-		let displayApellido = document.getElementById("apellido");
-		let displayEdad = document.getElementById("edad");
-		let displayDescripcion = document.getElementById("descripcion");
-		const { app } = require("electron").remote;
-		const path = require("path");
-		const Database = require("better-sqlite3");
-		const dbFile = path.join(app.getAppPath(), "db.sqlite");
-		const db = new Database(dbFile);
-		const query = "SELECT * FROM estudiantes";
-		const row = db.prepare(query);
-		const palabrasDB = row.all();
-		palabrasDB.forEach((palabra) => {
-			listaDocentes.push(palabra);
-		});
+		<script src="../node_modules/jquery/dist/jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
+		<script src="../js/index.js"></script>
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+		<script src="../js/letterAvatar.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				var elems = document.querySelectorAll(".sidenav");
+				var instances = M.Sidenav.init(elems, {
+					inDuration: 500,
+					outDuration: 400
+				});
+			});
+		</script>
+		<script>
+			let listaDocentes = [];
+			let displayNombre = document.getElementById("nombre");
+			let displayApellido = document.getElementById("apellido");
+			let displayEdad = document.getElementById("edad");
+			let displayDescripcion = document.getElementById("descripcion");
+			const { app } = require("electron").remote;
+			const path = require("path");
+			const Database = require("better-sqlite3");
+			const dbFile = path.join(app.getAppPath(), "db.sqlite");
+			const db = new Database(dbFile);
+			const query = "SELECT * FROM estudiantes";
+			const row = db.prepare(query);
+			const palabrasDB = row.all();
+			palabrasDB.forEach((palabra) => {
+				listaDocentes.push(palabra);
+			});
 
-		let div = document.getElementById("divEstudiantes");
-		for (let index = 0; index < listaDocentes.length; index++) {
-			let nombreApellido = listaDocentes[index].nombre + " " + listaDocentes[index].apellido;
-			let idDB = listaDocentes[index].id;
-			let listItem = document.createElement("div");
-			let pal = document.createElement("p");
-			pal.setAttribute("class", "nyap");
-			listItem.setAttribute("class", "col s6 estudiante");
-			pal.innerHTML = nombreApellido;
+			let div = document.getElementById("divEstudiantes");
+			for (let index = 0; index < listaDocentes.length; index++) {
+				let nombreApellido = listaDocentes[index].nombre + " " + listaDocentes[index].apellido;
+				let idDB = listaDocentes[index].id;
+				let listItem = document.createElement("div");
+				let pal = document.createElement("p");
+				pal.setAttribute("class", "nyap");
+				listItem.setAttribute("class", "col s6 estudiante");
+				pal.innerHTML = nombreApellido;
 
-			let img = document.createElement("img");
-			img.setAttribute("class", "circle noSeleccionado");
-			img.setAttribute("hight", "137");
-			img.setAttribute("width", "137");
-			img.setAttribute("avatar", nombreApellido);
-			img.setAttribute("nombre", listaDocentes[index].nombre);
-			img.setAttribute("apellido", listaDocentes[index].apellido);
-			img.setAttribute("edad", listaDocentes[index].edad);
-			img.setAttribute("descripcion", listaDocentes[index].descripcion);
-			listItem.innerHTML += img.outerHTML;
-			listItem.innerHTML += pal.outerHTML;
-			div.appendChild(listItem);
-		}
-
-		div.addEventListener("click", (e) => {
-			if (e.target.tagName === "IMG") {
-				console.log(e.target.getAttribute("nombre"));
-				blankAll();
-				e.target.setAttribute("class", "circle seleccionado");
-				let nombre = e.target.getAttribute("nombre");
-				let apellido = e.target.getAttribute("apellido");
-				let edad = e.target.getAttribute("edad");
-				let descripcion = e.target.getAttribute("descripcion");
-				displayNombre.setAttribute("value", nombre);
-				displayApellido.setAttribute("value", apellido);
-				displayEdad.setAttribute("value", edad);
-				displayDescripcion.setAttribute("value", descripcion);
+				let img = document.createElement("img");
+				img.setAttribute("class", "circle noSeleccionado");
+				img.setAttribute("hight", "137");
+				img.setAttribute("width", "137");
+				img.setAttribute("avatar", nombreApellido);
+				img.setAttribute("nombre", listaDocentes[index].nombre);
+				img.setAttribute("apellido", listaDocentes[index].apellido);
+				img.setAttribute("edad", listaDocentes[index].edad);
+				img.setAttribute("descripcion", listaDocentes[index].descripcion);
+				listItem.innerHTML += img.outerHTML;
+				listItem.innerHTML += pal.outerHTML;
+				div.appendChild(listItem);
 			}
-		});
 
-		function blankAll() {
-			let childs = document.getElementById("divEstudiantes").getElementsByTagName("img");
-			for (let index = 0; index < childs.length; index++) {
-				childs[index].setAttribute("class", "circle noSeleccionado");
-			}
-		}
+			div.addEventListener("click", (e) => {
+				if (e.target.tagName === "IMG") {
+					console.log(e.target.getAttribute("nombre"));
+					blankAll();
+					e.target.setAttribute("class", "circle seleccionado");
+					let nombre = e.target.getAttribute("nombre");
+					let apellido = e.target.getAttribute("apellido");
+					let edad = e.target.getAttribute("edad");
+					let descripcion = e.target.getAttribute("descripcion");
+					displayNombre.setAttribute("value", nombre);
+					displayApellido.setAttribute("value", apellido);
+					displayEdad.setAttribute("value", edad);
+					displayDescripcion.setAttribute("value", descripcion);
+				}
+			});
 
-		function search() {
-			var input, i, filter, li, ul, txtValue;
-			input = document.getElementById("icon_prefix2");
-			filter = input.value.toUpperCase();
-			let childs = document.getElementById("divEstudiantes").getElementsByTagName("img");
-			for (i = 0; i < childs.length; i++) {
-				a = childs[i].getAttribute("nombre") + " " + childs[i].getAttribute("apellido");
-				txtValue = a;
-				console.log(txtValue);
-				if (txtValue.toUpperCase().indexOf(filter) > -1) {
-					childs[i].parentElement.style.display = "";
-				} else {
-					childs[i].parentElement.style.display = "none";
+			function blankAll() {
+				let childs = document.getElementById("divEstudiantes").getElementsByTagName("img");
+				for (let index = 0; index < childs.length; index++) {
+					childs[index].setAttribute("class", "circle noSeleccionado");
 				}
 			}
-		}
-	</script>
+
+			function search() {
+				var input, i, filter, li, ul, txtValue;
+				input = document.getElementById("icon_prefix2");
+				filter = input.value.toUpperCase();
+				let childs = document.getElementById("divEstudiantes").getElementsByTagName("img");
+				for (i = 0; i < childs.length; i++) {
+					a = childs[i].getAttribute("nombre") + " " + childs[i].getAttribute("apellido");
+					txtValue = a;
+					console.log(txtValue);
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						childs[i].parentElement.style.display = "";
+					} else {
+						childs[i].parentElement.style.display = "none";
+					}
+				}
+			}
+		</script>
+	</body>
 </html>
