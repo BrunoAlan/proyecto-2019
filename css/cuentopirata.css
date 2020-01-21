@@ -45,20 +45,20 @@ body
   }
   .iconoatras:hover
   {
-      color: #00909e;
+      color: #86D6C6;
   }
  .iconosiguiente:hover
   {
-      color: #00909e;
+      color: #86D6C6;
   }
 
 
  .textocuento
   {
       color: #707070;
-      font-size: 2.1vw;
+      font-size: 1.9vw;
       font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-      text-align: center;
+      
       margin-top: 1%;
 
   }
@@ -66,36 +66,7 @@ body
 
         
         
-        
-#imgdocente
-{
-  margin-left: 18%;
-  width:12vw;
-  height: 12vw;
-  margin-top: 10%;
-}
-
-#nombredocente
-{
-  font-size: 1.3vw;
-  text-align: center;
-  text-align: center;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-}
-
-#hola
-{
-  font-size: 2vw;
-  text-align: center;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  margin-top: 15%;
-}
-
-#menu
-{
-  background-color: #00919e;
-}
-
+ 
 
 
   #reiniciar
@@ -137,7 +108,7 @@ body
    height: 100% ;
    margin-left: -3%;
    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-   background-color: #00909e; 
+   background-color: #86D6C6; 
  
 }
 

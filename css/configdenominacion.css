@@ -1,82 +1,70 @@
-@font-face {
+@font-face 
+{
 	font-family: "Roboto";
 	src: url("../css/Roboto/Roboto-Regular.ttf");
 }
 
-body {
+body 
+{
 	font-family: "Roboto";
 	overflow: hidden;
 }
-.estudiante {
+.estudiante 
+{
 	text-align: center;
 	margin-bottom: 10%;
 }
-.nyap {
+.nyap 
+{
 	margin: 0%;
 }
-img.avatar {
+img.avatar 
+{
 	border-style: solid;
 	border-color: #a9a9a9;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-img.avatar.seleccionado {
+img.avatar.seleccionado 
+{
 	border-width: 3px;
-	border-color: #86c911;
+	border-color: #86D6C6;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
 }
 
-img.avatar.noSeleccionado {
+img.avatar.noSeleccionado 
+{
 	border-width: 1px;
 	border-color: #a9a9a9;
 }
 
-.row {
+.row 
+{
 	margin-bottom: 0;
 }
 
-ul:not(.browser-default) {
+ul:not(.browser-default) 
+{
 	background-color: #fcfcfc;
 }
-.collection .collection-item {
+.collection .collection-item 
+{
 	background-color: #fcfcfc;
 	border-bottom: 0px;
 }
 
-.collection.collection-item.palabras {
+.collection.collection-item.palabras
+{
 	background-color: #fcfcfc;
 	border-bottom: 0px;
 }
-.collection {
+.collection 
+{
 	border: 0;
 }
 
-#imgdocente {
-	margin-left: 18%;
-	width: 12vw;
-	height: 12vw;
-	margin-top: 10%;
-}
-
-#nombredocente {
-	font-size: 1.3vw;
-	text-align: center;
-	text-align: center;
-	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-}
-
-#hola {
-	font-size: 2vw;
-	text-align: center;
-	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-	margin-top: 15%;
-}
-
-#menu {
-	background-color: #00919e;
-}
-
-#reiniciar {
+#reiniciar 
+{
 	margin-top: 55%;
 	color: aliceblue;
 	font-size: 1.3vw;
@@ -84,7 +72,8 @@ ul:not(.browser-default) {
 	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
-#terminar {
+#terminar 
+{
 	color: aliceblue;
 	font-size: 1.3vw;
 	text-align: center;
@@ -92,7 +81,8 @@ ul:not(.browser-default) {
 	margin-top: 8%;
 }
 
-.iconomenu {
+.iconomenu 
+{
 	line-height: 14px;
 	margin-left: 0.7%;
 	margin-top: 1.5%;
@@ -100,11 +90,145 @@ ul:not(.browser-default) {
 	color: #ffffff;
 }
 
-.barramenu {
+.barramenu 
+{
 	width: 2.1vw;
 	font-size: 1.3vw;
 	height: 100%;
 	margin-left: -3%;
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-	background-color: #00909e;
+	background-color: #86D6C6;
+}
+
+.conttitulo
+{
+	text-align: left;
+}
+
+#textoestudiante
+{
+	color: #707070;
+	font-weight: bold;
+	font-size: 1.3vw;
+	margin-left: 2%;
+	margin-top: -32%;
+	width: 20vw;
+}
+
+#textopalabras
+{
+	color: #707070;
+	font-weight: bold;
+	font-size: 1.3vw;
+	margin-left: 10%;
+	margin-top: -44%;
+}
+
+.buscadorestudiante
+{
+	margin-top: -1%;
+	width: 20vw;
+}
+
+.buscadorpalabra
+{
+	margin-top: -1%;
+	width: 20vw;
+	margin-left: 3%;
+}
+
+#ejercicio1
+{
+	color: #707070;
+	font-size: 2.4vw;
+	font-weight: bold;
+}
+
+#nombreejercicio
+{
+	color: #707070;
+	font-size: 1.6vw;
+
+	margin-top: -16%;
+}
+
+.contenedorpalabras
+{
+	height: 25vw ;
+	width: 19vw;
+	margin-top: -3%;
+}
+
+#ilustracion {
+	width: 13vw;
+	height: 26vw;
+	margin-left: 36%;
+	margin-top: 10%;
+}
+
+.comenzar 
+{
+	width: 17.5vw;
+	height: 4.4vw;
+	color: #ffffff;
+	font-family: "Roboto";
+	font-size: 1.3vw;
+	border-color: #86D6C6;
+	border-radius: 35px 35px 35px 35px;
+	-moz-border-radius: 35px 35px 35px 35px;
+	-webkit-border-radius: 35px 35px 35px 35px;
+	box-sizing: border-box;
+	margin-top: 32%;
+	margin-left: 11%;
+}
+
+.comenzar:active 
+{
+	transform: translateY(2px);
+}
+
+.comenzar:hover 
+{
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+.contabajo
+{
+	margin-top: -6%;
+}
+
+#textoselector
+{
+	color: #707070;
+	font-weight: bold;
+	font-size: 1.2vw;
+	margin-top: -5%;
+}
+
+.selectorrapido
+{
+    font-family: "Roboto";
+    font-size: 1.1vw;
+    color: #707070;
+	font-weight: bold;
+	width: 10vw;
+	height: 2vw;
+	font-size: 0.8vw;
+	border-color: #b9b9b9;
+	border-radius: 35px 35px 35px 35px;
+	-moz-border-radius: 35px 35px 35px 35px;
+	-webkit-border-radius: 35px 35px 35px 35px;
+	box-sizing: border-box;
+	margin-top: 0%;
+	margin-left: 26%;
+}
+
+.selectorrapido:active 
+{
+	transform: translateY(2px);
+}
+
+.contenedorconfiguracion
+{
+	margin-top: -3%;
 }

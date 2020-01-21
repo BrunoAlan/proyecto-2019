@@ -13,6 +13,8 @@
 		/>
 		<link href="../css/configdenominacion.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="../css/resultados.css" />
+		<link rel="stylesheet" href="../css/estudiantes.css" />
+		<link rel="stylesheet" href="../css/sidebar.css" />
 	</head>
 
 	<body>
@@ -30,10 +32,19 @@
 							<a href="#email"><span class="white-text email"></span></a>
 						</div>
 					</li>
-					<li><a id="reiniciar" href="index.html">Volver al inicio</a></li>
+					<li><a id="reiniciar" href="index.html">VOLVER AL INICIO</a></li>
 				</ul>
 			</div>
-			<div class="col s11">
+
+			<div class="col s">
+				<img id="nuevoestudiante" src="../public/images/nuevoestudiante.png"> </img>
+			</div>
+
+			<div class="col s">
+				<img id="nuevoestudiante" src="../public/images/eliminarestudiante.png"> </img>
+			</div>
+
+			<div class="contestudiantes col s10">
 				<div class="row">
 					<div class="row">
 						<div class="input-field col s4">
@@ -41,36 +52,51 @@
 							<textarea id="icon_prefix2" onkeyup="search()" class="materialize-textarea"></textarea>
 							<label for="icon_prefix2">Buscar nombre</label>
 						</div>
+						<div class="input-field col s offset-s1">
+							
+							<a href="estudiantes.html"> <p class="datospersonales ">Datos personales</p></a>
+						</div>
+						<div class="input-field col s1">
+							<a href="resultados.html"> <p class="seguimiento ">Seguimiento</p></a>
+						</div>
 					</div>
 					<div id="divEstudiantes" class="col s4"></div>
 					<div class="col s8">
 						<div class="row">
-							<div class="input-field col s12">
+							<div class="input-field col s6">
 								<input disabled value=" " id="nombre" type="text" class="validate" />
 								<label for="disabled">Nombre</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s12">
+							<div class="input-field col s6">
 								<input disabled value=" " id="apellido" type="text" class="validate" />
 								<label for="disabled">Apellido</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s12">
+							<div class="input-field col s6">
 								<input disabled value=" " id="edad" type="text" class="validate" />
 								<label for="disabled">Edad</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s12">
+							<div class="input-field col s6">
 								<input disabled value=" " id="descripcion" type="text" class="validate" />
 								<label for="disabled">Descripción</label>
 							</div>
 						</div>
+						
 					</div>
 				</div>
+				
+				<div class="contguardar col s offset-s8 ">
+					<a> <button class="guardar teal lighten-3">Guardar cambios</button></a>
+				</div>
+				
 			</div>
+		
+
 		</div>
 
 		<script src="../node_modules/jquery/dist/jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
@@ -117,8 +143,8 @@
 
 				let img = document.createElement("img");
 				img.setAttribute("class", "circle noSeleccionado");
-				img.setAttribute("hight", "137");
-				img.setAttribute("width", "137");
+				img.setAttribute("hight", "100");
+				img.setAttribute("width", "100");
 				img.setAttribute("avatar", nombreApellido);
 				img.setAttribute("nombre", listaDocentes[index].nombre);
 				img.setAttribute("apellido", listaDocentes[index].apellido);

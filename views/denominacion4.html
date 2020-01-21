@@ -1,17 +1,15 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="../css/estilos.css" rel="stylesheet" type="text/css">
   <link href="../css/denominacion4.css" rel="stylesheet" type="text/css">
   <link href="../css/denominacion.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/sidebar.css" />
   <link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css"
-    media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css" media="screen,projection" />
   <title>NombreApp</title>
 </head>
 
@@ -19,65 +17,62 @@
 
   <div class="row">
 
-
-    <div class="col s">
-      <div class="barramenu sidenav-trigger" data-target="menu" >
-          <i class="iconomenu fa fa-chevron-right"></i>
-     </div> 
-
+      <div class="col s">
+          <div class="barramenu sidenav-trigger" data-target="menu" >
+              <i class="iconomenu fa fa-chevron-right"></i>
+          </div> 
     
-      <ul id="menu" class="sidenav sidenav" style="width:23vw">
-          <li>
-              <div class="user-view">
-          
-                <a href="#user"><img class="circle z-depth-5" id="imgdocente" src=""></a>
-                <a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
-                <a href="#name"><span id="nombredocente" class="white-text name"></span></a>
-                <a href="#email"><span class="white-text email"></span></a>
-      
-              </div>
-          </li>
-    
-          <li ><a  id="reiniciar"  href="index.html">Reiniciar ejercicio</a></li>
-          <li ><a  id="terminar" href="index.html">Terminar ejercicio</a></li>
-      </ul>
+          <ul id="menu" class="sidenav sidenav" style="width:23vw">
+              <li>
+                 <div class="user-view">
+                     <a href="#user"><img class="circle z-depth-5" id="imgdocente" src=""></a>
+                     <a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
+                      <a href="#name"><span id="nombredocente" class="white-text name"></span></a>
+                     <a href="#email"><span class="white-text email"></span></a>
+                 </div>
+              </li>
+             <li><a id="reiniciar" href="index.html">REINICIAR EJERCICIO</a></li>
+				     <li><a id="terminar" href="index.html">TERMINAR EJERCICIO</a></li>
+          </ul>
+      </div>
+
+  <div class="col s offset-s10">
+      <img id="pista" src="../public/images/pista.png"> </img>
+  </div>
+  
+  <div class="col s10 offset-s1 contdenominacion">  
+      <p class="consigna col s10 offset-s1">ELIJE LA IMAGEN QUE CORRESPONDE CON LA PALABRA</p>
+
+  <div class="target">
+      <p class="col s10 offset-s1"  id="correcta"></p>
   </div>
 
-  <div class="col s10 offset-s1 contdenominacion">
-    
-      <p class="consigna col s10 offset-s1">Elije la imagen que corresponde con la palabra</p>
- <div class="target">
-      <p class="col s10 offset-s1"  id="correcta"></p>
-    </div>
-    <main class="row">
+    <main class="row">  
+        <div id="contdenom">
+            <div class="col s2" id="imagen1">
+                <img id="im1" palabra=""> </img>
+            </div>
 
-    
-      <div id="contdenom">
+            <div class="col s2 offset-s1" id="imagen2">
+                <img id="im2" palabra=""> </img>
+            </div>
 
-        <div class="col s2" id="imagen1">
-          <img id="im1" palabra=""> </img>
+            <div class="col s2 offset-s1" id="">
+                 <img id="im3" palabra=""> </img>
+            </div>
+
+            <div class="col s2 offset-s1" id="">
+                <img id="im4" palabra=""> </img>
+            </div>
+
         </div>
-
-        <div class="col s2 offset-s1" id="imagen2">
-          <img id="im2" palabra=""> </img>
-        </div>
-
-        <div class="col s2 offset-s1" id="">
-          <img id="im3" palabra=""> </img>
-        </div>
-
-        <div class="col s2 offset-s1" id="">
-          <img id="im4" palabra=""> </img>
-        </div>
-
-      </div>
     </main>
   </div>
 
 
 
   <script>
-    require('../js/denominacion4.js')
+      require('../js/denominacion4.js')
   </script>
   <script src="../js/index.js"></script>
   <script src="../js/letterAvatar.js"></script>
@@ -90,12 +85,10 @@
       var instances = M.Sidenav.init(elems, { 
         inDuration: 500, 
         outDuration:400, 
-        
-        
         });
+        });
+  </script>
   
-    });
-      </script>
 </body>
 
 </html>

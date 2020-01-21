@@ -1,4 +1,4 @@
-const Swal = require("sweetalert2");
+﻿const Swal = require("sweetalert2");
 
 const lunes = document.getElementById("lunes");
 const martes = document.getElementById("martes");
@@ -44,7 +44,7 @@ switch (locat) {
 // Función que determina si el día elegido es correcto
 function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 	if (diaCorrecto == diaElegido) {
-		const arrayAciertos = ["¡Muy bien!", "¡Excelente!", "¡Bravo!", "¡Grandioso!", "¡Estupendo!", "¡Fantastico!"];
+		const arrayAciertos = ["¡MUY BIEN!", "¡EXCELENTE!", "¡BRAVO!", "¡GRANDIOSO!", "¡ESTUPENDO!", "¡FANTASTICO!"];
 		const singleacierto = arrayAciertos[Math.floor(Math.random() * arrayAciertos.length)];
 
 		Swal.fire({
@@ -52,7 +52,7 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 			width: 400,
 			imageWidth: 200,
 			imageHeight: 300,
-			background: "#e4f2f0",
+			background: "#ffffff",
 			title: singleacierto,
 			showConfirmButton: false,
 			timer: 2000
@@ -64,7 +64,7 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 				siguiente.addEventListener("click", () => {
 					location.href = "diasSemanaAyer.html";
 				});
-				// location.href = 'diasSemanaAyer.html'
+				
 				break;
 			case "ayer":
 				siguiente.addEventListener("click", () => {
@@ -73,19 +73,19 @@ function verificarDia(diaCorrecto, diaElegido, ejercicio) {
 				break;
 			case "manana":
 				siguiente.addEventListener("click", () => {
-					location.href = "index.html";
+					location.href = "festejofinal.html";
 				});
 				break;
 		}
 	} else {
-		const arrayerror = ["¡Intentalo otra vez!", "¡Intentalo nuevamente!", "¡Una vez mas, tu puedes hacerlo!"];
+		const arrayerror =  ["¡INTENTALO OTRA VEZ!", "¡INTENTALO NUEVAMENTE!"];
 		const singlerror = arrayerror[Math.floor(Math.random() * arrayerror.length)];
 		Swal.fire({
 			imageUrl: "../public/images/otravez.png",
 			width: 400,
 			imageWidth: 200,
 			imageHeight: 300,
-			background: "#e4f2f0",
+			background: "#ffffff",
 			title: singlerror,
 			showConfirmButton: false,
 			timer: 2000

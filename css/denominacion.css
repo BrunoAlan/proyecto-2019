@@ -11,7 +11,7 @@ body#ejercicios
 .consigna {
 	height: 5vh;
 	font-size: 2.2vw;
-	color: #00909e;
+	color: #707070;;
 	font-weight: 600;
 	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 	font-weight: bold;
@@ -31,7 +31,7 @@ body#ejercicios
    .contdenominacion
    {
      
-     margin-top: 7%; 
+     margin-top: 1%; 
      margin-bottom: 5%;   
      width: 100%;
      height: auto;
@@ -47,38 +47,11 @@ body#ejercicios
   font-weight: bold;
   margin-left: 7%;
   margin-top: -4%; 
+  color: #86D6C6;
  }
 
 
- 
-#imgdocente
-{
-  margin-left: 18%;
-  width:12vw;
-  height: 12vw;
-  margin-top: 10%;
-}
 
-#nombredocente
-{
-  font-size: 1.3vw;
-  text-align: center;
-  text-align: center;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-}
-
-#hola
-{
-  font-size: 2vw;
-  text-align: center;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  margin-top: 15%;
-}
-
-#menu
-{
-  background-color: #00919e;
-}
 
 
 
@@ -120,10 +93,19 @@ body#ejercicios
    height: 100% ;
    margin-left: -3%;
    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-   background-color: #00909e;
+   background-color: #86D6C6;
    
 }
 
 
+#pista
+{
+  width:5.4vw;
+  height: 7vw;
+  margin-top: 0%;
+}
 
-
+#pista:active
+{
+  transform: translateY(4px);
+}

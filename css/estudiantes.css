@@ -1,0 +1,62 @@
+@font-face {
+	font-family: "Roboto";
+	src: url("../css/Roboto/Roboto-Regular.ttf");
+}
+
+.contestudiantes
+ {
+	margin-top: 2%;
+ }
+
+ #nuevoestudiante
+{
+	width:5.4vw;
+	height: 7vw;
+	margin-top: 0%;
+	border-color: #ffffff;
+}
+
+#nuevoestudiante:active
+{
+ 	 transform: translateY(4px);
+}
+
+.guardar 
+{
+	width: 14.5vw;
+	height: 4.4vw;
+	color: #ffffff;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.3vw;
+	border-color: #86D6C6;
+	border-radius: 35px 35px 35px 35px;
+	-moz-border-radius: 35px 35px 35px 35px;
+	-webkit-border-radius: 35px 35px 35px 35px;
+	box-sizing: border-box;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.guardar:active 
+{
+	transform: translateY(2px);
+}
+
+.guardar:hover {
+	box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.datospersonales
+{
+    font-family: "Roboto";
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: black;
+}
+
+.seguimiento
+{
+    font-family: "Roboto";
+    font-size: 1.1vw;
+    margin-left: 35%;
+    color: #707070;
+}

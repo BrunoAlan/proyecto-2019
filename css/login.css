@@ -1,0 +1,104 @@
+@font-face {
+	font-family: "Roboto";
+	src: url("../css/Roboto/Roboto-Regular.ttf");
+}
+
+.sidenav .salir {
+	color: aliceblue;
+	font-size: 1.3vw;
+	margin-top: 74%;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	font-weight: bold;
+}
+
+#nombreapp {
+	font-size: 2.3vw;
+	color: #86D6C6;
+	margin-left: 12%;
+	text-align: center;
+	font-family: "Roboto";
+	font-weight: bold;
+}
+
+#ilustracion {
+	width: 16vw;
+	height: 31vw;
+	margin-left: 6%;
+	margin-top: 32%;
+}
+
+.bienvenido
+{
+    color: aliceblue;
+	font-size: 2.2vw;
+	margin-top: 50%;
+	font-family: "Roboto", sans-serif;
+    text-align: center;
+    
+	
+}
+
+#usuario
+{
+    color: aliceblue;
+	font-size: 1.4vw;
+	margin-left: 11.5%;
+	font-family: "Roboto", sans-serif;
+    margin-top: 5%;
+}
+
+#tituloinput
+{
+    color: aliceblue;
+    font-size: 1.8vw;
+    margin-left: 11.5%;
+   
+    font-family: "Roboto", sans-serif;
+    
+}
+
+.inputusuario
+{
+    margin-top: 30%;
+}
+
+
+.ingresar:active {
+	transform: translateY(2px);
+}
+
+.ingresar:hover {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.ingresar {
+	
+	
+	width: 13vw;
+	height: 4vw;
+	color: rgb(88, 173, 156);
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+	font-size: 1.3vw;
+    margin-left: 33%;
+	border-color: #b1e0dc;
+    
+	border-radius: 35px 35px 35px 35px;
+	-moz-border-radius: 35px 35px 35px 35px;
+	-webkit-border-radius: 35px 35px 35px 35px;
+	box-sizing: border-box;
+	
+}
+
+.nuevodocente
+{
+    color: aliceblue;
+  
+	font-size: 1vw;
+	margin-top: 6%;
+	font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-weight: bold;
+	
+}

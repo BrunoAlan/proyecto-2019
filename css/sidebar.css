@@ -1,0 +1,25 @@
+#imgdocente {
+	margin-left: 16%;
+	width: 12vw;
+	height: 12vw;
+	margin-top: 10%;
+}
+
+#nombredocente {
+	font-size: 1.3vw;
+	text-align: center;
+	
+	font-family: "Roboto", sans-serif;
+}
+
+
+#hola {
+	font-size: 2vw;
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+	margin-top: 15%;
+}
+
+#menu {
+	background-color: #86D6C6;
+}

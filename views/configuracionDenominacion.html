@@ -12,6 +12,7 @@
 			media="screen,projection"
 		/>
 		<link href="../css/configdenominacion.css" rel="stylesheet" type="text/css" />
+		<link href="../css/sidebar.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<div class="row">
@@ -31,71 +32,77 @@
 					<li><a id="reiniciar" href="index.html">Volver al inicio</a></li>
 				</ul>
 			</div>
-			<div class="col s11">
-				<div class="col s3 offset-s1">
-					<p>Estudiantes</p>
-				</div>
-				<div class="col s3">
-					<p>Palabras</p>
-				</div>
-				<div class="col s3">
-					<p>Seleccionadas</p>
-				</div>
 
+			<div class="col s2 offset-s9">
+				<p id="ejercicio1"> EJERCICIO 1 </p>
+				<p id="nombreejercicio"> DENOMINACIÓN </p>
+			</div>
+
+			<div class="col s">
+				<p id="textoestudiante">ESTUDIANTES</p>
+			</div>
+
+			<div class="col s2">
+				<p id="textopalabras">PALABRAS</p >
+			</div>
+		
+			<div class="contenedorconfiguracion col s11">
 				<div class="row">
-					<div class="input-field col s3">
+					<div class="buscadorestudiante input-field col s">
 						<i class="material-icons prefix">search</i>
 						<textarea id="buscarEstudiante" class="materialize-textarea"></textarea>
 						<label for="buscarEstudiante">Buscar nombre</label>
 					</div>
 
-					<div class="input-field col s3">
+					<div class="buscadorpalabra input-field col s">
 						<i class="material-icons prefix">search</i>
 						<textarea id="buscarPalabra" class="materialize-textarea"></textarea>
 						<label for="buscarPalabra">Buscar palabra</label>
 					</div>
+					<div class="col s"><a> <button id="" class="selectorrapido grey lighten-2">SELECTOR RAPIDO</button></a></div>
 				</div>
 
-				<div class="row" style="max-height: 35vw; min-height: 35vw;">
+				<div class="row" style="max-height: 30vw; min-height: 30vw;">
 					<div id="divEstudiantes" class="col s3"></div>
-					<div class="col s4"><ul id="listaPalabras" class="collection col s12 "></ul></div>
-					<div class="col s4" id="divSeleccionados"><ul id="seleccionados" class="collection col s12"></ul></div>
+					<div class="col s"><ul id="listaPalabras" class="contenedorpalabras collection col s "></ul></div>
+					<div class="col s2" id="divSeleccionados"><ul id="seleccionados" class="contenedorpalabras collection col s12"></ul></div>
+					<div class="col s2 offset-s1">
+						<img id="ilustracion" src="../public/images/Bienvenido.png" />
+						<a> <button id="btnIniciar" class="comenzar teal lighten-3">COMENZAR</button></a>
+					</div>
 				</div>
 
 				<div class="row">
-					<div class="input-field col s3">
+					<div class="contabajo col s12">
+					<div class="input-field col s2">
 						<select id="dificultad">
 							<option value="" disabled>Elegir dificultad</option>
 							<option value="Baja" selected>Baja</option>
 							<option value="Media">Media</option>
 							<option value="Alta">Alta</option>
 						</select>
-						<label>Dificultad</label>
+						<label id="textoselector" >DIFICULTAD</label>
 					</div>
-					<div class="input-field col s3">
+					<div class="input-field col s2">
 						<select id="repeticiones">
 							<option value="" disabled>Elegir repeticiones</option>
 							<option value="5" selected>5</option>
 							<option value="10">10</option>
 							<option value="20">20</option>
 						</select>
-						<label>Repeticiones</label>
+						<label id="textoselector" >REPETICIONES</labelid="textoselector">
 					</div>
-					<div class="input-field col s3">
+					<div class="input-field col s2">
 						<select id="tipoImagen">
 							<option value="" disabled>Elegir imagen</option>
 							<option value="Imagen Real" selected>Imagen Real</option>
 							<option value="Dibujo">Dibujo</option>
 						</select>
-						<label>Tipo Imagen</label>
+						<label id="textoselector">TIPO IMAGEN</label>
 					</div>
-
-					<div class="col s3">
-						<button id="btnIniciar" class="btn waves-effect waves-light">
-							Comenzar
-							<i class="material-icons right">send</i>
-						</button>
 					</div>
+						
+				</div>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,5 @@
-// Requiero la DB y la instacio
+﻿// Requiero la DB y la instacio
+const Swal = require("sweetalert2");
 const { app } = require("electron").remote;
 const path = require("path");
 const Database = require("better-sqlite3");
@@ -81,9 +82,33 @@ function endGame(cantEjercicios, ejerciciosObjetivo) {
 function getAnswer() {
 	if (event.srcElement.palabra == palabraTarget.palabra) {
 		rtasCorrectas++;
+		const arrayAciertos = ["¡MUY BIEN!", "¡EXCELENTE!", "¡BRAVO!", "¡GRANDIOSO!", "¡ESTUPENDO!", "¡FANTASTICO!"];
+		const singleacierto = arrayAciertos[Math.floor(Math.random() * arrayAciertos.length)];
+		Swal.fire({
+			imageUrl: "../public/images/Felicitaciones.png",
+			width: 400,
+			imageWidth: 200,
+			imageHeight: 300,
+			background: "#e4f2f0",
+			title: singleacierto,
+			showConfirmButton: false,
+			timer: 2000
+		});
 		nextPlay();
 	} else {
 		errores.push(palabraTarget.palabra);
+		const arrayerror = ["¡INTENTALO OTRA VEZ!", "¡INTENTALO NUEVAMENTE!"];
+		const singlerror = arrayerror[Math.floor(Math.random() * arrayerror.length)];
+		Swal.fire({
+			imageUrl: "../public/images/otravez.png",
+			width: 400,
+			imageWidth: 200,
+			imageHeight: 300,
+			background: "#e4f2f0",
+			title: singlerror,
+			showConfirmButton: false,
+			timer: 2000
+		});
 		rtasIncorrectas++;
 	}
 	cantEjercicios++;
