@@ -169,7 +169,7 @@ function setImages() {
 		document.getElementById("im2").palabra = listaEjercicio[1].palabra;
 	} else {
 		prefix = prefixDibujo;
-		document.getElementById("correcta").innerHTML = palabraTarget.palabra;
+		document.getElementById("correcta").innerHTML = palabraTarget.palabra.toUpperCase();
 		document.getElementById("im1").src = prefix + listaEjercicio[0].rutaDibujo;
 		document.getElementById("im2").src = prefix + listaEjercicio[1].rutaDibujo;
 		document.getElementById("im1").palabra = listaEjercicio[0].palabra;
