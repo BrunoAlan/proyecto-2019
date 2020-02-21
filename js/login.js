@@ -72,3 +72,251 @@ btnIniciarSesion.addEventListener('click', (e) => {
 		alert('Seleccione un docente antes de iniciar sesion');
 	}
 });
+
+//
+//CARGAR DB
+//Para cargar la db descomentar la linea de abajo, la que llama al método cargarDB()
+//una vez ejecutada la app volver a comentar
+//
+//cargarDB();
+
+class Palabra {
+	constructor(nombre, categoria) {
+		this.nombre = nombre;
+		this.rutaReal = `/${getCleanedString(categoria)}/${getCleanedString(nombre)}.jpg`;
+		this.rutaDibujo = `/${getCleanedString(categoria)}/${getCleanedString(nombre)}.jpg`;
+		this.categoria = categoria;
+	}
+}
+
+//CATEGORIAS
+const ANIMALES_DOMESTICO = 'Animales domésticos';
+const ANIMALES_GRANJA = 'Animales de granja';
+const ANIMALES_SALVAJES = 'Animales Salvajes';
+const INSECTOS = 'Insectos';
+const VEHICULOS = 'Vehículos';
+const BEBIDAS = 'Bebidas';
+const VERDURAS = 'Verduras';
+const ALIMENTOS = 'Alimentos';
+const FRUTAS = 'Frutas';
+const ROPA_ACCESORIOS = 'Ropa y accesorios';
+const PARTES_CUERPO = 'Partes del cuerpo';
+const UTENSILIOS = 'Utensilios';
+const MUEBLES_CUARTOS = 'Muebles y cuartos';
+const OBJETOS_FUERA_CASA = 'Objetos fuera de la casa';
+const PROFESIONES = 'Profesiones';
+const ESCUELA = 'Escuela';
+
+let animales_domesticos = ['Gato', 'Pajaro', 'Pato', 'Perro', 'Pez', 'Ratón', 'Tortuga'];
+let animales_granja = ['Caballo', 'Chancho', 'Gallina', 'Vaca', 'Oveja', 'Conejo'];
+let animales_salvajes = [
+	'Ballena',
+	'Canguro',
+	'Cocodrilo',
+	'Delfín',
+	'Elefante',
+	'Jirafa',
+	'Leon',
+	'Mono',
+	'Oso',
+	'Sapo',
+	'Vibora',
+	'Tiburon'
+];
+let insectos = ['Abeja', 'Araña', 'Hormiga', 'Mariposa', 'Mosca'];
+let vehiculos = ['Ambulancia', 'Auto', 'Avión', 'Barco', 'Bicicleta', 'Camioneta', 'Camión', 'Colectivo', 'Moto', 'Tren'];
+let bebidas = ['Agua', 'Café', 'Chocolatada', 'Jugo', 'Leche', 'Mate', 'Gaseosa', 'Té'];
+let verduras = ['Cebolla', 'Choclo', 'Lechuga', 'Papa', 'Tomate', 'Zanahoria'];
+let alimentos = [
+	'Alfajor',
+	'Arroz',
+	'Azúcar',
+	'Caramelo',
+	'Carne',
+	'Cereales',
+	'Chocolate',
+	'Chupetín',
+	'Empanada',
+	'Fideos',
+	'Galletita',
+	'Hamburguesa',
+	'Helado',
+	'Huevo',
+	'Milanesa',
+	'Pan',
+	'Papas fritas',
+	'Pizza',
+	'Pochoclo',
+	'Pollo',
+	'Queso',
+	'Salchicha',
+	'Torta'
+];
+
+let frutas = ['Banana', 'Durazno', 'Frutilla', 'Limón', 'Manzana', 'Pera', 'Naranja', 'Sandia', 'Uva'];
+
+let ropa = [
+	'Anteojos',
+	'Botas',
+	'Botón',
+	'Bufanda',
+	'Buzo',
+	'Calzoncillo',
+	'Camisa',
+	'Campera',
+	'Cartera',
+	'Collar',
+	'Gorra',
+	'Guantes',
+	'Medias',
+	'Mochila',
+	'Ojotas',
+	'Pantalón',
+	'Pañal',
+	'Pijama',
+	'Remera',
+	'Vestido',
+	'Zapatilla'
+];
+
+let partesCuerpo = [
+	'Barba',
+	'Bigote',
+	'Boca',
+	'Brazo',
+	'Cabeza',
+	'Dedo',
+	'Dientes',
+	'Hombro',
+	'Lengua',
+	'Mano',
+	'Nariz',
+	'Ojos',
+	'Oreja',
+	'Panza',
+	'Pelo',
+	'Piernas',
+	'Pies',
+	'Rodilla',
+	'Uñas'
+];
+
+let utensilios = [
+	'Alfombra',
+	'Almohada',
+	'Balde',
+	'Basura',
+	'Bolsa',
+	'Botella',
+	'Caja',
+	'Celular',
+	'Cepillo de dientes',
+	'Chupete',
+	'Cigarrillos',
+	'Cuchara',
+	'Cuchillo',
+	'Diario',
+	'Dinero',
+	'Escoba',
+	'Espejo',
+	'Jabón',
+	'Lámpara',
+	'Llave',
+	'Luz',
+	'Mamadera',
+	'Martillo',
+	'Papel',
+	'Peine',
+	'Plancha',
+	'Plato',
+	'Reloj',
+	'Taza',
+	'Tenedor',
+	'Tijera',
+	'Vaso',
+	'Vela'
+];
+
+let muebles_cuartos = [
+	'Banco',
+	'Bañadera',
+	'Baño',
+	'Cama',
+	'Cocina',
+	'Computadora',
+	'Ducha',
+	'Escaleras',
+	'Habitación',
+	'Heladera',
+	'Inodoro',
+	'Lavarropas',
+	'Mesa',
+	'Patio',
+	'Placard',
+	'Puerta',
+	'Silla',
+	'Sillón',
+	'Televisión',
+	'Casa'
+];
+let objetos_fuera_casa = [
+	'Árbol',
+	'Bandera',
+	'Cielo',
+	'Flor',
+	'Fuego',
+	'Lluvia',
+	'Nube',
+	'Pala',
+	'Pasto',
+	'Piedra',
+	'Pileta',
+	'Sol',
+	'Timbre'
+];
+
+let profesiones = ['Bombero', 'Carpintero', 'Chofer', 'Cocinero', 'Maestra', 'Mecánico', 'Médico', 'Panadero', 'Policía'];
+let escuela = ['Aula', 'Biblioteca', 'Cuaderno', 'Escuela', 'Goma', 'Libro', 'Mapa', 'Patio'];
+
+function cargarCategoria(listaPalabras, categoria) {
+	for (let i = 0; i < listaPalabras.length; i++) {
+		pal = new Palabra(listaPalabras[i], categoria);
+		let queryInsert = `INSERT INTO palabras (palabra,rutaReal,rutaDibujo,categoriaSemantica) VALUES("${pal.nombre}","${pal.rutaReal}","${pal.rutaDibujo}","${pal.categoria}")`;
+		let rowinsert = db.prepare(queryInsert);
+		rowinsert.run();
+	}
+}
+
+function getCleanedString(cadena) {
+	var specialChars = '!@#$^&%*()+=-[]/{}|:<>?,.';
+	for (var i = 0; i < specialChars.length; i++) {
+		cadena = cadena.replace(new RegExp('\\' + specialChars[i], 'gi'), '');
+	}
+	cadena = cadena.toLowerCase();
+	cadena = cadena.replace(/ /g, '_');
+	cadena = cadena.replace(/á/gi, 'a');
+	cadena = cadena.replace(/é/gi, 'e');
+	cadena = cadena.replace(/í/gi, 'i');
+	cadena = cadena.replace(/ó/gi, 'o');
+	cadena = cadena.replace(/ú/gi, 'u');
+	cadena = cadena.replace(/ñ/gi, 'n');
+	return cadena;
+}
+
+function cargarDB() {
+	cargarCategoria(animales_domesticos, ANIMALES_DOMESTICO);
+	cargarCategoria(animales_granja, ANIMALES_GRANJA);
+	cargarCategoria(animales_salvajes, ANIMALES_SALVAJES);
+	cargarCategoria(insectos, INSECTOS);
+	cargarCategoria(vehiculos, VEHICULOS);
+	cargarCategoria(bebidas, BEBIDAS);
+	cargarCategoria(verduras, VERDURAS);
+	cargarCategoria(alimentos, ALIMENTOS);
+	cargarCategoria(frutas, FRUTAS);
+	cargarCategoria(ropa, ROPA_ACCESORIOS);
+	cargarCategoria(partesCuerpo, PARTES_CUERPO);
+	cargarCategoria(utensilios, UTENSILIOS);
+	cargarCategoria(muebles_cuartos, MUEBLES_CUARTOS);
+	cargarCategoria(objetos_fuera_casa, OBJETOS_FUERA_CASA);
+	cargarCategoria(profesiones, PROFESIONES);
+}
