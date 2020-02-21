@@ -1,23 +1,23 @@
 @font-face {
-	font-family: "Roboto";
-	src: url("../css/Roboto/Roboto-Regular.ttf");
+	font-family: 'Roboto';
+	src: url('../css/Roboto/Roboto-Regular.ttf');
 }
 
 .sidenav .salir {
 	color: aliceblue;
 	font-size: 1.3vw;
 	margin-top: 74%;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	text-align: center;
 	font-weight: bold;
 }
 
 #nombreapp {
 	font-size: 2.3vw;
-	color: #86D6C6;
+	color: #86d6c6;
 	margin-left: 12%;
 	text-align: center;
-	font-family: "Roboto";
+	font-family: 'Roboto';
 	font-weight: bold;
 }
 
@@ -28,41 +28,33 @@
 	margin-top: 32%;
 }
 
-.bienvenido
-{
-    color: aliceblue;
+.bienvenido {
+	color: aliceblue;
 	font-size: 2.2vw;
 	margin-top: 50%;
-	font-family: "Roboto", sans-serif;
-    text-align: center;
-    
-	
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
 }
 
-#usuario
-{
-    color: aliceblue;
+#usuario {
+	color: aliceblue;
 	font-size: 1.4vw;
 	margin-left: 11.5%;
-	font-family: "Roboto", sans-serif;
-    margin-top: 5%;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 5%;
 }
 
-#tituloinput
-{
-    color: aliceblue;
-    font-size: 1.8vw;
-    margin-left: 11.5%;
-   
-    font-family: "Roboto", sans-serif;
-    
+#tituloinput {
+	color: aliceblue;
+	font-size: 1.8vw;
+	margin-left: 11.5%;
+
+	font-family: 'Roboto', sans-serif;
 }
 
-.inputusuario
-{
-    margin-top: 30%;
+.inputusuario {
+	margin-top: 30%;
 }
-
 
 .ingresar:active {
 	transform: translateY(2px);
@@ -73,32 +65,51 @@
 }
 
 .ingresar {
-	
-	
 	width: 13vw;
 	height: 4vw;
 	color: rgb(88, 173, 156);
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
 	font-size: 1.3vw;
-    margin-left: 33%;
+	margin-left: 33%;
 	border-color: #b1e0dc;
-    
+
 	border-radius: 35px 35px 35px 35px;
 	-moz-border-radius: 35px 35px 35px 35px;
 	-webkit-border-radius: 35px 35px 35px 35px;
 	box-sizing: border-box;
-	
 }
 
-.nuevodocente
-{
-    color: aliceblue;
-  
+.nuevodocente {
+	color: aliceblue;
+
 	font-size: 1vw;
 	margin-top: 6%;
-	font-family: "Roboto", sans-serif;
-    text-align: center;
-    font-weight: bold;
-	
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	font-weight: bold;
+}
+
+img.circle.seleccionado {
+	border-style: solid;
+	border-width: 5px;
+	border-color: #86d6c6;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+img.circle.noSeleccionado {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a9a9a9;
+}
+
+#divEstudiantes {
+	padding: 10px;
+	background-color: #fcfcfc;
+	height: 30vw;
+	overflow: auto;
+}
+
+.estudiante {
+	text-align: center;
 }

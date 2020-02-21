@@ -4,39 +4,43 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../node_modules/material-icons/iconfont/material-icons.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+		<link
+			type="text/css"
+			rel="stylesheet"
+			media="screen,projection"
+			href="../node_modules/materialize-css/dist/css/materialize.css"
+			media="screen,projection"
+		/>
+		<link rel="stylesheet" href="../css/login.css" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Inicio Sesión</title>
 	</head>
 
 	<style>
 		@font-face {
-			font-family: "Roboto";
-			src: url("../css/Roboto/Roboto-Regular.ttf");
+			font-family: 'Roboto';
+			src: url('../css/Roboto/Roboto-Regular.ttf');
 		}
 		body {
-			font-family: "Roboto", sans-serif;
+			font-family: 'Roboto', sans-serif;
 		}
 	</style>
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="col s12 m4 l8">
-					<h2>Inicio Sesion Docentes</h2>
+				<div class="col s12">
+					<h1>Inicio Sesión docentes</h1>
 				</div>
 			</div>
 			<div class="row">
-				<ul id="listaDocentes" class="collection s12 m6 l8"></ul>
+				<div class="col s12" id="divEstudiantes"></div>
 			</div>
-			<button id="btnIniciarSesion" class="btn waves-effect waves-light">
-				Iniciar Sesion
-				<i class="material-icons right">send</i>
-			</button>
-			<button id="btnNuevo" class="btn waves-effect waves-light">
-				Nuevo Docente
-				<i class="material-icons right">add</i>
-			</button>
+			<div class="row">
+				<button class="btn waves-effect waves-light col s12 m6 l6" id="btnAgregarDocente">Agregar Docente</button>
+				<button class="btn waves-effect waves-light col s12 m6 l6" id="btnIniciarSesion">Iniciar Sesión</button>
+			</div>
 		</div>
 	</body>
 	<script src="../js/login.js"></script>
+	<script src="../js/letterAvatar.js"></script>
 </html>

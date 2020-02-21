@@ -34,8 +34,8 @@
 			</div>
 
 			<div class="col s2 offset-s9">
-				<p id="ejercicio1"> EJERCICIO 1 </p>
-				<p id="nombreejercicio"> DENOMINACIÓN </p>
+				<p id="ejercicio1">EJERCICIO 1</p>
+				<p id="nombreejercicio">DENOMINACIÓN</p>
 			</div>
 
 			<div class="col s">
@@ -43,9 +43,9 @@
 			</div>
 
 			<div class="col s2">
-				<p id="textopalabras">PALABRAS</p >
+				<p id="textopalabras">PALABRAS</p>
 			</div>
-		
+
 			<div class="contenedorconfiguracion col s11">
 				<div class="row">
 					<div class="buscadorestudiante input-field col s">
@@ -59,7 +59,9 @@
 						<textarea id="buscarPalabra" class="materialize-textarea"></textarea>
 						<label for="buscarPalabra">Buscar palabra</label>
 					</div>
-					<div class="col s"><a> <button id="" class="selectorrapido grey lighten-2">SELECTOR RAPIDO</button></a></div>
+					<div class="col s">
+						<a> <button id="" class="selectorrapido grey lighten-2">SELECTOR RAPIDO</button></a>
+					</div>
 				</div>
 
 				<div class="row" style="max-height: 30vw; min-height: 30vw;">
@@ -74,38 +76,37 @@
 
 				<div class="row">
 					<div class="contabajo col s12">
-					<div class="input-field col s2">
-						<select id="dificultad">
-							<option value="" disabled>Elegir dificultad</option>
-							<option value="Baja" selected>Baja</option>
-							<option value="Media">Media</option>
-							<option value="Alta">Alta</option>
-						</select>
-						<label id="textoselector" >DIFICULTAD</label>
+						<div class="input-field col s2">
+							<select id="dificultad">
+								<option value="" disabled>Elegir dificultad</option>
+								<option value="Baja" selected>Baja</option>
+								<option value="Media">Media</option>
+								<option value="Alta">Alta</option>
+							</select>
+							<label id="textoselector">DIFICULTAD</label>
+						</div>
+						<div class="input-field col s2">
+							<select id="repeticiones">
+								<option value="" disabled>Elegir repeticiones</option>
+								<option value="5" selected>5</option>
+								<option value="10">10</option>
+								<option value="20">20</option>
+							</select>
+							<label id="textoselector">REPETICIONES</label>
+						</div>
+						<div class="input-field col s2">
+							<select id="tipoImagen">
+								<option value="" disabled>Elegir imagen</option>
+								<option value="Imagen Real" selected>Imagen Real</option>
+								<option value="Dibujo">Dibujo</option>
+							</select>
+							<label id="textoselector">TIPO IMAGEN</label>
+						</div>
 					</div>
-					<div class="input-field col s2">
-						<select id="repeticiones">
-							<option value="" disabled>Elegir repeticiones</option>
-							<option value="5" selected>5</option>
-							<option value="10">10</option>
-							<option value="20">20</option>
-						</select>
-						<label id="textoselector" >REPETICIONES</labelid="textoselector">
-					</div>
-					<div class="input-field col s2">
-						<select id="tipoImagen">
-							<option value="" disabled>Elegir imagen</option>
-							<option value="Imagen Real" selected>Imagen Real</option>
-							<option value="Dibujo">Dibujo</option>
-						</select>
-						<label id="textoselector">TIPO IMAGEN</label>
-					</div>
-					</div>
-						
-				</div>
 				</div>
 			</div>
 		</div>
+		"parser": "html"
 
 		<script src="../node_modules/jquery/dist/jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
 		<script src="../js/index.js"></script>
@@ -113,11 +114,11 @@
 		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
 		<script src="../js/letterAvatar.js"></script>
 		<script>
-			require("../js/configuracionDenominacion.js");
+			require('../js/configuracionDenominacion.js');
 		</script>
 		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				var elems = document.querySelectorAll(".sidenav");
+			document.addEventListener('DOMContentLoaded', function() {
+				var elems = document.querySelectorAll('.sidenav');
 				var instances = M.Sidenav.init(elems, {
 					inDuration: 500,
 					outDuration: 400

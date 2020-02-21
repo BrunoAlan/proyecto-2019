@@ -19,13 +19,13 @@
 		</style>
 		<div class="container ">
 			<div class="row">
-				<h1>Nuevo Docente</h1>
+				<h1>Nuevo estudiante</h1>
 				<div class="row">
 					<div class="input-field col s6">
 						<input id="inputNombre" type="text" class="validate" />
 						<label for="first_name">Nombre</label>
 					</div>
-					<form id="uploadForm" enctype="multipart/form-data" action="http://www.localhost:3000/upload" method="post"></form>
+					<form id="uploadForm" enctype="multipart/form-data" action="http://www.localhost:3000/estudiantes" method="post"></form>
 				</div>
 
 				<div class="row">
@@ -34,7 +34,20 @@
 						<label for="last_name">Apellido</label>
 					</div>
 				</div>
-			</div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="inputEdad" type="text" class="validate" />
+          <label for="last_name">Edad</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="inputDescripcion" type="text" class="validate" />
+          <label for="last_name">Descripción</label>
+        </div>
+      </div>
+    </div>
 			<div class="row">
 				<button id="btnAgregar" class="btn waves-effect waves-light" type="submit" form="uploadForm">
 					Agregar
@@ -48,15 +61,17 @@
 		<script>
 			var request = require('request');
 			let btnAgregar = document.getElementById('btnAgregar');
-			var inputNombre = document.getElementById('inputNombre');
-			var inputApellido = document.getElementById('inputApellido');
+			let inputNombre = document.getElementById('inputNombre');
+			let inputApellido = document.getElementById('inputApellido');
+			let inputEdad = document.getElementById('inputEdad');
+			let inputDescripcion = document.getElementById('inputDescripcion');
 
 			btnAgregar.addEventListener('click', (e) => {
 				validar();
 			});
 
 			function validar() {
-				if (inputApellido.value != '' && inputNombre.value != '') {
+				if (inputApellido.value != '' && inputNombre.value != ''&& inputEdad.value != '' && inputDescripcion.value != '') {
 					var nombreMayuscula = inputNombre.value.charAt(0).toUpperCase() + inputNombre.value.slice(1);
 					var apellidoMayuscula = inputApellido.value.charAt(0).toUpperCase() + inputApellido.value.slice(1);
 
@@ -67,14 +82,17 @@
 						},
 						body: new URLSearchParams({
 							nombre: nombreMayuscula,
-							apellido: apellidoMayuscula
+              apellido: apellidoMayuscula,
+              edad: inputEdad.value,
+              descripcion: inputDescripcion.value
+              
 						})
 					};
-					fetch('http://localhost:3000/docentes', options).then((response) => {
+					fetch('http://localhost:3000/estudiantes', options).then((response) => {
 						response.json().then((data) => {
 							console.log(data);
 						});
-						location.href = 'login.html';
+						location.href = 'estudiantes.html';
 					});
 				} else {
 					alert('debe completar los campos');
