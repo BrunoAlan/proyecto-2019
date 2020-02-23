@@ -29,10 +29,12 @@ var ul = document.getElementById('listaPalabras');
 for (let index = 0; index < listaPalabras.length; index++) {
 	let palabra = listaPalabras[index].palabra;
 	let idDB = listaPalabras[index].id;
+	let categoria = listaPalabras[index].categoriaSemantica;
 	let listItem = document.createElement('li');
 	listItem.setAttribute('idDB', idDB);
 	listItem.setAttribute('class', 'collection-item palabras');
 	listItem.textContent = palabra;
+	listItem.setAttribute('categoria', categoria);
 	ul.appendChild(listItem);
 }
 
@@ -113,8 +115,10 @@ function searchPalabra() {
 
 	for (i = 0; i < li.length; i++) {
 		a = li[i].textContent;
+		b = li[i].getAttribute('categoria');
 		txtValue = a;
-		if (txtValue.toUpperCase().indexOf(filter) > -1) {
+		txtValue2 = b;
+		if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
 			li[i].style.display = '';
 		} else {
 			li[i].style.display = 'none';
