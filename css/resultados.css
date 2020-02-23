@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('../css/Roboto/Roboto-Regular.ttf');
+}
+
 .estudiante {
 	text-align: center;
 	margin-bottom: 10%;
@@ -21,11 +26,34 @@ img {
 	border-color: #a9a9a9;
 }
 
-#divEstudiantes {
-	padding: 10px;
-	background-color: #fcfcfc;
-}
+
 
 input[type='text']:not(.browser-default):disabled + label {
 	color: #86d6c6;
+}
+
+
+.datospersonales {
+	font-family: 'Roboto';
+	font-size: 1.1vw;
+	
+	color: #3f3f3f;
+}
+
+.seguimiento {
+	font-family: 'Roboto';
+	font-size: 1.1vw;
+	margin-left: 35%;
+	font-weight: bold;
+	color: #3f3f3f;
+}
+
+.contestudiantes {
+	margin-top: 14%;
+}
+
+.textoseguimiento
+{
+	color: #86d6c6;
+	font-weight: lighter;
 }

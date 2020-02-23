@@ -4,8 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		<link rel="stylesheet" href="../css/nuevosestilos.css" />
+		<link rel="stylesheet" href="../css/altadocente.css" />
+
 		<link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css" media="screen,projection" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Nuevo Docente</title>
 	</head>
@@ -19,27 +21,32 @@
 		</style>
 		<div class="container ">
 			<div class="row">
-				<h1>Nuevo Docente</h1>
-				<div class="row">
-					<div class="input-field col s6">
+				<a href="login.html"
+					><button class="col s volver teal lighten-3"><i class="iconovolver fa fa-arrow-left fa-2x"></i></button
+				></a>
+				<div class="divtextodocente col s6 offset-s3">
+					<p id="textonuevodocente">NUEVO DOCENTE</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="nuevodocente col s8 offset-s2">
+					<div class="input-field col s8 offset-s2">
 						<input id="inputNombre" type="text" class="validate" />
 						<label for="first_name">Nombre</label>
 					</div>
 					<form id="uploadForm" enctype="multipart/form-data" action="http://www.localhost:3000/upload" method="post"></form>
-				</div>
 
-				<div class="row">
-					<div class="input-field col s6">
+					<div class="input-field col s8 offset-s2">
 						<input id="inputApellido" type="text" class="validate" />
 						<label for="last_name">Apellido</label>
 					</div>
 				</div>
 			</div>
+
 			<div class="row">
-				<button id="btnAgregar" class="btn waves-effect waves-light" type="submit" form="uploadForm">
-					Agregar
-					<i class="material-icons right">send</i>
-				</button>
+				<div class="col s offset-s5 ">
+					<a> <button id="btnAgregar" class="agregar teal lighten-3">AGREGAR DOCENTE</button></a>
+				</div>
 			</div>
 		</div>
 

@@ -124,6 +124,7 @@ function getAnswer() {
 	if (endGame(cantEjercicios, ejerciciosObjetivo)) {
 		alert(`Respuestas correctas ${rtasCorrectas}
 		Respuestas incorrectas ${rtasIncorrectas}`);
+		window.location="../views/festejofinal.html";
 	}
 }
 

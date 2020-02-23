@@ -12,7 +12,7 @@
 			media="screen,projection"
 		/>
 		<link href="../css/configdenominacion.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="../css/resultados.css" />
+
 		<link rel="stylesheet" href="../css/estudiantes.css" />
 		<link rel="stylesheet" href="../css/sidebar.css" />
 	</head>
@@ -87,10 +87,6 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="contguardar col s offset-s8 ">
-					<a> <button class="guardar teal lighten-3">Guardar cambios</button></a>
-				</div>
 			</div>
 		</div>
 
@@ -109,7 +105,9 @@
 			});
 		</script>
 		<script>
+			const Swal = require('sweetalert2');
 			let idSeleccionado;
+			let nombreSeleccionado;
 			let listaEstudiantes = [];
 			let displayNombre = document.getElementById('nombre');
 			let displayApellido = document.getElementById('apellido');
@@ -162,11 +160,13 @@
 					let apellido = e.target.getAttribute('apellido');
 					let edad = e.target.getAttribute('edad');
 					let descripcion = e.target.getAttribute('descripcion');
+					nombreSeleccionado = nombre + ' ' + apellido;
 					idSeleccionado = e.target.getAttribute('id');
 					displayNombre.setAttribute('value', nombre);
 					displayApellido.setAttribute('value', apellido);
 					displayEdad.setAttribute('value', edad);
 					displayDescripcion.setAttribute('value', descripcion);
+					console.log(nombreSeleccionado);
 				}
 			});
 
@@ -195,8 +195,23 @@
 			}
 
 			eliminarEstudiante.addEventListener('click', (e) => {
-				alert('Elimanar');
-				deleteEstudiante();
+				if (nombreSeleccionado != undefined) {
+					Swal.fire({
+						title: `¿ESTÁ SEGURO DE ELIMINAR AL ESTUDIANTE? \n\n ${nombreSeleccionado.toUpperCase()}`,
+						type: 'warning',
+						showCancelButton: true,
+						confirmButtonColor: '#86D6C6',
+						cancelButtonColor: '#ffcc80',
+						confirmButtonText: 'SI, ELIMINAR',
+						cancelButtonText: 'CANCELAR'
+					}).then((result) => {
+						if (result.value) {
+							deleteEstudiante();
+						}
+					});
+				} else {
+					Swal.fire({ title: 'DEBE SELECCIONAR A UN ESTUDIANTE', confirmButtonColor: '#86D6C6', type: 'warning' });
+				}
 			});
 
 			function deleteEstudiante() {
@@ -206,7 +221,6 @@
 				location.href = 'estudiantes.html';
 				//console.log(idSeleccionado);
 			}
-
 			let btnNuevoEstudiante = document.getElementById('agregarEstudiante');
 			btnNuevoEstudiante.addEventListener('click', (e) => {
 				location.href = 'altaEstudiante.html';

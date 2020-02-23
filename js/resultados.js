@@ -27,8 +27,8 @@ for (let index = 0; index < listaDocentes.length; index++) {
 
 	let img = document.createElement('img');
 	img.setAttribute('class', 'circle noSeleccionado');
-	img.setAttribute('hight', '137');
-	img.setAttribute('width', '137');
+	img.setAttribute('hight', '100');
+	img.setAttribute('width', '100');
 	img.setAttribute('avatar', nombreApellido);
 	img.setAttribute('nombre', listaDocentes[index].nombre);
 	img.setAttribute('apellido', listaDocentes[index].apellido);
