@@ -12,8 +12,8 @@
 			media="screen,projection"
 		/>
 		<link href="../css/configdenominacion.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="../css/resultados.css" />
-        
+		<link rel="stylesheet" href="../css/resultados.css" />
+
 		<link rel="stylesheet" href="../css/altaestudiante.css" />
 		<link rel="stylesheet" href="../css/sidebar.css" />
 	</head>
@@ -37,64 +37,47 @@
 				</ul>
 			</div>
 
-			
-
 			<div class="contestudiantes col s10">
 				<div class="row">
-                    
-                    <div class="row">
-                        
-                        <div class="divtextoestudiante col s6 offset-s3">
-                            <p id="textonuevoestudiante">NUEVO ESTUDIANTE</p>
-                        </div>
-                    </div>
+					<div class="row">
+						<div class="divtextoestudiante col s6 offset-s3">
+							<p id="textonuevoestudiante">NUEVO ESTUDIANTE</p>
+						</div>
+					</div>
 
-                    <div class="row">
-                    <div class="nuevoestudiante col s8 offset-s2">
-                        <div class="input-field col s8 offset-s2">
-                            <input id="inputNombre" type="text" class="validate" />
-                            <label for="first_name">Nombre</label>
-                        </div>
-                        <form id="uploadForm" enctype="multipart/form-data" action="http://www.localhost:3000/estudiantes" method="post"></form>
-                    
-    
-                    
-                        <div class="input-field col s8 offset-s2">
-                            <input id="inputApellido" type="text" class="validate" />
-                            <label for="last_name">Apellido</label>
-                        </div>
-                    
-               
-                
-                
-                    <div class="input-field col s8 offset-s2">
-                      <input id="inputEdad" type="text" class="validate" />
-                      <label for="last_name">Edad</label>
-                    </div>
-                 
-               
-                  
-                    <div class="input-field col s8 offset-s2">
-                      <input id="inputDescripcion" type="text" class="validate" />
-                      <label for="last_name">Descripción</label>
-                    </div>
-                </div>
-                </div>
-            </div>
-        
-        
-       
-        <div class="row">
-				
-            <div class="col s offset-s5 ">
-                <a> <button id="btnAgregar" class="agregar teal lighten-3" type="submit" form="uploadForm">AGREGAR ESTUDIANTE</button></a>
-            </div>
-        </div>
+					<div class="row">
+						<div class="nuevoestudiante col s8 offset-s2">
+							<div class="input-field col s8 offset-s2">
+								<input id="inputNombre" type="text" class="validate" />
+								<label for="first_name">Nombre</label>
+							</div>
+							<form id="uploadForm" enctype="multipart/form-data" action="http://www.localhost:3000/estudiantes" method="post"></form>
 
+							<div class="input-field col s8 offset-s2">
+								<input id="inputApellido" type="text" class="validate" />
+								<label for="last_name">Apellido</label>
+							</div>
 
-        </div>
-    </div>
-        
+							<div class="input-field col s8 offset-s2">
+								<input id="inputEdad" type="text" class="validate" />
+								<label for="last_name">Edad</label>
+							</div>
+
+							<div class="input-field col s8 offset-s2">
+								<input id="inputDescripcion" type="text" class="validate" />
+								<label for="last_name">Descripción</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col s offset-s5 ">
+						<a> <button id="btnAgregar" class="agregar teal lighten-3">AGREGAR ESTUDIANTE</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<script src="../node_modules/jquery/dist/jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
 		<script src="../js/index.js"></script>
@@ -110,47 +93,46 @@
 				});
 			});
 		</script>
-			<script>
-                var request = require('request');
-                let btnAgregar = document.getElementById('btnAgregar');
-                let inputNombre = document.getElementById('inputNombre');
-                let inputApellido = document.getElementById('inputApellido');
-                let inputEdad = document.getElementById('inputEdad');
-                let inputDescripcion = document.getElementById('inputDescripcion');
-    
-                btnAgregar.addEventListener('click', (e) => {
-                    validar();
-                });
-    
-                function validar() {
-                    if (inputApellido.value != '' && inputNombre.value != ''&& inputEdad.value != '' && inputDescripcion.value != '') {
-                        var nombreMayuscula = inputNombre.value.charAt(0).toUpperCase() + inputNombre.value.slice(1);
-                        var apellidoMayuscula = inputApellido.value.charAt(0).toUpperCase() + inputApellido.value.slice(1);
-    
-                        var options = {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/x-www-form-urlencoded'
-                            },
-                            body: new URLSearchParams({
-                                nombre: nombreMayuscula,
-                  apellido: apellidoMayuscula,
-                  edad: inputEdad.value,
-                  descripcion: inputDescripcion.value
-                  
-                            })
-                        };
-                        fetch('http://localhost:3000/estudiantes', options).then((response) => {
-                            response.json().then((data) => {
-                                console.log(data);
-                            });
-                            location.href = 'estudiantes.html';
-                        });
-                    } else {
-                        alert('debe completar los campos');
-                    }
-                }
-            </script>
-		
+		<script>
+			const Swal = require('sweetalert2');
+			var request = require('request');
+			let btnAgregar = document.getElementById('btnAgregar');
+			let inputNombre = document.getElementById('inputNombre');
+			let inputApellido = document.getElementById('inputApellido');
+			let inputEdad = document.getElementById('inputEdad');
+			let inputDescripcion = document.getElementById('inputDescripcion');
+
+			btnAgregar.addEventListener('click', (e) => {
+				validar();
+			});
+
+			function validar() {
+				if (inputApellido.value != '' && inputNombre.value != '' && inputEdad.value != '' && inputDescripcion.value != '') {
+					var nombreMayuscula = inputNombre.value.charAt(0).toUpperCase() + inputNombre.value.slice(1);
+					var apellidoMayuscula = inputApellido.value.charAt(0).toUpperCase() + inputApellido.value.slice(1);
+
+					var options = {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded'
+						},
+						body: new URLSearchParams({
+							nombre: nombreMayuscula,
+							apellido: apellidoMayuscula,
+							edad: inputEdad.value,
+							descripcion: inputDescripcion.value
+						})
+					};
+					fetch('http://localhost:3000/estudiantes', options).then((response) => {
+						response.json().then((data) => {
+							console.log(data);
+						});
+						location.href = 'estudiantes.html';
+					});
+				} else {
+					Swal.fire({ title: 'DEBE COMPLETAR TODOS LOS CAMPOS', confirmButtonColor: '#86D6C6', type: 'warning' });
+				}
+			}
+		</script>
 	</body>
 </html>

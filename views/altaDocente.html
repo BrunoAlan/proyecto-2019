@@ -53,6 +53,7 @@
 		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
 
 		<script>
+			const Swal = require('sweetalert2');
 			var request = require('request');
 			let btnAgregar = document.getElementById('btnAgregar');
 			var inputNombre = document.getElementById('inputNombre');
@@ -84,7 +85,7 @@
 						location.href = 'login.html';
 					});
 				} else {
-					alert('debe completar los campos');
+					Swal.fire({ title: 'DEBE COMPLETAR TODOS LOS CAMPOS', confirmButtonColor: '#86D6C6', type: 'warning' });
 				}
 			}
 		</script>
