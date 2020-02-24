@@ -1,82 +1,71 @@
 @font-face {
-	font-family: "Roboto";
-	src: url("../css/Roboto/Roboto-Regular.ttf");
+	font-family: 'Roboto';
+	src: url('../css/Roboto/Roboto-Regular.ttf');
 }
-  body#festejo
-  {
-      background-color: #ffffff;
-      height: 100%;
-      width: 100%;
-      margin: auto; 
-      overflow:hidden;
-  }
-  
-  #reiniciar
-  {
-      margin-top: 55%;
-      color: aliceblue;
-      font-size: 1.3vw;
-      text-align: center;
-      font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  }
-
-  #terminar
-  {
-      color: aliceblue;
-      font-size: 1.3vw;
-      text-align: center;
-      font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-      margin-top: 8%;
-  }
-
- .iconomenu
- {
-    line-height: 14px;
-    margin-left: 0.7%;
-    margin-top: 1.5%;
-    position: fixed;
-    color: #ffffff;
- }
-
- .barramenu
- {
-   
-    width: 2.1vw;
-    font-size: 1.3vw;
-    height: 100% ;
-    margin-left: -3%;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    background-color: #86D6C6;
-   
+body#festejo {
+	background-color: #ffffff;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
 }
 
-#ilustracion 
-{
-    width: 20vw;
-    height:35vw;
-    margin-left: 9%;
-    margin-top: 35%;
+#reiniciar {
+	margin-top: 55%;
+	color: aliceblue;
+	font-size: 1.3vw;
+	text-align: center;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
-
-#textofelicitaciones
-{
-    color: #86D6C6;
-    font-weight: bold;
-    font-size: 3vw;
-    margin-left: 2%;
-    margin-top: 80%;
-    width: 20vw;
+#terminar {
+	color: aliceblue;
+	font-size: 1.3vw;
+	text-align: center;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	margin-top: 8%;
 }
 
-.finalizar
-{
-  width: 17.5vw;
+.iconomenu {
+	line-height: 14px;
+	margin-left: 0.7%;
+	margin-top: 1.5%;
+	position: fixed;
+	color: #ffffff;
+}
+
+.barramenu {
+	width: 2.1vw;
+	font-size: 1.3vw;
+	height: 100%;
+	margin-left: -3%;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	background-color: #86d6c6;
+}
+
+#ilustracion {
+	width: 20vw;
+	height: 35vw;
+	margin-left: 9%;
+	margin-top: 35%;
+}
+
+#textofelicitaciones {
+	color: #86d6c6;
+	font-weight: bold;
+	font-size: 3vw;
+	margin-left: 2%;
+	margin-top: 80%;
+	width: 25vw;
+}
+
+.finalizar {
+	width: 17.5vw;
 	height: 4.4vw;
 	color: #ffffff;
-	font-family: "Roboto";
+	font-family: 'Roboto';
 	font-size: 1.5vw;
-	border-color: #86D6C6;
+	border-color: #86d6c6;
 	border-radius: 35px 35px 35px 35px;
 	-moz-border-radius: 35px 35px 35px 35px;
 	-webkit-border-radius: 35px 35px 35px 35px;

@@ -1,19 +1,19 @@
 ﻿// Requiero la DB y la instacio
-const Swal = require("sweetalert2");
-const { app } = require("electron").remote;
-const path = require("path");
-const Database = require("better-sqlite3");
-const prefixReal = "../public/images/Imagenes_reales/";
-const prefixDibujo = "../public/images/Imagenes_dibujo/";
-const dbFile = path.join(app.getAppPath(), "db.sqlite");
+const Swal = require('sweetalert2');
+const { app } = require('electron').remote;
+const path = require('path');
+const Database = require('better-sqlite3');
+const prefixReal = '../public/images/Imagenes_reales/';
+const prefixDibujo = '../public/images/Imagenes_dibujo/';
+const dbFile = path.join(app.getAppPath(), 'db.sqlite');
 const db = new Database(dbFile);
 let listaPalabras = [];
 let listaDistractoresCercanos = [];
 let listaDistractoresLejanos = [];
 let listaEjercicio = [];
-const btn1 = document.getElementById("im1");
-const btn2 = document.getElementById("im2");
-const btn3 = document.getElementById("im3");
+const btn1 = document.getElementById('im1');
+const btn2 = document.getElementById('im2');
+const btn3 = document.getElementById('im3');
 
 let ejerciciosObjetivo;
 let cantEjercicios = 0;
@@ -23,7 +23,7 @@ let errores = [];
 
 /* Parametros de configuración del ejercicio
 Obtengo los ids de las palabras a trabajar y el tipo de imagen */
-const conf = JSON.parse(localStorage.getItem("configuracion"));
+const conf = JSON.parse(localStorage.getItem('configuracion'));
 const pal = conf.palabras.toString();
 const tipoImg = conf.tipo;
 const estudiante = conf.estudiante;
@@ -34,7 +34,7 @@ const info = stmt.run(estudiante);
 let idUltimoResultado = info.lastInsertRowid;
 
 conf.palabras.forEach((palabra) => {
-	const stmt = db.prepare("INSERT INTO resultadosPalabras (id_resultado, id_palabra) VALUES (?, ?)");
+	const stmt = db.prepare('INSERT INTO resultadosPalabras (id_resultado, id_palabra) VALUES (?, ?)');
 	const info = stmt.run(idUltimoResultado, palabra);
 });
 
@@ -55,7 +55,7 @@ btn2.onclick = () => {
 // Obtengo las palabras pasadas desde la configuración de la db
 function getPalabras(listaPalabras) {
 	// Armo mi query para trabajar con las palabras seleccionadas
-	const query = `${"SELECT * FROM palabras WHERE id in " + "("}${pal})`;
+	const query = `${'SELECT * FROM palabras WHERE id in ' + '('}${pal})`;
 	const row = db.prepare(query);
 	const palabrasDB = row.all();
 	palabrasDB.forEach((palabra) => {
@@ -82,14 +82,14 @@ function endGame(cantEjercicios, ejerciciosObjetivo) {
 function getAnswer() {
 	if (event.srcElement.palabra == palabraTarget.palabra) {
 		rtasCorrectas++;
-		const arrayAciertos = ["¡MUY BIEN!", "¡EXCELENTE!", "¡BRAVO!", "¡GRANDIOSO!", "¡ESTUPENDO!", "¡FANTASTICO!"];
+		const arrayAciertos = ['¡MUY BIEN!', '¡EXCELENTE!', '¡BRAVO!', '¡GRANDIOSO!', '¡ESTUPENDO!', '¡FANTASTICO!'];
 		const singleacierto = arrayAciertos[Math.floor(Math.random() * arrayAciertos.length)];
 		Swal.fire({
-			imageUrl: "../public/images/Felicitaciones.png",
+			imageUrl: '../public/images/Felicitaciones.png',
 			width: 400,
 			imageWidth: 200,
 			imageHeight: 300,
-			background: "#e4f2f0",
+			background: '#e4f2f0',
 			title: singleacierto,
 			showConfirmButton: false,
 			timer: 2000
@@ -97,14 +97,14 @@ function getAnswer() {
 		nextPlay();
 	} else {
 		errores.push(palabraTarget.palabra);
-		const arrayerror = ["¡INTENTALO OTRA VEZ!", "¡INTENTALO NUEVAMENTE!"];
+		const arrayerror = ['¡INTENTALO OTRA VEZ!', '¡INTENTALO NUEVAMENTE!'];
 		const singlerror = arrayerror[Math.floor(Math.random() * arrayerror.length)];
 		Swal.fire({
-			imageUrl: "../public/images/otravez.png",
+			imageUrl: '../public/images/otravez.png',
 			width: 400,
 			imageWidth: 200,
 			imageHeight: 300,
-			background: "#e4f2f0",
+			background: '#e4f2f0',
 			title: singlerror,
 			showConfirmButton: false,
 			timer: 2000
@@ -115,7 +115,7 @@ function getAnswer() {
 	if (endGame(cantEjercicios, ejerciciosObjetivo)) {
 		alert(`Respuestas correctas ${rtasCorrectas}
 		Respuestas incorrectas ${rtasIncorrectas}`);
-		window.location="../views/festejofinal.html";
+		window.location = '../views/festejofinal.html';
 	}
 }
 
@@ -161,20 +161,20 @@ function shuffleExercise(listaEjercicio) {
 
 function setImages() {
 	let prefix;
-	if (tipoImg == "Imagen Real") {
+	if (tipoImg == 'Imagen Real') {
 		prefix = prefixReal;
-		document.getElementById("correcta").innerHTML = palabraTarget.palabra.toUpperCase();
-		document.getElementById("im1").src = prefix + listaEjercicio[0].rutaReal;
-		document.getElementById("im2").src = prefix + listaEjercicio[1].rutaReal;
-		document.getElementById("im1").palabra = listaEjercicio[0].palabra;
-		document.getElementById("im2").palabra = listaEjercicio[1].palabra;
+		document.getElementById('correcta').innerHTML = palabraTarget.palabra.toUpperCase();
+		document.getElementById('im1').src = prefix + listaEjercicio[0].rutaReal;
+		document.getElementById('im2').src = prefix + listaEjercicio[1].rutaReal;
+		document.getElementById('im1').palabra = listaEjercicio[0].palabra;
+		document.getElementById('im2').palabra = listaEjercicio[1].palabra;
 	} else {
 		prefix = prefixDibujo;
-		document.getElementById("correcta").innerHTML = palabraTarget.palabra.toUpperCase();
-		document.getElementById("im1").src = prefix + listaEjercicio[0].rutaDibujo;
-		document.getElementById("im2").src = prefix + listaEjercicio[1].rutaDibujo;
-		document.getElementById("im1").palabra = listaEjercicio[0].palabra;
-		document.getElementById("im2").palabra = listaEjercicio[1].palabra;
+		document.getElementById('correcta').innerHTML = palabraTarget.palabra.toUpperCase();
+		document.getElementById('im1').src = prefix + listaEjercicio[0].rutaDibujo;
+		document.getElementById('im2').src = prefix + listaEjercicio[1].rutaDibujo;
+		document.getElementById('im1').palabra = listaEjercicio[0].palabra;
+		document.getElementById('im2').palabra = listaEjercicio[1].palabra;
 	}
 }
 
