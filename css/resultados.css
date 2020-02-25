@@ -26,17 +26,14 @@ img {
 	border-color: #a9a9a9;
 }
 
-
-
 input[type='text']:not(.browser-default):disabled + label {
 	color: #86d6c6;
 }
 
-
 .datospersonales {
 	font-family: 'Roboto';
 	font-size: 1.1vw;
-	
+
 	color: #3f3f3f;
 }
 
@@ -52,8 +49,12 @@ input[type='text']:not(.browser-default):disabled + label {
 	margin-top: 14%;
 }
 
-.textoseguimiento
-{
+#divResultados {
+	overflow: auto;
+	height: 30vw;
+}
+
+.textoseguimiento {
 	color: #86d6c6;
 	font-weight: lighter;
 }

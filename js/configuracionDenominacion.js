@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 let listaAlumnos = [];
 let listaPalabras = [];
 var idEstudiante;
+let nombreEstudiante;
 const { app } = require('electron').remote;
 const path = require('path');
 const Database = require('better-sqlite3');
@@ -18,7 +19,7 @@ alumnosDB.forEach((alumno) => {
 	listaAlumnos.push(alumno);
 });
 
-query = 'SELECT * FROM palabras';
+query = 'SELECT * FROM palabras WHERE palabras.categoriaSemantica != "Resultados"';
 row = db.prepare(query);
 const palabrasDB = row.all();
 palabrasDB.forEach((palabra) => {
@@ -60,7 +61,8 @@ div.addEventListener('click', (e) => {
 		blankAllEstudiantes();
 		e.target.setAttribute('class', 'circle avatar seleccionado');
 		idEstudiante = e.target.getAttribute('idDB');
-		console.log(idEstudiante);
+		nombreEstudiante = e.target.getAttribute('avatar');
+		console.log(nombreEstudiante);
 	}
 });
 
@@ -155,6 +157,7 @@ function iniciar() {
 		localStorage.setItem(
 			'configuracion',
 			JSON.stringify({
+				nombreEstudiante: nombreEstudiante,
 				estudiante: idEstudiante,
 				palabras: idsSeleccionados,
 				tipo: tipoImagen,

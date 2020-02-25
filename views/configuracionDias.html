@@ -183,6 +183,7 @@
 			btnIniciar.addEventListener('click', (e) => {
 				if (nombreSeleccionado != undefined) {
 					sessionStorage.setItem('nombreDias', nombreSeleccionado);
+					sessionStorage.setItem('idNombreDías', idSeleccionado);
 					location.href = 'diasSemanaHoy.html';
 					console.log(nombreSeleccionado);
 				} else {

@@ -27,6 +27,7 @@ const conf = JSON.parse(localStorage.getItem('configuracion'));
 const pal = conf.palabras.toString();
 const tipoImg = conf.tipo;
 const estudiante = conf.estudiante;
+const nombreEstudiante = conf.nombreEstudiante;
 ejerciciosObjetivo = conf.repeticiones;
 
 const stmt = db.prepare("INSERT INTO RESULTADOS (id_estudiante, fecha) VALUES (?, datetime('now', 'localtime'))");
@@ -113,8 +114,7 @@ function getAnswer() {
 	}
 	cantEjercicios++;
 	if (endGame(cantEjercicios, ejerciciosObjetivo)) {
-		alert(`Respuestas correctas ${rtasCorrectas}
-		Respuestas incorrectas ${rtasIncorrectas}`);
+		sessionStorage.setItem('nombreDias', nombreEstudiante);
 		window.location = '../views/festejofinal.html';
 	}
 }
