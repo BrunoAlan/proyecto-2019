@@ -33,6 +33,10 @@ input[type='text']:not(.browser-default):disabled + label {
 	color: #86d6c6;
 }
 
+.circle.z-depth-5 {
+	border-style: none;
+}
+
 .nuevoestudiante {
 	width: 5.4vw;
 	height: 7vw;
