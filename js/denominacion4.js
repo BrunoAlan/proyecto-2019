@@ -145,7 +145,7 @@ function getListaDistractoresCercanos(listaDistractoresCercanos, palabraTarget) 
 }
 
 function getListaDistractoresLejano(listaDistractoresLejanos, palabraTarget) {
-	const query = `SELECT * FROM palabras WHERE palabras.categoriaSemantica <>"${palabraTarget.categoriaSemantica}" `;
+	const query = `SELECT * FROM palabras WHERE palabras.categoriaSemantica <>"${palabraTarget.categoriaSemantica}" AND palabras.categoriaSemantica !="Resultados" `;
 	const row = db.prepare(query);
 	const listaAux = row.all();
 	listaDistractoresLejanos.length = 0;
