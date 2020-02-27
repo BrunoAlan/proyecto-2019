@@ -1,128 +1,115 @@
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link href="../css/configconceptos.css" rel="stylesheet" type="text/css" />
+		<link href="../node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet" />
+		<link href="../css/sidebar.css" rel="stylesheet" type="text/css" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css" media="screen,projection" />
 
-<head>
+		<title>NombreApp</title>
+	</head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-  <link href="../css/configConceptos.css" rel="stylesheet" type="text/css">  
-  <link href="../node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet" />
-  <link href="../css/sidebar.css" rel="stylesheet" type="text/css" />
-  <link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css"
-    media="screen,projection" />
- 
-  <title>NombreApp</title>
-</head>
+	<body>
+		<div class="row">
+			<div class="col s1">
+				<div class="barramenu sidenav-trigger" data-target="menu">
+					<i class="iconomenu fa fa-chevron-right"></i>
+				</div>
 
-<body>
- <div class="row">
- <div class="col s1">
- <div class="barramenu sidenav-trigger" data-target="menu" >
- <i class="iconomenu fa fa-chevron-right"></i>
- </div> 
-  
- <ul id="menu" class="sidenav sidenav" style="width:23vw">
- <li>
- <div class="user-view">
- <a href="#user"><img class="circle z-depth-5" id="imgdocente" src=""></a>
- <a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
- <a href="#name"><span id="nombredocente" class="white-text name"></span></a>
- <a href="#email"><span class="white-text email"></span></a>   
- </div>
- </li>
- <li ><a  id="reiniciar" href="index.html">VOLVER AL INICIO</a></li>
- </ul>
- </div>
-  <br>
-  <!-- Inicia el Contenido de la columna Principal --> 
-   
- 
-  <!-- Termina el Contenido de la Columna Izquierda -->
-   <div class="contenedorestudiantes col s">
-     
-   <p id="textoestudiante">ESTUDIANTES</p>
-   
-   <div class="input-field">
-   <i class=" material-icons prefix">search</i><textarea id="buscarEstudiante" class="materialize-textarea"></textarea>
-   <label for="buscarEstudiante">BUSCAR NOMBRE</label>
-   </div>
-   <div class="row" id="listadoalumnos"></div>
-   </div>  
-  <!-- Inicia el Contenido de la Columna Derecha -->
-   <div class="contenedorconceptos col s"> 
-    <p id="textoconcepto">CONCEPTO</p>
-  
-   <div class="input-field">
-   <i class="material-icons prefix">search</i><textarea id="buscarConcepto" class="materialize-textarea"></textarea>
-   <label for="buscarConcepto">BUSCAR CONCEPTO</label>
-   </div>  
-   <ul class="collection listado" id="listadoconceptos"></ul>   
-   </div> 
-  <!-- Termina el contenido de la Columna Derecha -->
+				<ul id="menu" class="sidenav sidenav" style="width:23vw">
+					<li>
+						<div class="user-view">
+							<a href="#user"><img class="circle z-depth-5" id="imgdocente" src=""/></a>
+							<a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
+							<a href="#name"><span id="nombredocente" class="white-text name"></span></a>
+							<a href="#email"><span class="white-text email"></span></a>
+						</div>
+					</li>
+					<li><a id="reiniciar" href="index.html">VOLVER AL INICIO</a></li>
+				</ul>
+			</div>
+			<br />
+			<!-- Inicia el Contenido de la columna Principal -->
 
-  <div class="contenedorderecha col s offset-s2">
-    <p id="ejercicio1">EJERCICIO 5</p>
-    <p id="nombreejercicio">QUIEN ES? COMO ES?</p>
-    <img id="ilustracion" src="../public/images/Bienvenido.png" />
-    <a> <button onclick="iniciarEjercicio()" id="btnIniciar" type="submit" class="comenzar teal lighten-3">INICIAR EJERCICIO</button></a>
-  </div>
+			<!-- Termina el Contenido de la Columna Izquierda -->
+			<div class="contenedorestudiantes col s">
+				<p id="textoestudiante">ESTUDIANTES</p>
 
-  <div class="col s">
-    
-    
-  </div>
+				<div class="input-field">
+					<i class=" material-icons prefix">search</i><textarea id="buscarEstudiante" class="materialize-textarea"></textarea>
+					<label for="buscarEstudiante">BUSCAR NOMBRE</label>
+				</div>
+				<div class="row" id="listadoalumnos"></div>
+			</div>
+			<!-- Inicia el Contenido de la Columna Derecha -->
+			<div class="contenedorconceptos col s">
+				<p id="textoconcepto">CONCEPTO</p>
 
- 
-  <!-- Inicia el Contenido de la Columna Central -->
-   <div class="contenedorabajo col s4">
-      
-    <!-- Seleccionar Dificultad -->
-    <div class="input-field col s6">
-      <select id="dificultad">
-        <option value="" disabled>Elegir dificultad</option>
-        <option value="baja" selected>BAJA</option>
-        <option value="media">MEDIA</option>
-        <option value="alta">ALTA</option>
-      </select>
-      <label id="textoselector">DIFICULTAD</label>
-    </div>
-    <!-- Seleccionar Dificultad --> 
+				<div class="input-field">
+					<i class="material-icons prefix">search</i><textarea id="buscarConcepto" class="materialize-textarea"></textarea>
+					<label for="buscarConcepto">BUSCAR CONCEPTO</label>
+				</div>
+				<ul class="collection listado" id="listadoconceptos"></ul>
+			</div>
+			<!-- Termina el contenido de la Columna Derecha -->
 
-    <!-- Seleccionar Dificultad -->
-     <div class="input-field col s6">
-      <select id="tipoimagen">
-        <option value="" disabled>Elegir imagen</option>
-        <option value="real" selected>REAL</option>
-        <option value="animada">DIBUJO</option>
-      </select>
-      <label id="textoselector">TIPO IMAGEN</label>
-     </div>
-    <!-- Seleccionar Dificultad --> 
-    
+			<div class="contenedorderecha col s offset-s2">
+				<p id="ejercicio1">EJERCICIO 5</p>
+				<p id="nombreejercicio">QUIEN ES? COMO ES?</p>
+				<img id="ilustracion" src="../public/images/Bienvenido.png" />
+				<a>
+					<button onclick="iniciarEjercicio()" id="btnIniciar" type="submit" class="comenzar teal lighten-3">INICIAR EJERCICIO</button></a
+				>
+			</div>
 
-   </div>
+			<div class="col s"></div>
 
-  
-  <!-- Termina el contenido de la Columna Central -->
+			<!-- Inicia el Contenido de la Columna Central -->
+			<div class="contenedorabajo col s4">
+				<!-- Seleccionar Dificultad -->
+				<div class="input-field col s6">
+					<select id="dificultad">
+						<option value="" disabled>Elegir dificultad</option>
+						<option value="baja" selected>BAJA</option>
+						<option value="media">MEDIA</option>
+						<option value="alta">ALTA</option>
+					</select>
+					<label id="textoselector">DIFICULTAD</label>
+				</div>
+				<!-- Seleccionar Dificultad -->
 
- </div> 
- <!--JavaScript at end of body for optimized loading-->
- <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
- <script src="../js/index.js"></script>
- <script src="../js/configuracionConceptos.js"></script>
- <script src="../js/letterAvatar.js"></script>
- <!--JavaScript at end of body for optimized loading-->
- <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, { 
-      inDuration: 500, 
-      outDuration:400,    
-      });
-  });
- </script>
-</body>
+				<!-- Seleccionar Dificultad -->
+				<div class="input-field col s6">
+					<select id="tipoimagen">
+						<option value="" disabled>Elegir imagen</option>
+						<option value="real" selected>REAL</option>
+						<option value="animada">DIBUJO</option>
+					</select>
+					<label id="textoselector">TIPO IMAGEN</label>
+				</div>
+				<!-- Seleccionar Dificultad -->
+			</div>
+
+			<!-- Termina el contenido de la Columna Central -->
+		</div>
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+		<script src="../js/index.js"></script>
+		<script src="../js/configuracionConceptos.js"></script>
+		<script src="../js/letterAvatar.js"></script>
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var elems = document.querySelectorAll('.sidenav');
+				var instances = M.Sidenav.init(elems, {
+					inDuration: 500,
+					outDuration: 400
+				});
+			});
+		</script>
+	</body>
 </html>

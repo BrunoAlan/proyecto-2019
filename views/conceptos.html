@@ -1,72 +1,70 @@
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link href="../css/conceptos.css" rel="stylesheet" type="text/css" />
+		<link href="../css/sidebar.css" rel="stylesheet" type="text/css" />
+		<link href="../node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css" media="screen,projection" />
+		<title>NombreApp</title>
+	</head>
 
-<head>
+	<body>
+		<div class="row">
+			<div class="col s">
+				<div class="barramenu sidenav-trigger" data-target="menu">
+					<i class="iconomenu fa fa-chevron-right"></i>
+				</div>
 
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-  <link href="../css/conceptos.css" rel="stylesheet" type="text/css">  
-  <link href="../css/sidebar.css" rel="stylesheet" type="text/css">  
-  <link href="../node_modules/material-icons/iconfont/material-icons.css" rel="stylesheet" />
-  <link type="text/css" rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-  <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css"
-    media="screen,projection" />
-  <title>NombreApp</title>
-</head>
+				<ul id="menu" class="sidenav sidenav" style="width:23vw">
+					<li>
+						<div class="user-view">
+							<a href="#user"><img class="circle z-depth-5" id="imgdocente" src=""/></a>
+							<a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
+							<a href="#name"><span id="nombredocente" class="white-text name"></span></a>
+							<a href="#email"><span class="white-text email"></span></a>
+						</div>
+					</li>
+					<li><a id="reiniciar" href="index.html">VOLVER AL INICIO</a></li>
+				</ul>
+			</div>
 
-<body>
- <div class="row">
- <div class="col s">
- <div class="barramenu sidenav-trigger" data-target="menu" >
- <i class="iconomenu fa fa-chevron-right"></i>
- </div> 
-  
- <ul id="menu" class="sidenav sidenav" style="width:23vw">
- <li>
- <div class="user-view">
- <a href="#user"><img class="circle z-depth-5" id="imgdocente" src=""></a>
- <a href="#name"><span id="hola" class="white-text name">Hola!</span></a>
- <a href="#name"><span id="nombredocente" class="white-text name"></span></a>
- <a href="#email"><span class="white-text email"></span></a>   
- </div>
- </li>
- <li ><a  id="reiniciar" href="index.html">VOLVER AL INICIO</a></li>
- </ul>
- </div>
-  
- <!-- Inicia el Contenido de la columna Principal --> 
-<div class="row">
- <div class=" col s4">  
-    <div id="ejercitacion_paso" class="paso"></div>
-    
-    <div class="quees col s offset-s8 " id="que_es"></div> <!-- Aca genero el contenido del que es -->
-    <div class="quienes col s offset-s4" id="quien_es"></div> <!-- Aca genero el contenido del quien es -->
-    <div class="quehace col s offset-s8" id="que_hace"></div> <!-- Aca genero el contenido del que hace -->
-    <div class="comoes col s offset-s8" id="como_es"></div> <!-- Aca genero el contenido del como es -->
+			<!-- Inicia el Contenido de la columna Principal -->
+			<div class="row">
+				<div class=" col s4">
+					<div id="ejercitacion_paso" class="paso"></div>
 
- <!-- Termina el contenido de la Columna Principal -->
- </div>
-</div>
-</div>
+					<div class="quees col s offset-s8 " id="que_es"></div>
+					<!-- Aca genero el contenido del que es -->
+					<div class="quienes col s offset-s4" id="quien_es"></div>
+					<!-- Aca genero el contenido del quien es -->
+					<div class="quehace col s offset-s8" id="que_hace"></div>
+					<!-- Aca genero el contenido del que hace -->
+					<div class="comoes col s offset-s8" id="como_es"></div>
+					<!-- Aca genero el contenido del como es -->
 
- <!--JavaScript at end of body for optimized loading-->
- <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
- <script src="../js/index.js"></script>
- <script src="../js/conceptos.js"></script>
- <script src="../js/letterAvatar.js"></script>
- <!--JavaScript at end of body for optimized loading-->
- <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, { 
-      inDuration: 500, 
-      outDuration:400,    
-      });
-  });
- </script>
+					<!-- Termina el contenido de la Columna Principal -->
+				</div>
+			</div>
+		</div>
 
-
-</body>
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+		<script src="../js/index.js"></script>
+		<script src="../js/conceptos.js"></script>
+		<script src="../js/letterAvatar.js"></script>
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var elems = document.querySelectorAll('.sidenav');
+				var instances = M.Sidenav.init(elems, {
+					inDuration: 500,
+					outDuration: 400
+				});
+			});
+		</script>
+	</body>
 </html>
