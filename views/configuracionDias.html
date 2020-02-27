@@ -11,41 +11,12 @@
 			href="../node_modules/materialize-css/dist/css/materialize.css"
 			media="screen,projection"
 		/>
-		<link href="../css/configdenominacion.css" rel="stylesheet" type="text/css" />
+
+		<link href="../css/configuraciondias.css" rel="stylesheet" type="text/css" />
 
 		<link rel="stylesheet" href="../css/estudiantes.css" />
 		<link rel="stylesheet" href="../css/sidebar.css" />
 	</head>
-	<style>
-		.agregar {
-			width: 14.5vw;
-			height: 4.4vw;
-			color: #ffffff;
-			font-family: 'Roboto', sans-serif;
-			font-size: 1.3vw;
-			border-color: #86d6c6;
-			border-radius: 35px 35px 35px 35px;
-			-moz-border-radius: 35px 35px 35px 35px;
-			-webkit-border-radius: 35px 35px 35px 35px;
-			box-sizing: border-box;
-			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 13%;
-			margin-left: -10%;
-		}
-
-		.agregar:active {
-			transform: translateY(2px);
-		}
-
-		.agregar:hover {
-			box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12), 0 15px 12px rgba(0, 0, 0, 0.12);
-		}
-
-		#divEstudiantes {
-			overflow: auto;
-			height: 25vw;
-		}
-	</style>
 
 	<body>
 		<div class="row">
@@ -65,20 +36,24 @@
 					<li><a id="reiniciar" href="index.html">VOLVER AL INICIO</a></li>
 				</ul>
 			</div>
-			<div class="contestudiantes col s10">
+			<div class="contestudiantes col s">
+				<p id="textoestudiante">ESTUDIANTES</p>
 				<div class="row">
 					<div class="row">
-						<div class="input-field col s6 offset-s3">
+						<div class="buscador col s offset-s1 input-field ">
 							<i class="material-icons prefix">search</i>
 							<textarea id="icon_prefix2" onkeyup="search()" class="materialize-textarea"></textarea>
-							<label for="icon_prefix2">Buscar nombre</label>
+							<label for="icon_prefix2">BUSCAR NOMBRE</label>
 						</div>
 					</div>
-					<div id="divEstudiantes" class="col s4 offset-s4"></div>
+					<div id="divEstudiantes" class="col s"></div>
 				</div>
 			</div>
 
-			<div class="col s offset-s4 ">
+			<div class="contenedorderecha col s offset-s4">
+				<p id="ejercicio1">EJERCICIO 2</p>
+				<p id="nombreejercicio">DÍAS DE LA SEMANA</p>
+				<img id="ilustracion" src="../public/images/Bienvenido.png" />
 				<a> <button id="btnIniciar" class="agregar teal lighten-3">INICIAR EJERCICIO</button></a>
 			</div>
 		</div>

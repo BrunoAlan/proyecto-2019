@@ -1,0 +1,237 @@
+@font-face 
+{
+	font-family: "Roboto";
+	src: url("../css/Roboto/Roboto-Regular.ttf");
+}
+
+body
+{
+  overflow: hidden;
+  font-family: "Roboto";
+}
+
+
+.nyap {
+	margin: 0%;
+}
+
+
+.iconomenu 
+{
+	line-height: 14px;
+	margin-left: 0.7%;
+	margin-top: 1.5%;
+	position: fixed;
+	color: #ffffff;
+}
+
+.barramenu 
+{
+	width: 2.1vw;
+	font-size: 1.3vw;
+	height: 100%;
+	margin-left: -3%;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	background-color: #86D6C6;
+}
+
+#reiniciar 
+{
+	margin-top: 55%;
+	color: aliceblue;
+	font-size: 1.3vw;
+	text-align: center;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+.estudiante
+{
+	text-align: center;
+}
+
+#terminar 
+{
+	color: aliceblue;
+	font-size: 1.3vw;
+	text-align: center;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	margin-top: 8%;
+}
+img.avatar 
+{
+	border-style: solid;
+	border-color: #a9a9a9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-top: 15%;
+}
+
+img.avatar.seleccionado 
+{
+	border-width: 3px;
+	border-color: #86D6C6;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+img.avatar.noSeleccionado 
+{
+	border-width: 1px;
+  border-color: #a9a9a9;
+
+}
+
+
+.barramenu 
+{
+	width: 2.1vw;
+	font-size: 1.3vw;
+	height: 100%;
+	margin-left: -3%;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	background-color: #86D6C6;
+}
+
+.listado {
+ font-size:1vw;
+}
+
+
+#textoestudiante
+{
+	color: #707070;
+	font-weight: bold ;
+	font-size: 1.3vw;
+	margin-left: 2%;
+	
+	width: 20vw;
+}
+
+
+#textoconcepto
+{
+	color: #707070;
+	font-weight: bold;
+	font-size: 1.3vw;
+
+
+}
+
+
+#buscarestudiante
+{
+  width: 20vw;
+}
+
+#listadoalumnos
+{
+  height: 19vw;
+  overflow: auto;
+  width: 26vw;
+  
+  margin-top: -2%;	
+}
+
+#listadoconceptos {
+ height: 19vw;
+ overflow: auto;
+ width: 23vw;
+ margin-left: 7%;
+ margin-top: -2%;	
+}
+
+.contenedorestudiantes
+{
+  margin-top: 6%;
+}
+
+.contenedorconceptos
+{
+  margin-top: 6%;
+  width: 26vw;
+}
+
+
+
+#ilustracion {
+	width: 13vw;
+	height: 26vw;
+	margin-left: 36%;
+	margin-top: 10%;
+}
+
+.comenzar 
+{
+	width: 15.5vw;
+	height: 4.4vw;
+	color: #ffffff;
+	font-family: "Roboto";
+	font-size: 1.3vw;
+	border-color: #86D6C6;
+	border-radius: 35px 35px 35px 35px;
+	-moz-border-radius: 35px 35px 35px 35px;
+	-webkit-border-radius: 35px 35px 35px 35px;
+	box-sizing: border-box;
+
+  margin-top: 25%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10), 0 10px 10px rgba(0, 0, 0, 0.10);
+  
+
+}
+
+.comenzar:active 
+{
+	transform: translateY(2px);
+}
+
+.comenzar:hover 
+{
+	box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12), 0 15px 12px rgba(0, 0, 0, 0.12);
+}
+
+#ilustracion {
+	width: 13vw;
+	height: 26vw;
+  margin-top: 4%;
+  margin-left: 11%;
+	
+}
+
+
+
+
+
+#ejercicio1
+{
+	color: #707070;
+	font-size: 2.4vw;
+  font-weight: bold;
+
+}
+
+#nombreejercicio
+{
+	color: #707070;
+	font-size: 1.6vw;
+
+	margin-top: -16%;
+}
+
+#textoselector
+{
+	color: #707070;
+	font-weight: bold;
+	font-size: 1.3vw;
+	margin-top: -5%;
+}
+
+.contenedorabajo
+{
+  margin-top: 0%;
+}
+
+
+.contenedorderecha
+{
+    width: 18vw;
+    height: 70vh ;
+    margin-top: 1%;
+}

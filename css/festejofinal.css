@@ -60,7 +60,7 @@ body#festejo {
 }
 
 .finalizar {
-	width: 17.5vw;
+	width: 15.5vw;
 	height: 4.4vw;
 	color: #ffffff;
 	font-family: 'Roboto';
@@ -70,8 +70,9 @@ body#festejo {
 	-moz-border-radius: 35px 35px 35px 35px;
 	-webkit-border-radius: 35px 35px 35px 35px;
 	box-sizing: border-box;
-	margin-top: 60%;
+	margin-top: 30%;
 	margin-left: 11%;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10), 0 10px 10px rgba(0, 0, 0, 0.10);
 }
 
 .finalizar:active {
@@ -79,5 +80,5 @@ body#festejo {
 }
 
 .finalizar:hover {
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+	box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12), 0 15px 12px rgba(0, 0, 0, 0.12);
 }

@@ -1,3 +1,16 @@
+@font-face 
+{
+	font-family: "Roboto";
+	src: url("../css/Roboto/Roboto-Regular.ttf");
+}
+
+body
+{
+  overflow: hidden;
+  font-family: "Roboto";
+}
+
+  
   body#diassemana
   {   
       background-color: #ffffff;
@@ -45,37 +58,51 @@
 
   .contdiassemana
   {
-     margin-top: 6%;
+     margin-top: 3%;
   }
 
   .consigna
   {
-      height: 5vh;
-      font-size: 2.3vw;
-      color: #707070;
-      font-weight: 600;
-      font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+      height: 3vh;
+      font-size: 2.4vw;
+      color: #020202;
+   
+    
       font-weight: bold;
       box-sizing: border-box;
       text-align: center;
-      margin-left: 0%;
+      
+     
   }
+
+.divconsigna
+{
+    width: 70vw;
+    border-bottom: #86D6C6 5px solid;
+    margin-left: 5%;
+}
+
  
   #textoResolucion
   {
-      margin-top: 5%;
-      margin-left: 12%;
+      
+      text-align: center;
       font-size: 2.5vw;
-      color: #86D6C6;
+      color: #707070;
       font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
       font-weight: bold;  
   }
 
+.textosol
+{
+    width: 74vw;
+    margin-top: 4%;
+}
 
   .siguiente
   {
       margin-left: 40%;
-      margin-top: 4%;
+      margin-top: 2%;
       object-fit: fixed;
       width:10vw;
       height: 4vw;

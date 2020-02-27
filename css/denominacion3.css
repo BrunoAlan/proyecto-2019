@@ -1,5 +1,5 @@
 #contdenom {
-  margin-top: 12%;
+  margin-top: 13%;
     margin-left: 13%;
     box-sizing: border-box;
     width: 80%;
@@ -45,3 +45,23 @@
 }
 
 
+
+
+.consigna {
+	height: 3vh;
+	font-size: 2.2vw;
+	color: #050505;;
+	font-weight: 600;
+	
+	
+	/*text-shadow: 2px 2px 4px;*/
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.divconsigna
+{
+    width: 70vw;
+    border-bottom: #86D6C6 5px solid;
+    margin-left: 10%;
+}

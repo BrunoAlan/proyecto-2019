@@ -1,3 +1,5 @@
+const Swal = require('sweetalert2');
+
 document.addEventListener('DOMContentLoaded', function() {
 	var elems = document.querySelectorAll('select');
 	var instances = M.FormSelect.init(elems);
@@ -6,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 let listaAlumnos = [];
 let listaPalabras = [];
 var idEstudiante;
-let nombreEstudiante;
 const { app } = require('electron').remote;
 const path = require('path');
 const Database = require('better-sqlite3');
@@ -20,6 +21,7 @@ alumnosDB.forEach((alumno) => {
 });
 
 query = 'SELECT * FROM palabras WHERE palabras.categoriaSemantica != "Resultados"';
+//query = 'SELECT * FROM palabras';
 row = db.prepare(query);
 const palabrasDB = row.all();
 palabrasDB.forEach((palabra) => {
@@ -61,8 +63,7 @@ div.addEventListener('click', (e) => {
 		blankAllEstudiantes();
 		e.target.setAttribute('class', 'circle avatar seleccionado');
 		idEstudiante = e.target.getAttribute('idDB');
-		nombreEstudiante = e.target.getAttribute('avatar');
-		console.log(nombreEstudiante);
+		console.log(idEstudiante);
 	}
 });
 
@@ -157,7 +158,6 @@ function iniciar() {
 		localStorage.setItem(
 			'configuracion',
 			JSON.stringify({
-				nombreEstudiante: nombreEstudiante,
 				estudiante: idEstudiante,
 				palabras: idsSeleccionados,
 				tipo: tipoImagen,
@@ -179,6 +179,12 @@ function iniciar() {
 				break;
 		}
 	} else {
-		alert('Seleccionar al menos una palabra y un estudiante');
+		if (idEstudiante == null) {
+			Swal.fire({ title: 'DEBE SELECCIONAR UN ESTUDIANTE', confirmButtonColor: '#86D6C6', type: 'warning' });
+		}
+
+		if (idsSeleccionados.length == 0) {
+			Swal.fire({ title: 'DEBE SELECCIONAR AL MENOS UNA PALABRA', confirmButtonColor: '#86D6C6', type: 'warning' });
+		}
 	}
 }

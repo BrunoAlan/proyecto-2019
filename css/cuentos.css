@@ -1,0 +1,215 @@
+@font-face 
+{
+	font-family: "Roboto";
+	src: url("../css/Roboto/Roboto-Regular.ttf");
+}
+
+body
+{
+  overflow: hidden;
+  font-family: "Roboto";
+}
+
+
+.nyap {
+	margin: 0%;
+}
+
+
+.iconomenu 
+{
+	line-height: 14px;
+	margin-left: 0.7%;
+	margin-top: 1.5%;
+	position: fixed;
+	color: #ffffff;
+}
+
+.barramenu 
+{
+	width: 2.1vw;
+	font-size: 1.3vw;
+	height: 100%;
+	margin-left: -3%;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	background-color: #86D6C6;
+}
+
+#reiniciar 
+{
+	margin-top: 55%;
+	color: aliceblue;
+	font-size: 1.3vw;
+	text-align: center;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+#terminar 
+{
+	color: aliceblue;
+	font-size: 1.3vw;
+	text-align: center;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	margin-top: 8%;
+}
+
+
+
+
+
+
+
+#imagencuento {
+ height: 87%;
+ width: 97vw;
+ margin-left: -1.71%;
+}
+
+.iconosiguiente {
+ color: #7c7878;
+ line-height:14px;
+ margin-left: 190%;
+ font-size: 6vw !important;
+}
+
+.iconoatras {
+ color: #7c7878;
+ line-height:14px; 
+ font-size: 6vw !important;
+}
+
+.iconoatras:active {
+ transform: translateY(3px);
+}
+        
+.iconosiguiente:active {
+ transform: translateY(3px);
+}
+
+.iconoatras:hover {
+ color: #00909e;
+}
+
+.iconosiguiente:hover {
+ color: #00909e;
+}
+
+.textocuento {
+ color: #707070;
+ font-size: 2.1vw;
+ font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+ text-align: center;
+ margin-top: 1%;
+}
+ 
+.contenedorcuento {
+ margin-left: auto;
+ margin-right: auto; 
+ width: 104%;
+ height: 85%; 
+ background-color: #1b7fbd ;
+ background-image: url("../public/images/cuentos/default.jpg");
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: 100% 100%; 
+}
+
+.contenedortexto {
+  cursor:pointer;
+}
+
+
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  #background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;  
+}
+
+.modalFondo { 
+ #background-color: #145374;
+ #background-image: url("../public/images/cuentos/default.jpg");
+ #background-position: center;
+ #background-repeat: no-repeat;
+ #background-size: 100% 100%; 
+}
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+.modalDialog > div {
+  width: 80%;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  background-color: white; 
+}
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #00d9ff; }
+
+.resolverpalabra {
+ color: #707070;
+}
+
+.textomodal {
+ color: #707070;
+ font-size: 1vw;
+ font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+ text-align: center;
+}
+
+.titulomodal {
+ color: #707070;
+ font-size: 2vw;
+ font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+ text-align: center;
+}
+
+.galeria li {
+  margin: 5px;
+}
+
+.galeria img {
+  width: 250px;
+  height: 250px;
+  max-width:250px;
+  max-height:250px;
+  padding-right:10px;
+  border-radius: 15px 15px 15px 15px;
+ -moz-border-radius: 15px 15px 15px 15px;
+ -webkit-border-radius: 15px 15px 15px 15px;
+ box-sizing: border-box;
+ box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.botonseparador {
+  padding-left:20px;
+  padding-right:20px;
+  visibility: hidden;
+}
