@@ -17,13 +17,15 @@ const dificultad = datosejercicio.dificultad;
 const tipoimagen = obtenerLinkImagen(datosejercicio.tipoimagen);
 let cantidadDistractores = 0; //por defecto 0 , se le asiga el valor en ejecucion
 
+let nombreApellido = alumno.nombre + ' ' + alumno.apellido;
+sessionStorage.setItem('nombreDias', nombreApellido);
 ///Parametros que voy a utilizar durante el ejercicio
 //let palabrasEjercitadas=[]; //Array que va a contener todas las palabras ejercitadas durante el ejercicio
 var faseActual = 1; //seteo la faseactual en la fase inicial
 var nroFase = 1; //seteo la fase en 1 para iniciar
 let target = concepto.concepto; //fijo mi concepto como target
 let cantidadAciertos = 0; //cuento la cantidad de aciertos
-console.log(datosejercicio);
+//console.log(datosejercicio);
 let Pasos = ['¿Que es?', '¿Quien es?', '¿Que Hace?', '¿Como es?']; //contiene las 3 etapas del ejercicio
 let IDS = ['que_es', 'quien_es', 'que_hace', 'como_es']; //contiene los IDS de los divs que se utilizan del HTML
 let TEXTOS = [' ', '  ', ' ', ' ']; //se pone el mensaje para el ejercicio aca
@@ -349,7 +351,6 @@ function finEjercicio() {
 	let conceptoEjercitado = concepto.concepto;
 	let idEstudiante = alumno.id;
 	let idPalabra = ' '; //es un valor referencial , despues toma valor verdadero
-
 	//Busco EL CONCEPTO TRABAJADO EN LA TABLA DE PALABRAS PARA OBTENER EL IDPALABRA (ASI TRABAJA MODULO RESULTADOS DE ALAN)
 	let listadoPalabras = db.prepare('SELECT * FROM palabras').all();
 	//Recorro entre todas las palabras y me quedo con la ID que necesito

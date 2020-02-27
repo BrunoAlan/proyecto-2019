@@ -22,6 +22,7 @@ const db = new Database(dbFile);
 const Swal = require('sweetalert2');
 var idEstudiante; //voy a trabajar con el ID de cada estudiante
 var nroConcepto; //voy a trabajar con el Nro del cuento
+let nombreEstudiante;
 
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////CONCEPTOS DESDE LA BASE DE DATOS//////////////////////
