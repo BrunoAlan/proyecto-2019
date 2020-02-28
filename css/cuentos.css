@@ -68,7 +68,7 @@ body
 .iconosiguiente {
  color: #7c7878;
  line-height:14px;
- margin-left: 190%;
+ margin-left: 90%;
  font-size: 6vw !important;
 }
 
@@ -96,10 +96,12 @@ body
 
 .textocuento {
  color: #707070;
- font-size: 2.1vw;
+ font-size: 2vw;
  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
- text-align: center;
+width: 65vw;
  margin-top: 1%;
+ margin-left: 8%;
+ 
 }
  
 .contenedorcuento {
@@ -121,27 +123,19 @@ body
 
 .modalDialog {
   position: fixed;
-  font-family: Arial, Helvetica, sans-serif;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  #background: rgba(0,0,0,0.8);
+  margin-left: 23.4%;
+ margin-top: 7%;
+
   z-index: 99999;
   opacity:0;
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
   pointer-events: none;  
+  width:55vw;
 }
 
-.modalFondo { 
- #background-color: #145374;
- #background-image: url("../public/images/cuentos/default.jpg");
- #background-position: center;
- #background-repeat: no-repeat;
- #background-size: 100% 100%; 
-}
+
 .modalDialog:target {
   opacity:1;
   pointer-events: auto;

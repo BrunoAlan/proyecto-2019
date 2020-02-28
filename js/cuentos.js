@@ -34,7 +34,7 @@ while (variablecontrol <= totalPasos) {
 	a.appendChild(textoclose);
 	var h5 = document.createElement('h5');
 	h5.className = 'titulomodal';
-	var hr5contenido = document.createTextNode('Seleccione la palabra Correcta');
+	var hr5contenido = document.createTextNode('SELECCIONE LA PALABRA CORRECTA');
 	h5.appendChild(hr5contenido);
 
 	//Primer boton con la opcion correcta

@@ -81,3 +81,10 @@ input[type='text']:not(.browser-default):disabled + label {
 	margin-left: 35%;
 	color: #3f3f3f;
 }
+
+
+#divestudiantes
+{
+	height: 20vw ;
+	overflow: auto;
+}

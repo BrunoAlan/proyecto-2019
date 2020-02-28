@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 let listaAlumnos = [];
 let listaPalabras = [];
 var idEstudiante;
+let nombreEstudiante;
 const { app } = require('electron').remote;
 const path = require('path');
 const Database = require('better-sqlite3');
@@ -36,7 +37,7 @@ for (let index = 0; index < listaPalabras.length; index++) {
 	let listItem = document.createElement('li');
 	listItem.setAttribute('idDB', idDB);
 	listItem.setAttribute('class', 'collection-item palabras');
-	listItem.textContent = palabra;
+	listItem.textContent = palabra.toUpperCase();
 	listItem.setAttribute('categoria', categoria);
 	ul.appendChild(listItem);
 }
@@ -63,6 +64,7 @@ div.addEventListener('click', (e) => {
 		blankAllEstudiantes();
 		e.target.setAttribute('class', 'circle avatar seleccionado');
 		idEstudiante = e.target.getAttribute('idDB');
+		nombreEstudiante = e.target.getAttribute('avatar');
 		console.log(idEstudiante);
 	}
 });
@@ -158,6 +160,7 @@ function iniciar() {
 		localStorage.setItem(
 			'configuracion',
 			JSON.stringify({
+				nombreEstudiante: nombreEstudiante,
 				estudiante: idEstudiante,
 				palabras: idsSeleccionados,
 				tipo: tipoImagen,

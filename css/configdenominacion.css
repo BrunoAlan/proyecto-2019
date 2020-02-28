@@ -213,5 +213,7 @@ ul:not(.browser-default) {
 #divEstudiantes
 {
 	margin-top: 1%;
+	height: 25vw;
+  	overflow: auto;
 }
 
