@@ -14,14 +14,14 @@ const path = require('path');
 const Database = require('better-sqlite3');
 const dbFile = path.join(app.getAppPath(), 'db.sqlite');
 const db = new Database(dbFile);
-let query = 'SELECT * FROM estudiantes';
+let query = 'SELECT * FROM estudiantes order by estudiantes.nombre';
 let row = db.prepare(query);
 let alumnosDB = row.all();
 alumnosDB.forEach((alumno) => {
 	listaAlumnos.push(alumno);
 });
 
-query = 'SELECT * FROM palabras WHERE palabras.categoriaSemantica != "Resultados"';
+query = 'SELECT * FROM palabras WHERE palabras.categoriaSemantica != "Resultados" order by palabras.palabra';
 //query = 'SELECT * FROM palabras';
 row = db.prepare(query);
 const palabrasDB = row.all();

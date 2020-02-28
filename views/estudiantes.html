@@ -119,7 +119,7 @@
 			const Database = require('better-sqlite3');
 			const dbFile = path.join(app.getAppPath(), 'db.sqlite');
 			const db = new Database(dbFile);
-			const query = 'SELECT * FROM estudiantes';
+			const query = 'SELECT * FROM estudiantes order by estudiantes.nombre';
 			const row = db.prepare(query);
 			const palabrasDB = row.all();
 			palabrasDB.forEach((palabra) => {

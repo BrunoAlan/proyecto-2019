@@ -126,7 +126,7 @@ function obtenerCategoriasSemanticas(listadoconceptos) {
 
 ////Obtengo los alumnos de la Base de datos
 let listaAlumnos = []; //Array donde tengo el listado de mis alumnos
-let alumnosDB = db.prepare('SELECT * FROM estudiantes').all();
+let alumnosDB = db.prepare('SELECT * FROM estudiantes order by estudiantes.nombre').all();
 alumnosDB.forEach((alumno) => {
 	listaAlumnos.push(alumno);
 });
